@@ -1,0 +1,1258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Admissions | Crestfield International Academy</title>
+
+  <meta name="description" content="Explore admissions information, application steps and contact details for Crestfield International Academy.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f8fa;
+      color: #182235;
+      line-height: 1.7;
+    }
+
+    header {
+      background: #07182f;
+      padding: 18px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 3px 15px rgba(0,0,0,0.15);
+    }
+
+    .logo {
+      color: #d4af37;
+      font-size: 23px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #d4af37;
+    }
+
+    .apply-btn {
+      background: #d4af37;
+      color: #07182f !important;
+      padding: 10px 17px;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    .menu-btn {
+      display: none;
+      color: white;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    .hero {
+      min-height: 430px;
+      background:
+        linear-gradient(rgba(7,24,47,0.84), rgba(7,24,47,0.84)),
+        url("https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1600&q=80")
+        center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 60px 7%;
+      color: white;
+    }
+
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .hero small {
+      color: #d4af37;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    .hero h1 {
+      font-size: 50px;
+      margin: 15px 0;
+      line-height: 1.15;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #e5e8ee;
+    }
+
+    section {
+      padding: 75px 7%;
+    }
+
+    .section-title {
+      text-align: center;
+      max-width: 750px;
+      margin: 0 auto 45px;
+    }
+
+    .section-title span {
+      color: #b18d18;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 13px;
+    }
+
+    .section-title h2 {
+      font-size: 35px;
+      margin: 10px 0;
+      color: #07182f;
+    }
+
+    .section-title p {
+      color: #657083;
+    }
+
+    /* ADMISSION PROCESS */
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .process-card {
+      background: white;
+      padding: 30px 22px;
+      text-align: center;
+      border-radius: 10px;
+      box-shadow: 0 8px 22px rgba(0,0,0,0.06);
+      position: relative;
+    }
+
+    .process-number {
+      width: 55px;
+      height: 55px;
+      margin: 0 auto 18px;
+      border-radius: 50%;
+      background: #07182f;
+      color: #d4af37;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 19px;
+      font-weight: bold;
+    }
+
+    .process-card h3 {
+      color: #07182f;
+      margin-bottom: 10px;
+    }
+
+    .process-card p {
+      color: #657083;
+      font-size: 14px;
+    }
+
+    /* PROGRAMMES */
+
+    .programmes {
+      background: #07182f;
+    }
+
+    .programmes .section-title h2 {
+      color: white;
+    }
+
+    .programmes .section-title p {
+      color: #cbd2dc;
+    }
+
+    .programme-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .programme-card {
+      background: #102542;
+      padding: 30px;
+      border-radius: 10px;
+      border: 1px solid rgba(212,175,55,0.25);
+    }
+
+    .programme-card h3 {
+      color: #d4af37;
+      margin-bottom: 10px;
+    }
+
+    .programme-card p {
+      color: #d1d7e0;
+      font-size: 15px;
+    }
+
+    /* REQUIREMENTS */
+
+    .requirements-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    .requirements-box {
+      background: white;
+      padding: 32px;
+      border-radius: 10px;
+      box-shadow: 0 8px 22px rgba(0,0,0,0.06);
+    }
+
+    .requirements-box h3 {
+      color: #07182f;
+      margin-bottom: 18px;
+      font-size: 23px;
+    }
+
+    .requirements-box ul {
+      padding-left: 20px;
+    }
+
+    .requirements-box li {
+      margin-bottom: 10px;
+      color: #5f6b7c;
+    }
+
+    .info-box {
+      background: #eef1f5;
+      padding: 32px;
+      border-radius: 10px;
+    }
+
+    .info-box h3 {
+      color: #07182f;
+      margin-bottom: 15px;
+    }
+
+    .info-box p {
+      color: #5f6b7c;
+      margin-bottom: 12px;
+    }
+
+    /* APPLICATION */
+
+    .application {
+      background: #f0f2f5;
+    }
+
+    .application-container {
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-group.full {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      font-weight: bold;
+      color: #07182f;
+      margin-bottom: 7px;
+      font-size: 14px;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #d5d9df;
+      border-radius: 5px;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      outline: none;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: #d4af37;
+    }
+
+    textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    .submit-btn {
+      margin-top: 20px;
+      background: #07182f;
+      color: white;
+      border: none;
+      padding: 14px 25px;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 15px;
+    }
+
+    .submit-btn:hover {
+      background: #102542;
+    }
+
+    /* CONTACT */
+
+    .contact {
+      background: white;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .contact-card {
+      text-align: center;
+      background: #f7f8fa;
+      padding: 30px 20px;
+      border-radius: 10px;
+    }
+
+    .contact-card .icon {
+      font-size: 30px;
+      margin-bottom: 12px;
+    }
+
+    .contact-card h3 {
+      color: #07182f;
+      margin-bottom: 8px;
+    }
+
+    .contact-card p {
+      color: #657083;
+      font-size: 14px;
+    }
+
+    /* CTA */
+
+    .cta {
+      background:
+        linear-gradient(rgba(7,24,47,0.93), rgba(7,24,47,0.93)),
+        url("https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=1600&q=80")
+        center/cover;
+      text-align: center;
+      color: white;
+    }
+
+    .cta h2 {
+      font-size: 38px;
+      margin-bottom: 15px;
+    }
+
+    .cta p {
+      color: #d7dce4;
+      max-width: 700px;
+      margin: 0 auto 25px;
+    }
+
+    .cta a {
+      display: inline-block;
+      background: #d4af37;
+      color: #07182f;
+      text-decoration: none;
+      padding: 13px 25px;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #040f20;
+      color: #cbd2dc;
+      padding: 45px 7% 25px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 35px;
+      margin-bottom: 30px;
+    }
+
+    footer h3 {
+      color: white;
+      margin-bottom: 12px;
+    }
+
+    footer p,
+    footer a {
+      color: #aeb7c5;
+      font-size: 14px;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 7px;
+    }
+
+    footer a:hover {
+      color: #d4af37;
+    }
+
+    .copyright {
+      border-top: 1px solid #1e2b3e;
+      padding-top: 20px;
+      text-align: center;
+      font-size: 13px;
+      color: #8e99a9;
+    }
+
+    .demo-label {
+      position: fixed;
+      bottom: 12px;
+      right: 12px;
+      background: #d4af37;
+      color: #07182f;
+      padding: 7px 11px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: bold;
+      z-index: 2000;
+    }
+
+    @media (max-width: 900px) {
+
+      nav {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: #07182f;
+        flex-direction: column;
+        padding: 25px;
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      .process-grid,
+      .contact-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .programme-grid,
+      .requirements-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 40px;
+      }
+    }
+
+    @media (max-width: 600px) {
+
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .process-grid,
+      .contact-grid,
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .form-group.full {
+        grid-column: auto;
+      }
+
+      .application-container {
+        padding: 25px 20px;
+      }
+
+      section {
+        padding: 55px 6%;
+      }
+
+      .section-title h2 {
+        font-size: 29px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <header>
+
+    <a href="index.html" class="logo">
+      CRESTFIELD ACADEMY
+    </a>
+
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+    <nav id="navMenu">
+
+      <a href="index.html">Home</a>
+
+      <a href="about.html">
+        About & Academics
+      </a>
+
+      <a href="admissions.html">
+        Admissions
+      </a>
+
+      <a href="index.html#contact">
+        Contact
+      </a>
+
+      <a href="admissions.html" class="apply-btn">
+        Apply Now
+      </a>
+
+    </nav>
+
+  </header>
+
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <small>ADMISSIONS 2026/2027</small>
+
+      <h1>
+        Begin Your Child's Journey
+      </h1>
+
+      <p>
+        Discover a learning environment designed to nurture
+        academic excellence, confidence, character and creativity.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- ADMISSION PROCESS -->
+
+  <section>
+
+    <div class="section-title">
+
+      <span>How It Works</span>
+
+      <h2>
+        Our Admission Process
+      </h2>
+
+      <p>
+        A simple four-step pathway for families interested
+        in joining the Crestfield community.
+      </p>
+
+    </div>
+
+
+    <div class="process-grid">
+
+      <div class="process-card">
+
+        <div class="process-number">
+          01
+        </div>
+
+        <h3>
+          Make an Enquiry
+        </h3>
+
+        <p>
+          Contact the admissions team to learn about
+          programmes, availability and the application process.
+        </p>
+
+      </div>
+
+
+      <div class="process-card">
+
+        <div class="process-number">
+          02
+        </div>
+
+        <h3>
+          Submit Application
+        </h3>
+
+        <p>
+          Complete the application information and provide
+          the required student documentation.
+        </p>
+
+      </div>
+
+
+      <div class="process-card">
+
+        <div class="process-number">
+          03
+        </div>
+
+        <h3>
+          Assessment
+        </h3>
+
+        <p>
+          Applicants may participate in an age-appropriate
+          assessment or interaction with the school.
+        </p>
+
+      </div>
+
+
+      <div class="process-card">
+
+        <div class="process-number">
+          04
+        </div>
+
+        <h3>
+          Admission Offer
+        </h3>
+
+        <p>
+          Successful applicants receive admission information
+          and guidance on the next steps.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PROGRAMMES -->
+
+  <section class="programmes">
+
+    <div class="section-title">
+
+      <span>Choose Your Path</span>
+
+      <h2>
+        Available Programmes
+      </h2>
+
+      <p>
+        Educational pathways designed for different stages
+        of a student's development.
+      </p>
+
+    </div>
+
+
+    <div class="programme-grid">
+
+      <div class="programme-card">
+
+        <h3>
+          Early Years
+        </h3>
+
+        <p>
+          A nurturing introduction to structured learning,
+          creativity, communication and social development.
+        </p>
+
+      </div>
+
+
+      <div class="programme-card">
+
+        <h3>
+          Primary School
+        </h3>
+
+        <p>
+          A strong foundation in literacy, numeracy, science,
+          technology and creative learning.
+        </p>
+
+      </div>
+
+
+      <div class="programme-card">
+
+        <h3>
+          Junior Secondary
+        </h3>
+
+        <p>
+          Broader academic exposure combined with critical
+          thinking, practical learning and personal development.
+        </p>
+
+      </div>
+
+
+      <div class="programme-card">
+
+        <h3>
+          Senior Secondary
+        </h3>
+
+        <p>
+          Focused academic preparation for higher education,
+          professional opportunities and future careers.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- REQUIREMENTS -->
+
+  <section>
+
+    <div class="section-title">
+
+      <span>Get Prepared</span>
+
+      <h2>
+        Admission Requirements
+      </h2>
+
+      <p>
+        Families should prepare the relevant information and
+        documentation before beginning the application process.
+      </p>
+
+    </div>
+
+
+    <div class="requirements-grid">
+
+
+      <div class="requirements-box">
+
+        <h3>
+          Suggested Documents
+        </h3>
+
+        <ul>
+
+          <li>
+            Completed admission application
+          </li>
+
+          <li>
+            Recent passport photographs
+          </li>
+
+          <li>
+            Previous school report or academic record
+          </li>
+
+          <li>
+            Birth certificate or age declaration
+          </li>
+
+          <li>
+            Relevant medical information where required
+          </li>
+
+          <li>
+            Parent or guardian identification
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <div class="info-box">
+
+        <h3>
+          Important Information
+        </h3>
+
+        <p>
+          Admission requirements may vary depending on the
+          student's age and programme.
+        </p>
+
+        <p>
+          Families are encouraged to contact the admissions
+          office before submitting final documentation.
+        </p>
+
+        <p>
+          <strong>
+            Note:
+          </strong>
+          This is a fictional demonstration website.
+          The information shown here is sample content.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- APPLICATION FORM -->
+
+  <section class="application">
+
+    <div class="section-title">
+
+      <span>Start Here</span>
+
+      <h2>
+        Admission Enquiry
+      </h2>
+
+      <p>
+        Send an enquiry to the admissions team.
+      </p>
+
+    </div>
+
+
+    <div class="application-container">
+
+      <form onsubmit="submitForm(event)">
+
+        <div class="form-grid">
+
+
+          <div class="form-group">
+
+            <label for="studentName">
+              Student Full Name
+            </label>
+
+            <input
+              type="text"
+              id="studentName"
+              placeholder="Enter student's name"
+              required
+            >
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="parentName">
+              Parent / Guardian Name
+            </label>
+
+            <input
+              type="text"
+              id="parentName"
+              placeholder="Enter parent or guardian name"
+              required
+            >
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="email">
+              Email Address
+            </label>
+
+            <input
+              type="email"
+              id="email"
+              placeholder="Enter email address"
+              required
+            >
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="phone">
+              Phone Number
+            </label>
+
+            <input
+              type="tel"
+              id="phone"
+              placeholder="Enter phone number"
+              required
+            >
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="programme">
+              Programme
+            </label>
+
+            <select id="programme" required>
+
+              <option value="">
+                Select programme
+              </option>
+
+              <option>
+                Early Years
+              </option>
+
+              <option>
+                Primary School
+              </option>
+
+              <option>
+                Junior Secondary
+              </option>
+
+              <option>
+                Senior Secondary
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="session">
+              Intended Session
+            </label>
+
+            <select id="session" required>
+
+              <option value="">
+                Select session
+              </option>
+
+              <option>
+                2026/2027
+              </option>
+
+              <option>
+                2027/2028
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <div class="form-group full">
+
+            <label for="message">
+              Message
+            </label>
+
+            <textarea
+              id="message"
+              placeholder="Tell us anything you would like the admissions team to know..."
+              required
+            ></textarea>
+
+          </div>
+
+
+        </div>
+
+
+        <button
+          type="submit"
+          class="submit-btn"
+        >
+          Submit Admission Enquiry
+        </button>
+
+      </form>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONTACT -->
+
+  <section class="contact" id="contact">
+
+    <div class="section-title">
+
+      <span>Get In Touch</span>
+
+      <h2>
+        Contact Admissions
+      </h2>
+
+      <p>
+        Our sample admissions office is available to answer
+        questions about programmes and applications.
+      </p>
+
+    </div>
+
+
+    <div class="contact-grid">
+
+
+      <div class="contact-card">
+
+        <div class="icon">
+          📍
+        </div>
+
+        <h3>
+          Location
+        </h3>
+
+        <p>
+          18 Crestfield Avenue<br>
+          Asaba, Delta State, Nigeria
+        </p>
+
+      </div>
+
+
+      <div class="contact-card">
+
+        <div class="icon">
+          📞
+        </div>
+
+        <h3>
+          Phone
+        </h3>
+
+        <p>
+          +234 800 000 2026
+        </p>
+
+      </div>
+
+
+      <div class="contact-card">
+
+        <div class="icon">
+          ✉️
+        </div>
+
+        <h3>
+          Email
+        </h3>
+
+        <p>
+          admissions@crestfieldacademy.example
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CTA -->
+
+  <section class="cta">
+
+    <h2>
+      Questions About Admission?
+    </h2>
+
+    <p>
+      Families can contact the admissions office for additional
+      information about the application process and programmes.
+    </p>
+
+    <a href="index.html">
+      Back to Home
+    </a>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="footer-grid">
+
+
+      <div>
+
+        <h3>
+          Crestfield International Academy
+        </h3>
+
+        <p>
+          Inspiring Minds. Building Futures.
+        </p>
+
+        <p>
+          A fictional school website demonstration created
+          for NovaTech Solutions.
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <h3>
+          Quick Links
+        </h3>
+
+        <a href="index.html">
+          Home
+        </a>
+
+        <a href="about.html">
+          About & Academics
+        </a>
+
+        <a href="admissions.html">
+          Admissions
+        </a>
+
+      </div>
+
+
+      <div>
+
+        <h3>
+          Contact
+        </h3>
+
+        <p>
+          18 Crestfield Avenue
+        </p>
+
+        <p>
+          Asaba, Delta State, Nigeria
+        </p>
+
+        <p>
+          +234 800 000 2026
+        </p>
+
+        <p>
+          admissions@crestfieldacademy.example
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="copyright">
+
+      © 2026 Crestfield International Academy Demo.
+      Designed by NovaTech Solutions.
+
+    </div>
+
+  </footer>
+
+
+  <div class="demo-label">
+    FICTIONAL DEMO WEBSITE
+  </div>
+
+
+  <script>
+
+    function toggleMenu() {
+
+      document
+        .getElementById("navMenu")
+        .classList
+        .toggle("active");
+
+    }
+
+
+    function submitForm(event) {
+
+      event.preventDefault();
+
+      alert(
+        "Thank you for your enquiry! This is a fictional demonstration form."
+      );
+
+    }
+
+  </script>
+
+</body>
+</html>
