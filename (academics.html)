@@ -1,0 +1,1707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Academics | Crestfield International Academy</title>
+
+  <meta name="description" content="Explore the academic programmes, curriculum, teaching approach, assessment and learning opportunities at Crestfield International Academy.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #172033;
+      background: #f7f9fc;
+      line-height: 1.7;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* DEMO BAR */
+    .demo-bar {
+      background: #101c36;
+      color: #ffffff;
+      text-align: center;
+      padding: 10px 15px;
+      font-size: 13px;
+      letter-spacing: 0.4px;
+    }
+
+    /* HEADER */
+    header {
+      background: #ffffff;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+    }
+
+    .nav-container {
+      width: 92%;
+      max-width: 1200px;
+      margin: auto;
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: 800;
+      color: #102347;
+      line-height: 1.2;
+    }
+
+    .logo span {
+      display: block;
+      color: #c79a38;
+      font-size: 11px;
+      letter-spacing: 2px;
+      margin-top: 3px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    nav a {
+      color: #26334d;
+      font-size: 14px;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: #b38324;
+    }
+
+    .apply-btn {
+      background: #c79a38;
+      color: #ffffff !important;
+      padding: 11px 18px;
+      border-radius: 6px;
+      font-weight: 700;
+    }
+
+    .apply-btn:hover {
+      background: #a97d1d;
+    }
+
+    /* HERO */
+    .page-hero {
+      min-height: 450px;
+      background:
+        linear-gradient(rgba(12,28,58,0.83), rgba(12,28,58,0.89)),
+        url("https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1600&q=85")
+        center/cover no-repeat;
+
+      display: flex;
+      align-items: center;
+      text-align: center;
+      color: #ffffff;
+    }
+
+    .hero-content {
+      width: 92%;
+      max-width: 900px;
+      margin: auto;
+      padding: 60px 0;
+    }
+
+    .eyebrow {
+      color: #c79a38;
+      text-transform: uppercase;
+      letter-spacing: 2.5px;
+      font-size: 12px;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .hero-content .eyebrow {
+      color: #e0b85d;
+    }
+
+    .hero-content h1 {
+      font-size: clamp(38px, 6vw, 68px);
+      line-height: 1.08;
+      margin-bottom: 20px;
+    }
+
+    .hero-content p {
+      max-width: 750px;
+      margin: auto;
+      font-size: 18px;
+      color: #edf2fb;
+    }
+
+    /* GENERAL */
+    .section {
+      width: 92%;
+      max-width: 1180px;
+      margin: auto;
+      padding: 85px 0;
+    }
+
+    .section-heading {
+      max-width: 780px;
+      margin-bottom: 45px;
+    }
+
+    .section-heading.center {
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+
+    h2 {
+      color: #102347;
+      font-size: clamp(30px, 4vw, 45px);
+      line-height: 1.2;
+      margin-bottom: 18px;
+    }
+
+    .section-heading p {
+      color: #5d687d;
+      font-size: 16px;
+    }
+
+    /* OVERVIEW */
+    .overview {
+      background: #ffffff;
+    }
+
+    .overview-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .overview-text p {
+      color: #5d687d;
+      margin-bottom: 18px;
+    }
+
+    .overview-image {
+      min-height: 420px;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 18px 45px rgba(16,35,71,0.14);
+    }
+
+    .overview-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* ACADEMIC LEVELS */
+    .levels {
+      background: #f1f4f8;
+    }
+
+    .levels-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
+
+    .level-card {
+      background: #ffffff;
+      padding: 35px;
+      border-radius: 14px;
+      border: 1px solid #e1e6ef;
+      position: relative;
+      overflow: hidden;
+      transition: 0.3s;
+    }
+
+    .level-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(16,35,71,0.09);
+    }
+
+    .level-number {
+      color: #c79a38;
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+
+    .level-card h3 {
+      color: #102347;
+      font-size: 25px;
+      margin-bottom: 12px;
+    }
+
+    .level-card p {
+      color: #667187;
+      font-size: 15px;
+    }
+
+    .level-card ul {
+      margin-top: 18px;
+      padding-left: 20px;
+      color: #5f6b80;
+    }
+
+    .level-card li {
+      margin-bottom: 7px;
+    }
+
+    /* CURRICULUM */
+    .curriculum {
+      background: #102347;
+      color: #ffffff;
+    }
+
+    .curriculum h2 {
+      color: #ffffff;
+    }
+
+    .curriculum .section-heading p {
+      color: #d7dfed;
+    }
+
+    .curriculum-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .curriculum-card {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.13);
+      padding: 32px;
+      border-radius: 14px;
+    }
+
+    .curriculum-card h3 {
+      color: #ffffff;
+      margin-bottom: 12px;
+      font-size: 21px;
+    }
+
+    .curriculum-card p {
+      color: #d1d9e8;
+      font-size: 14px;
+    }
+
+    /* TEACHING APPROACH */
+    .teaching {
+      background: #ffffff;
+    }
+
+    .teaching-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .teaching-card {
+      padding: 35px 28px;
+      background: #f8f9fc;
+      border-radius: 14px;
+      border-top: 4px solid #c79a38;
+    }
+
+    .teaching-card h3 {
+      color: #102347;
+      margin-bottom: 12px;
+      font-size: 21px;
+    }
+
+    .teaching-card p {
+      color: #657086;
+      font-size: 15px;
+    }
+
+    /* ASSESSMENT */
+    .assessment-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .assessment-text p {
+      color: #5d687d;
+      margin-bottom: 18px;
+    }
+
+    .assessment-list {
+      display: grid;
+      gap: 15px;
+    }
+
+    .assessment-item {
+      background: #ffffff;
+      padding: 20px 22px;
+      border-left: 4px solid #c79a38;
+      box-shadow: 0 8px 25px rgba(16,35,71,0.07);
+      border-radius: 7px;
+    }
+
+    .assessment-item h3 {
+      color: #102347;
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+
+    .assessment-item p {
+      color: #687489;
+      font-size: 14px;
+    }
+
+    /* SUPPORT */
+    .support {
+      background: #f1f4f8;
+    }
+
+    .support-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .support-card {
+      background: #ffffff;
+      padding: 32px;
+      border-radius: 14px;
+      border: 1px solid #e0e5ed;
+    }
+
+    .support-card h3 {
+      color: #102347;
+      margin-bottom: 10px;
+      font-size: 21px;
+    }
+
+    .support-card p {
+      color: #657086;
+      font-size: 14px;
+    }
+
+    /* DIGITAL LEARNING */
+    .digital-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .digital-image {
+      min-height: 390px;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 18px 45px rgba(16,35,71,0.14);
+    }
+
+    .digital-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .digital-text p {
+      color: #5d687d;
+      margin-bottom: 18px;
+    }
+
+    .digital-points {
+      display: grid;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .digital-point {
+      padding: 16px 18px;
+      background: #f5f7fa;
+      border-radius: 8px;
+      border-left: 3px solid #c79a38;
+    }
+
+    .digital-point strong {
+      color: #102347;
+    }
+
+    /* ENRICHMENT */
+    .enrichment {
+      background: #ffffff;
+    }
+
+    .enrichment-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .enrichment-card {
+      padding: 32px;
+      border: 1px solid #e0e5ed;
+      border-radius: 14px;
+      background: #fbfcfe;
+    }
+
+    .enrichment-card h3 {
+      color: #102347;
+      margin-bottom: 10px;
+      font-size: 21px;
+    }
+
+    .enrichment-card p {
+      color: #687489;
+      font-size: 14px;
+    }
+
+    /* OUTCOMES */
+    .outcomes {
+      background: #102347;
+      color: #ffffff;
+    }
+
+    .outcomes h2 {
+      color: #ffffff;
+    }
+
+    .outcomes .section-heading p {
+      color: #d7dfed;
+    }
+
+    .outcomes-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .outcome {
+      padding: 28px 22px;
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 12px;
+      background: rgba(255,255,255,0.06);
+    }
+
+    .outcome h3 {
+      color: #ffffff;
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .outcome p {
+      color: #ccd5e4;
+      font-size: 13px;
+    }
+
+    /* CTA */
+    .cta {
+      background: #f4f6fa;
+      text-align: center;
+    }
+
+    .cta-box {
+      background: #ffffff;
+      max-width: 900px;
+      margin: auto;
+      padding: 55px 35px;
+      border-radius: 18px;
+      box-shadow: 0 15px 40px rgba(16,35,71,0.09);
+    }
+
+    .cta-box p {
+      color: #657086;
+      max-width: 650px;
+      margin: 0 auto 25px;
+    }
+
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 22px;
+      border-radius: 7px;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .btn-primary {
+      background: #c79a38;
+      color: #ffffff;
+    }
+
+    .btn-primary:hover {
+      background: #a97d1d;
+    }
+
+    .btn-secondary {
+      border: 1px solid #102347;
+      color: #102347;
+    }
+
+    .btn-secondary:hover {
+      background: #102347;
+      color: #ffffff;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #0b172f;
+      color: #cbd3e1;
+      padding: 55px 0 25px;
+    }
+
+    .footer-container {
+      width: 92%;
+      max-width: 1180px;
+      margin: auto;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 45px;
+      padding-bottom: 35px;
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+    }
+
+    footer h3 {
+      color: #ffffff;
+      margin-bottom: 15px;
+      font-size: 18px;
+    }
+
+    footer p {
+      font-size: 14px;
+      color: #aeb9cb;
+    }
+
+    .footer-links a {
+      display: block;
+      color: #aeb9cb;
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    .footer-links a:hover {
+      color: #e0b85d;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 22px;
+      font-size: 13px;
+      color: #8f9bae;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 950px) {
+
+      .nav-container {
+        flex-direction: column;
+        padding: 18px 0;
+      }
+
+      nav {
+        justify-content: center;
+      }
+
+      .overview-grid,
+      .assessment-grid,
+      .digital-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .levels-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .curriculum-grid,
+      .teaching-grid,
+      .support-grid,
+      .enrichment-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .outcomes-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 650px) {
+
+      .demo-bar {
+        font-size: 11px;
+      }
+
+      nav {
+        gap: 10px 13px;
+      }
+
+      nav a {
+        font-size: 12px;
+      }
+
+      .page-hero {
+        min-height: 380px;
+      }
+
+      .hero-content p {
+        font-size: 16px;
+      }
+
+      .section {
+        padding: 65px 0;
+      }
+
+      .overview-image,
+      .digital-image {
+        min-height: 320px;
+      }
+
+      .curriculum-grid,
+      .teaching-grid,
+      .support-grid,
+      .enrichment-grid,
+      .outcomes-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .level-card,
+      .curriculum-card,
+      .teaching-card,
+      .support-card,
+      .enrichment-card {
+        padding: 28px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- DEMO NOTICE -->
+  <div class="demo-bar">
+    FICTIONAL DEMO WEBSITE — CREATED BY NOVATECH SOLUTIONS
+  </div>
+
+  <!-- HEADER -->
+  <header>
+
+    <div class="nav-container">
+
+      <a href="index.html" class="logo">
+        Crestfield International Academy
+        <span>LEARN • LEAD • EXCEL</span>
+      </a>
+
+      <nav>
+
+        <a href="index.html">Home</a>
+
+        <a href="about.html">About</a>
+
+        <a href="academics.html" class="active">Academics</a>
+
+        <a href="admissions.html">Admissions</a>
+
+        <a href="facilities.html">Facilities</a>
+
+        <a href="student-life.html">Student Life</a>
+
+        <a href="news.html">News & Events</a>
+
+        <a href="contact.html">Contact</a>
+
+        <a href="admissions.html" class="apply-btn">
+          Apply Now
+        </a>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+  <!-- HERO -->
+  <section class="page-hero">
+
+    <div class="hero-content">
+
+      <div class="eyebrow">
+        Academic Excellence
+      </div>
+
+      <h1>
+        Learning With Purpose
+      </h1>
+
+      <p>
+        A structured and engaging educational journey designed to help
+        students build knowledge, confidence, critical thinking and
+        the skills needed for the future.
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- ACADEMIC OVERVIEW -->
+  <section class="section overview">
+
+    <div class="overview-grid">
+
+      <div class="overview-text">
+
+        <div class="eyebrow">
+          Our Academic Approach
+        </div>
+
+        <h2>
+          Education That Develops the Whole Learner
+        </h2>
+
+        <p>
+          At Crestfield International Academy, academic development
+          combines strong subject knowledge with curiosity, creativity,
+          communication and independent thinking.
+        </p>
+
+        <p>
+          Students are encouraged to understand what they learn,
+          apply knowledge to real situations and develop the confidence
+          to ask questions and explore new ideas.
+        </p>
+
+        <p>
+          Our academic structure is designed to provide continuity
+          as learners progress from their earliest years through
+          secondary education.
+        </p>
+
+      </div>
+
+      <div class="overview-image">
+
+        <img
+          src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1000&q=85"
+          alt="Students learning in a classroom">
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ACADEMIC LEVELS -->
+  <section class="levels">
+
+    <div class="section">
+
+      <div class="section-heading center">
+
+        <div class="eyebrow">
+          Academic Pathways
+        </div>
+
+        <h2>
+          Learning Across Every Stage
+        </h2>
+
+        <p>
+          Our academic pathways are structured around the changing
+          needs and developmental stages of learners.
+        </p>
+
+      </div>
+
+      <div class="levels-grid">
+
+        <!-- EARLY YEARS -->
+        <div class="level-card">
+
+          <div class="level-number">
+            01 — EARLY YEARS
+          </div>
+
+          <h3>
+            Early Years Programme
+          </h3>
+
+          <p>
+            A nurturing foundation where young learners begin developing
+            communication, social, creative, numerical and problem-solving
+            skills through purposeful learning experiences.
+          </p>
+
+          <ul>
+            <li>Early literacy and communication</li>
+            <li>Numeracy foundations</li>
+            <li>Creative exploration</li>
+            <li>Social development</li>
+          </ul>
+
+        </div>
+
+        <!-- PRIMARY -->
+        <div class="level-card">
+
+          <div class="level-number">
+            02 — PRIMARY
+          </div>
+
+          <h3>
+            Primary School
+          </h3>
+
+          <p>
+            Students build strong foundations across core subjects
+            while developing curiosity, confidence, study habits
+            and independent learning skills.
+          </p>
+
+          <ul>
+            <li>Core academic subjects</li>
+            <li>Reading and writing development</li>
+            <li>Mathematical reasoning</li>
+            <li>Creative and practical learning</li>
+          </ul>
+
+        </div>
+
+        <!-- JUNIOR SECONDARY -->
+        <div class="level-card">
+
+          <div class="level-number">
+            03 — JUNIOR SECONDARY
+          </div>
+
+          <h3>
+            Junior Secondary School
+          </h3>
+
+          <p>
+            Learners encounter broader subject areas and increasingly
+            challenging concepts while developing analytical thinking
+            and greater academic independence.
+          </p>
+
+          <ul>
+            <li>Expanded subject learning</li>
+            <li>Research and inquiry</li>
+            <li>Problem-solving</li>
+            <li>Independent study skills</li>
+          </ul>
+
+        </div>
+
+        <!-- SENIOR SECONDARY -->
+        <div class="level-card">
+
+          <div class="level-number">
+            04 — SENIOR SECONDARY
+          </div>
+
+          <h3>
+            Senior Secondary School
+          </h3>
+
+          <p>
+            Students prepare for advanced academic study and future
+            pathways while strengthening subject knowledge, critical
+            thinking, communication and examination readiness.
+          </p>
+
+          <ul>
+            <li>Advanced subject development</li>
+            <li>Examination preparation</li>
+            <li>Career awareness</li>
+            <li>University and future readiness</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CURRICULUM -->
+  <section class="curriculum">
+
+    <div class="section">
+
+      <div class="section-heading">
+
+        <div class="eyebrow">
+          Curriculum
+        </div>
+
+        <h2>
+          Broad Knowledge. Strong Foundations.
+        </h2>
+
+        <p>
+          The curriculum is presented as a balanced learning framework
+          that encourages students to build knowledge while developing
+          transferable skills.
+        </p>
+
+      </div>
+
+      <div class="curriculum-grid">
+
+        <div class="curriculum-card">
+
+          <h3>
+            Languages & Communication
+          </h3>
+
+          <p>
+            Students develop reading, writing, speaking, listening
+            and communication skills that support learning across
+            different subjects.
+          </p>
+
+        </div>
+
+        <div class="curriculum-card">
+
+          <h3>
+            Mathematics & Reasoning
+          </h3>
+
+          <p>
+            Mathematical thinking is developed through structured
+            learning, reasoning, problem-solving and practical
+            application.
+          </p>
+
+        </div>
+
+        <div class="curriculum-card">
+
+          <h3>
+            Science & Discovery
+          </h3>
+
+          <p>
+            Learners explore scientific ideas through observation,
+            questioning, investigation and evidence-based thinking.
+          </p>
+
+        </div>
+
+        <div class="curriculum-card">
+
+          <h3>
+            Humanities & Society
+          </h3>
+
+          <p>
+            Students explore people, communities, history, geography,
+            culture and the world around them.
+          </p>
+
+        </div>
+
+        <div class="curriculum-card">
+
+          <h3>
+            Technology & Digital Skills
+          </h3>
+
+          <p>
+            Digital learning supports research, communication,
+            creativity and responsible use of technology.
+          </p>
+
+        </div>
+
+        <div class="curriculum-card">
+
+          <h3>
+            Creative Development
+          </h3>
+
+          <p>
+            Creative activities provide opportunities for students
+            to express ideas, experiment and develop imagination.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- TEACHING APPROACH -->
+  <section class="teaching">
+
+    <div class="section">
+
+      <div class="section-heading center">
+
+        <div class="eyebrow">
+          Teaching & Learning
+        </div>
+
+        <h2>
+          How We Support Learning
+        </h2>
+
+        <p>
+          Effective learning requires more than delivering information.
+          Our approach encourages participation, understanding and application.
+        </p>
+
+      </div>
+
+      <div class="teaching-grid">
+
+        <div class="teaching-card">
+
+          <h3>
+            Interactive Lessons
+          </h3>
+
+          <p>
+            Students are encouraged to participate in discussions,
+            activities, questions and practical learning experiences.
+          </p>
+
+        </div>
+
+        <div class="teaching-card">
+
+          <h3>
+            Critical Thinking
+          </h3>
+
+          <p>
+            Learners are encouraged to examine ideas, ask questions,
+            compare information and develop reasoned conclusions.
+          </p>
+
+        </div>
+
+        <div class="teaching-card">
+
+          <h3>
+            Practical Application
+          </h3>
+
+          <p>
+            Where appropriate, learning connects classroom knowledge
+            with practical examples, projects and real-world situations.
+          </p>
+
+        </div>
+
+        <div class="teaching-card">
+
+          <h3>
+            Collaboration
+          </h3>
+
+          <p>
+            Group activities help students practise communication,
+            cooperation, listening and shared problem-solving.
+          </p>
+
+        </div>
+
+        <div class="teaching-card">
+
+          <h3>
+            Independent Learning
+          </h3>
+
+          <p>
+            Students gradually develop research, organisation and
+            study habits that encourage greater ownership of learning.
+          </p>
+
+        </div>
+
+        <div class="teaching-card">
+
+          <h3>
+            Continuous Feedback
+          </h3>
+
+          <p>
+            Feedback helps learners understand their progress,
+            identify areas for improvement and set meaningful goals.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ASSESSMENT -->
+  <section class="section">
+
+    <div class="assessment-grid">
+
+      <div class="assessment-text">
+
+        <div class="eyebrow">
+          Assessment
+        </div>
+
+        <h2>
+          Measuring Progress, Guiding Improvement
+        </h2>
+
+        <p>
+          Assessment provides teachers and learners with useful
+          information about academic progress.
+        </p>
+
+        <p>
+          A balanced approach can combine classroom activities,
+          assignments, projects, tests and examinations to provide
+          a broader picture of student development.
+        </p>
+
+        <p>
+          The goal is not simply to measure performance, but to use
+          feedback to identify strengths and areas where additional
+          support may be useful.
+        </p>
+
+      </div>
+
+      <div class="assessment-list">
+
+        <div class="assessment-item">
+
+          <h3>
+            Classroom Assessment
+          </h3>
+
+          <p>
+            Ongoing activities help teachers understand student
+            understanding during everyday learning.
+          </p>
+
+        </div>
+
+        <div class="assessment-item">
+
+          <h3>
+            Assignments & Projects
+          </h3>
+
+          <p>
+            Students apply knowledge through structured tasks,
+            research and project-based activities.
+          </p>
+
+        </div>
+
+        <div class="assessment-item">
+
+          <h3>
+            Tests & Examinations
+          </h3>
+
+          <p>
+            Formal assessments help evaluate knowledge and preparation
+            against defined learning expectations.
+          </p>
+
+        </div>
+
+        <div class="assessment-item">
+
+          <h3>
+            Feedback & Reflection
+          </h3>
+
+          <p>
+            Students receive guidance that helps them recognise
+            progress and improve future performance.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ACADEMIC SUPPORT -->
+  <section class="support">
+
+    <div class="section">
+
+      <div class="section-heading center">
+
+        <div class="eyebrow">
+          Academic Support
+        </div>
+
+        <h2>
+          Helping Students Move Forward
+        </h2>
+
+        <p>
+          Students learn at different speeds and in different ways.
+          Academic support can help learners address challenges
+          while continuing to build confidence.
+        </p>
+
+      </div>
+
+      <div class="support-grid">
+
+        <div class="support-card">
+
+          <h3>
+            Targeted Support
+          </h3>
+
+          <p>
+            Additional guidance can be provided when a learner needs
+            help understanding a particular concept or skill.
+          </p>
+
+        </div>
+
+        <div class="support-card">
+
+          <h3>
+            Study Skills
+          </h3>
+
+          <p>
+            Learners can develop organisation, revision, time-management
+            and independent study habits.
+          </p>
+
+        </div>
+
+        <div class="support-card">
+
+          <h3>
+            Individual Progress
+          </h3>
+
+          <p>
+            Student progress can be monitored to help identify
+            strengths, challenges and opportunities for development.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- DIGITAL LEARNING -->
+  <section class="section">
+
+    <div class="digital-grid">
+
+      <div class="digital-image">
+
+        <img
+          src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1000&q=85"
+          alt="Students using technology for learning">
+
+      </div>
+
+      <div class="digital-text">
+
+        <div class="eyebrow">
+          Digital Learning
+        </div>
+
+        <h2>
+          Preparing Learners for a Digital World
+        </h2>
+
+        <p>
+          Technology can expand the ways students research,
+          communicate, create and solve problems.
+        </p>
+
+        <p>
+          Crestfield's digital learning approach aims to help students
+          become confident and responsible users of technology while
+          maintaining strong foundational learning.
+        </p>
+
+        <div class="digital-points">
+
+          <div class="digital-point">
+            <strong>Research:</strong>
+            Finding, evaluating and organising information.
+          </div>
+
+          <div class="digital-point">
+            <strong>Creativity:</strong>
+            Using digital tools to develop and communicate ideas.
+          </div>
+
+          <div class="digital-point">
+            <strong>Collaboration:</strong>
+            Using technology to support communication and teamwork.
+          </div>
+
+          <div class="digital-point">
+            <strong>Digital Responsibility:</strong>
+            Understanding safe, respectful and responsible technology use.
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ACADEMIC ENRICHMENT -->
+  <section class="enrichment">
+
+    <div class="section">
+
+      <div class="section-heading center">
+
+        <div class="eyebrow">
+          Beyond the Classroom
+        </div>
+
+        <h2>
+          Academic Enrichment
+        </h2>
+
+        <p>
+          Enrichment opportunities can help students explore interests,
+          practise skills and connect classroom learning with wider experiences.
+        </p>
+
+      </div>
+
+      <div class="enrichment-grid">
+
+        <div class="enrichment-card">
+
+          <h3>
+            Research Projects
+          </h3>
+
+          <p>
+            Students can explore questions and topics beyond the
+            standard classroom lesson through guided research.
+          </p>
+
+        </div>
+
+        <div class="enrichment-card">
+
+          <h3>
+            Academic Competitions
+          </h3>
+
+          <p>
+            Competitions can encourage students to challenge themselves,
+            practise skills and develop confidence.
+          </p>
+
+        </div>
+
+        <div class="enrichment-card">
+
+          <h3>
+            Reading & Knowledge
+          </h3>
+
+          <p>
+            Independent reading and wider exploration help students
+            develop vocabulary, knowledge and curiosity.
+          </p>
+
+        </div>
+
+        <div class="enrichment-card">
+
+          <h3>
+            Presentations
+          </h3>
+
+          <p>
+            Presenting ideas helps learners develop communication,
+            organisation and public-speaking skills.
+          </p>
+
+        </div>
+
+        <div class="enrichment-card">
+
+          <h3>
+            Problem-Solving
+          </h3>
+
+          <p>
+            Students are encouraged to approach unfamiliar challenges
+            using logic, creativity and persistence.
+          </p>
+
+        </div>
+
+        <div class="enrichment-card">
+
+          <h3>
+            Career Awareness
+          </h3>
+
+          <p>
+            Older students can explore possible future pathways and
+            begin connecting academic interests with their aspirations.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- LEARNING OUTCOMES -->
+  <section class="outcomes">
+
+    <div class="section">
+
+      <div class="section-heading center">
+
+        <div class="eyebrow">
+          Student Development
+        </div>
+
+        <h2>
+          What Students Build
+        </h2>
+
+        <p>
+          Our academic approach aims to help learners develop a
+          combination of knowledge, skills and personal qualities.
+        </p>
+
+      </div>
+
+      <div class="outcomes-grid">
+
+        <div class="outcome">
+
+          <h3>
+            Knowledge
+          </h3>
+
+          <p>
+            Strong foundations across academic subjects and areas
+            of knowledge.
+          </p>
+
+        </div>
+
+        <div class="outcome">
+
+          <h3>
+            Critical Thinking
+          </h3>
+
+          <p>
+            The ability to analyse information, ask questions and
+            develop reasoned ideas.
+          </p>
+
+        </div>
+
+        <div class="outcome">
+
+          <h3>
+            Communication
+          </h3>
+
+          <p>
+            Confidence in expressing ideas clearly through speaking,
+            writing and collaboration.
+          </p>
+
+        </div>
+
+        <div class="outcome">
+
+          <h3>
+            Problem-Solving
+          </h3>
+
+          <p>
+            The ability to approach challenges with curiosity,
+            logic, creativity and persistence.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+
+    <div class="section">
+
+      <div class="cta-box">
+
+        <div class="eyebrow">
+          Continue Exploring
+        </div>
+
+        <h2>
+          Take the Next Step
+        </h2>
+
+        <p>
+          Learn how students can join Crestfield International Academy
+          and begin their educational journey.
+        </p>
+
+        <div class="cta-buttons">
+
+          <a href="admissions.html" class="btn btn-primary">
+            Explore Admissions
+          </a>
+
+          <a href="facilities.html" class="btn btn-secondary">
+            View Facilities
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+
+    <div class="footer-container">
+
+      <div class="footer-grid">
+
+        <div>
+
+          <h3>
+            Crestfield International Academy
+          </h3>
+
+          <p>
+            A fictional international school website created as a
+            professional demonstration by NovaTech Solutions.
+          </p>
+
+          <p style="margin-top:12px;">
+            Asaba, Delta State, Nigeria
+          </p>
+
+        </div>
+
+        <div>
+
+          <h3>
+            Explore
+          </h3>
+
+          <div class="footer-links">
+
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="academics.html">Academics</a>
+            <a href="admissions.html">Admissions</a>
+
+          </div>
+
+        </div>
+
+        <div>
+
+          <h3>
+            Quick Links
+          </h3>
+
+          <div class="footer-links">
+
+            <a href="facilities.html">Facilities</a>
+            <a href="student-life.html">Student Life</a>
+            <a href="news.html">News & Events</a>
+            <a href="contact.html">Contact</a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+
+        © 2026 Crestfield International Academy Demo.
+        Created by NovaTech Solutions.
+
+      </div>
+
+    </div>
+
+  </footer>
+
+</body>
+</html>
