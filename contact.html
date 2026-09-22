@@ -35,7 +35,6 @@
       display: block;
     }
 
-    /* DEMO BAR */
     .demo-bar {
       background: #111827;
       color: #ffffff;
@@ -45,7 +44,6 @@
       letter-spacing: 0.5px;
     }
 
-    /* HEADER */
     header {
       background: #ffffff;
       border-bottom: 1px solid #e5e7eb;
@@ -109,7 +107,6 @@
       background: #946f20;
     }
 
-    /* HERO */
     .hero {
       background:
         linear-gradient(rgba(7, 28, 54, 0.88), rgba(7, 28, 54, 0.88)),
@@ -145,7 +142,6 @@
       color: #e8eef5;
     }
 
-    /* GENERAL */
     section {
       padding: 80px 25px;
     }
@@ -178,7 +174,6 @@
       color: #667085;
     }
 
-    /* CONTACT CARDS */
     .contact-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -224,7 +219,6 @@
       font-weight: 600;
     }
 
-    /* CONTACT MAIN */
     .contact-main {
       background: #ffffff;
     }
@@ -291,7 +285,6 @@
       font-size: 17px;
     }
 
-    /* FORM */
     .form-box {
       background: #f7f9fc;
       border: 1px solid #e5e7eb;
@@ -364,7 +357,6 @@
       background: #b68a2c;
     }
 
-    /* ADMISSIONS */
     .admissions-contact {
       background: #f7f9fc;
     }
@@ -431,7 +423,6 @@
       color: #0b1f3a;
     }
 
-    /* LOCATION */
     .location {
       background: #ffffff;
     }
@@ -476,7 +467,6 @@
       margin-bottom: 20px;
     }
 
-    /* HOURS */
     .hours {
       background: #f7f9fc;
     }
@@ -511,7 +501,6 @@
       text-align: right;
     }
 
-    /* SOCIAL */
     .social {
       text-align: center;
       background: #ffffff;
@@ -540,7 +529,6 @@
       border-color: #0b1f3a;
     }
 
-    /* FOOTER */
     footer {
       background: #071c36;
       color: #ffffff;
@@ -585,7 +573,6 @@
       font-size: 13px;
     }
 
-    /* RESPONSIVE */
     @media (max-width: 1000px) {
       .contact-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -674,12 +661,10 @@
 
 <body>
 
-  <!-- DEMO NOTICE -->
   <div class="demo-bar">
     FICTIONAL DEMO WEBSITE — CREATED BY NOVATECH SOLUTIONS
   </div>
 
-  <!-- HEADER -->
   <header>
     <div class="nav-container">
 
@@ -695,7 +680,10 @@
         <a href="admissions.html">Admissions</a>
         <a href="facilities.html">Facilities</a>
         <a href="student-life.html">Student Life</a>
-        <a href="news.htm1">News & Events</a>
+
+        <!-- CORRECTED LINK -->
+        <a href="news.html">News & Events</a>
+
         <a href="contact.html" class="active">Contact</a>
         <a href="admissions.html" class="nav-apply">Apply Now</a>
       </nav>
@@ -703,11 +691,9 @@
     </div>
   </header>
 
-  <!-- HERO -->
   <section class="hero">
     <div class="hero-content">
       <small>Connect With Crestfield</small>
-
       <h1>We’re Here to Help</h1>
 
       <p>
@@ -717,7 +703,6 @@
     </div>
   </section>
 
-  <!-- QUICK CONTACT -->
   <section>
     <div class="container">
 
@@ -770,7 +755,6 @@
     </div>
   </section>
 
-  <!-- CONTACT DETAILS + FORM -->
   <section class="contact-main">
     <div class="container">
 
@@ -842,7 +826,6 @@
 
         </div>
 
-        <!-- ENQUIRY FORM -->
         <div class="form-box">
 
           <h2>Send an Enquiry</h2>
@@ -856,80 +839,41 @@
 
             <div class="form-group">
               <label for="name">Full Name</label>
-
-              <input
-                type="text"
-                id="name"
-                name="name"
-                placeholder="Enter your full name"
-                required
-              >
+              <input type="text" id="name" name="name"
+                     placeholder="Enter your full name" required>
             </div>
 
             <div class="form-group">
               <label for="email">Email Address</label>
-
-              <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="Enter your email address"
-                required
-              >
+              <input type="email" id="email" name="email"
+                     placeholder="Enter your email address" required>
             </div>
 
             <div class="form-group">
               <label for="phone">Phone Number</label>
-
-              <input
-                type="tel"
-                id="phone"
-                name="phone"
-                placeholder="Enter your phone number"
-              >
+              <input type="tel" id="phone" name="phone"
+                     placeholder="Enter your phone number">
             </div>
 
             <div class="form-group">
               <label for="subject">Enquiry Type</label>
 
               <select id="subject" name="subject">
-
-                <option value="">
-                  Select an enquiry type
-                </option>
-
-                <option value="admissions">
-                  Admissions
-                </option>
-
-                <option value="academics">
-                  Academics
-                </option>
-
-                <option value="school-information">
-                  General School Information
-                </option>
-
-                <option value="visit">
-                  School Visit
-                </option>
-
-                <option value="other">
-                  Other
-                </option>
-
+                <option value="">Select an enquiry type</option>
+                <option value="admissions">Admissions</option>
+                <option value="academics">Academics</option>
+                <option value="school-information">General School Information</option>
+                <option value="visit">School Visit</option>
+                <option value="other">Other</option>
               </select>
             </div>
 
             <div class="form-group">
               <label for="message">Your Message</label>
 
-              <textarea
-                id="message"
-                name="message"
-                placeholder="Write your enquiry here..."
-                required
-              ></textarea>
+              <textarea id="message" name="message"
+                        placeholder="Write your enquiry here..."
+                        required></textarea>
             </div>
 
             <button type="submit" class="submit-btn">
@@ -945,7 +889,6 @@
     </div>
   </section>
 
-  <!-- ADMISSIONS -->
   <section class="admissions-contact">
 
     <div class="container">
@@ -981,7 +924,6 @@
 
   </section>
 
-  <!-- LOCATION -->
   <section class="location">
 
     <div class="container">
@@ -1029,14 +971,12 @@
 
   </section>
 
-  <!-- OFFICE HOURS -->
   <section class="hours">
 
     <div class="container">
 
       <div class="section-heading">
         <small>School Office</small>
-
         <h2>Opening Hours</h2>
 
         <p>
@@ -1088,7 +1028,6 @@
 
   </section>
 
-  <!-- SOCIAL -->
   <section class="social">
 
     <div class="container">
@@ -1108,21 +1047,10 @@
 
       <div class="social-links">
 
-        <a href="#" aria-label="Facebook">
-          Facebook
-        </a>
-
-        <a href="#" aria-label="Instagram">
-          Instagram
-        </a>
-
-        <a href="#" aria-label="LinkedIn">
-          LinkedIn
-        </a>
-
-        <a href="#" aria-label="YouTube">
-          YouTube
-        </a>
+        <a href="#" aria-label="Facebook">Facebook</a>
+        <a href="#" aria-label="Instagram">Instagram</a>
+        <a href="#" aria-label="LinkedIn">LinkedIn</a>
+        <a href="#" aria-label="YouTube">YouTube</a>
 
       </div>
 
@@ -1130,7 +1058,6 @@
 
   </section>
 
-  <!-- FOOTER -->
   <footer>
 
     <div class="footer-grid">
@@ -1164,7 +1091,10 @@
 
         <a href="facilities.html">Facilities</a>
         <a href="student-life.html">Student Life</a>
-        <a href="news.htm1">News & Events</a>
+
+        <!-- CORRECTED LINK -->
+        <a href="news.html">News & Events</a>
+
         <a href="contact.html">Contact</a>
 
       </div>
@@ -1174,14 +1104,8 @@
         <h3>Contact</h3>
 
         <p>Asaba, Delta State, Nigeria</p>
-
-        <p>
-          +234 800 000 2026
-        </p>
-
-        <p>
-          admissions@crestfieldacademy.example
-        </p>
+        <p>+234 800 000 2026</p>
+        <p>admissions@crestfieldacademy.example</p>
 
       </div>
 
