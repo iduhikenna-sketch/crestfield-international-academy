@@ -1,1160 +1,863 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>News & Events | Crestfield International Academy</title>
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f7f9fc;
-      color: #172033;
-      line-height: 1.7;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    /* DEMO BAR */
-    .demo-bar {
-      background: #0b1f3a;
-      color: #ffffff;
-      text-align: center;
-      padding: 9px 15px;
-      font-size: 13px;
-      letter-spacing: 0.3px;
-    }
-
-    /* HEADER */
-    header {
-      background: #ffffff;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 3px 15px rgba(0,0,0,0.08);
-    }
-
-    .nav-container {
-      max-width: 1200px;
-      margin: auto;
-      padding: 18px 25px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 25px;
-    }
-
-    .logo {
-      font-size: 22px;
-      font-weight: bold;
-      color: #0b1f3a;
-      line-height: 1.2;
-    }
-
-    .logo span {
-      display: block;
-      color: #c9a227;
-      font-size: 12px;
-      letter-spacing: 1.5px;
-      margin-top: 3px;
-    }
-
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-    }
-
-    nav a {
-      font-size: 13px;
-      font-weight: bold;
-      color: #172033;
-      transition: 0.3s;
-    }
-
-    nav a:hover,
-    nav a.active {
-      color: #c9a227;
-    }
-
-    .nav-button {
-      background: #c9a227;
-      color: #ffffff !important;
-      padding: 10px 17px;
-      border-radius: 6px;
-    }
-
-    .nav-button:hover {
-      background: #a98718;
-    }
-
-    /* HERO */
-    .hero {
-      background:
-        linear-gradient(rgba(11,31,58,0.88), rgba(11,31,58,0.88)),
-        linear-gradient(135deg, #0b1f3a, #163b68);
-      color: #ffffff;
-      padding: 100px 25px;
-      text-align: center;
-    }
-
-    .hero-content {
-      max-width: 900px;
-      margin: auto;
-    }
-
-    .hero h1 {
-      font-size: 50px;
-      margin-bottom: 18px;
-      line-height: 1.15;
-    }
-
-    .hero h1 span {
-      color: #e2bd45;
-    }
-
-    .hero p {
-      max-width: 700px;
-      margin: auto;
-      font-size: 18px;
-      color: #e4eaf2;
-    }
-
-    /* GENERAL */
-    section {
-      padding: 75px 25px;
-    }
-
-    .container {
-      max-width: 1150px;
-      margin: auto;
-    }
-
-    .section-heading {
-      text-align: center;
-      max-width: 750px;
-      margin: 0 auto 45px;
-    }
-
-    .section-heading h2 {
-      color: #0b1f3a;
-      font-size: 34px;
-      margin-bottom: 12px;
-    }
-
-    .section-heading p {
-      color: #687386;
-    }
-
-    .gold-line {
-      width: 65px;
-      height: 4px;
-      background: #c9a227;
-      margin: 15px auto 20px;
-      border-radius: 10px;
-    }
-
-    /* NEWS GRID */
-    .news-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
-    }
-
-    .news-card {
-      background: #ffffff;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 8px 25px rgba(11,31,58,0.08);
-      transition: 0.3s;
-      border: 1px solid #e9edf3;
-    }
-
-    .news-card:hover {
-      transform: translateY(-7px);
-      box-shadow: 0 15px 30px rgba(11,31,58,0.13);
-    }
-
-    .news-image {
-      height: 190px;
-      background: linear-gradient(135deg, #0b1f3a, #28517e);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: #ffffff;
-      font-size: 50px;
-    }
-
-    .news-content {
-      padding: 25px;
-    }
-
-    .news-date {
-      color: #c9a227;
-      font-size: 13px;
-      font-weight: bold;
-      text-transform: uppercase;
-      letter-spacing: 0.8px;
-    }
-
-    .news-content h3 {
-      color: #0b1f3a;
-      font-size: 21px;
-      margin: 10px 0;
-      line-height: 1.3;
-    }
-
-    .news-content p {
-      color: #687386;
-      font-size: 14px;
-      margin-bottom: 18px;
-    }
-
-    .read-more {
-      color: #0b1f3a;
-      font-weight: bold;
-      font-size: 14px;
-    }
-
-    .read-more:hover {
-      color: #c9a227;
-    }
-
-    /* ANNOUNCEMENTS */
-    .announcement-section {
-      background: #ffffff;
-    }
-
-    .announcement-list {
-      max-width: 900px;
-      margin: auto;
-      display: grid;
-      gap: 18px;
-    }
-
-    .announcement {
-      display: flex;
-      align-items: flex-start;
-      gap: 20px;
-      padding: 22px;
-      background: #f7f9fc;
-      border-left: 5px solid #c9a227;
-      border-radius: 8px;
-    }
-
-    .announcement-icon {
-      min-width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      background: #0b1f3a;
-      color: #ffffff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 20px;
-    }
-
-    .announcement h3 {
-      color: #0b1f3a;
-      margin-bottom: 5px;
-      font-size: 18px;
-    }
-
-    .announcement p {
-      color: #687386;
-      font-size: 14px;
-    }
-
-    /* ACHIEVEMENTS */
-    .achievement-section {
-      background: #0b1f3a;
-      color: #ffffff;
-    }
-
-    .achievement-section .section-heading h2 {
-      color: #ffffff;
-    }
-
-    .achievement-section .section-heading p {
-      color: #cbd6e4;
-    }
-
-    .achievement-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
-    }
-
-    .achievement-card {
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.12);
-      padding: 30px 25px;
-      border-radius: 12px;
-    }
-
-    .achievement-card .number {
-      font-size: 38px;
-      color: #e2bd45;
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
-
-    .achievement-card h3 {
-      font-size: 20px;
-      margin-bottom: 10px;
-    }
-
-    .achievement-card p {
-      color: #d1d9e4;
-      font-size: 14px;
-    }
-
-    /* EVENTS */
-    .events-section {
-      background: #f7f9fc;
-    }
-
-    .event-list {
-      display: grid;
-      gap: 20px;
-      max-width: 950px;
-      margin: auto;
-    }
-
-    .event-card {
-      background: #ffffff;
-      display: flex;
-      align-items: stretch;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 7px 20px rgba(11,31,58,0.07);
-      border: 1px solid #e7ebf0;
-    }
-
-    .event-date {
-      min-width: 115px;
-      background: #0b1f3a;
-      color: #ffffff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-    }
-
-    .event-date .month {
-      color: #e2bd45;
-      font-size: 14px;
-      font-weight: bold;
-      text-transform: uppercase;
-    }
-
-    .event-date .day {
-      font-size: 36px;
-      font-weight: bold;
-      line-height: 1;
-      margin-top: 5px;
-    }
-
-    .event-info {
-      padding: 25px;
-    }
-
-    .event-info h3 {
-      color: #0b1f3a;
-      font-size: 21px;
-      margin-bottom: 7px;
-    }
-
-    .event-info p {
-      color: #687386;
-      font-size: 14px;
-    }
-
-    .event-tag {
-      display: inline-block;
-      margin-top: 12px;
-      background: #f3ead0;
-      color: #7e6413;
-      padding: 5px 10px;
-      border-radius: 20px;
-      font-size: 12px;
-      font-weight: bold;
-    }
-
-    /* CELEBRATIONS */
-    .celebration-section {
-      background: #ffffff;
-    }
-
-    .celebration-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
-    }
-
-    .celebration-card {
-      background: #f7f9fc;
-      padding: 28px;
-      border-radius: 12px;
-      text-align: center;
-      border: 1px solid #e8edf3;
-    }
-
-    .celebration-icon {
-      font-size: 42px;
-      margin-bottom: 15px;
-    }
-
-    .celebration-card h3 {
-      color: #0b1f3a;
-      margin-bottom: 8px;
-    }
-
-    .celebration-card p {
-      color: #687386;
-      font-size: 14px;
-    }
-
-    /* CTA */
-    .cta {
-      background: linear-gradient(135deg, #c9a227, #dfc052);
-      color: #ffffff;
-      text-align: center;
-      padding: 70px 25px;
-    }
-
-    .cta h2 {
-      font-size: 35px;
-      margin-bottom: 12px;
-    }
-
-    .cta p {
-      max-width: 700px;
-      margin: 0 auto 25px;
-    }
-
-    .cta-buttons {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 13px 23px;
-      border-radius: 6px;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-
-    .btn-dark {
-      background: #0b1f3a;
-      color: #ffffff;
-    }
-
-    .btn-dark:hover {
-      background: #172f50;
-    }
-
-    .btn-light {
-      background: #ffffff;
-      color: #0b1f3a;
-    }
-
-    .btn-light:hover {
-      background: #f1f1f1;
-    }
-
-    /* FOOTER */
-    footer {
-      background: #07172b;
-      color: #ffffff;
-      padding: 55px 25px 25px;
-    }
-
-    .footer-grid {
-      max-width: 1150px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
-      gap: 40px;
-    }
-
-    footer h3 {
-      margin-bottom: 15px;
-      color: #e2bd45;
-    }
-
-    footer p,
-    footer li {
-      color: #bdc8d6;
-      font-size: 14px;
-    }
-
-    footer ul {
-      list-style: none;
-    }
-
-    footer li {
-      margin-bottom: 8px;
-    }
-
-    footer a:hover {
-      color: #e2bd45;
-    }
-
-    .footer-bottom {
-      max-width: 1150px;
-      margin: 35px auto 0;
-      padding-top: 20px;
-      border-top: 1px solid rgba(255,255,255,0.12);
-      text-align: center;
-      color: #8e9bad;
-      font-size: 13px;
-    }
-
-    /* RESPONSIVE */
-    @media (max-width: 950px) {
-      .news-grid,
-      .achievement-grid,
-      .celebration-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .nav-container {
-        flex-direction: column;
-      }
-
-      nav {
-        gap: 10px;
-      }
-    }
-
-    @media (max-width: 650px) {
-      .hero {
-        padding: 75px 20px;
-      }
-
-      .hero h1 {
-        font-size: 38px;
-      }
-
-      section {
-        padding: 55px 20px;
-      }
-
-      .section-heading h2 {
-        font-size: 28px;
-      }
-
-      .news-grid,
-      .achievement-grid,
-      .celebration-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .event-card {
-        flex-direction: column;
-      }
-
-      .event-date {
-        min-width: auto;
-        padding: 15px;
-        flex-direction: row;
-        gap: 10px;
-      }
-
-      .event-date .day {
-        font-size: 28px;
-      }
-
-      .footer-grid {
-        grid-template-columns: 1fr;
-      }
-
-      nav a {
-        font-size: 12px;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>News & Events | Crestfield International Academy</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.7;
+            color: #1f2937;
+            background: #f8fafc;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .demo-bar {
+            background: #111827;
+            color: #ffffff;
+            text-align: center;
+            padding: 9px 15px;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+
+        header {
+            background: #ffffff;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        }
+
+        .nav-container {
+            width: 92%;
+            max-width: 1200px;
+            margin: auto;
+            min-height: 75px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 800;
+            color: #0f2a4a;
+            line-height: 1.2;
+        }
+
+        .logo span {
+            display: block;
+            color: #c49a45;
+            font-size: 11px;
+            letter-spacing: 2px;
+            margin-top: 4px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav a {
+            color: #1f2937;
+            font-size: 14px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: #c49a45;
+        }
+
+        .apply-btn {
+            background: #c49a45;
+            color: #ffffff !important;
+            padding: 10px 16px;
+            border-radius: 6px;
+        }
+
+        .apply-btn:hover {
+            background: #a97e30;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(15,42,74,0.90), rgba(15,42,74,0.90)),
+                        linear-gradient(135deg, #0f2a4a, #1d4f7a);
+            color: #ffffff;
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 18px;
+        }
+
+        .hero p {
+            font-size: 19px;
+            color: #e5e7eb;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        section {
+            padding: 75px 20px;
+        }
+
+        .container {
+            width: 92%;
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-heading h2 {
+            font-size: 34px;
+            color: #0f2a4a;
+            margin-bottom: 12px;
+        }
+
+        .section-heading p {
+            max-width: 720px;
+            margin: auto;
+            color: #64748b;
+        }
+
+        .news-grid,
+        .announcement-grid,
+        .achievement-grid,
+        .event-grid,
+        .celebration-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 28px;
+            box-shadow: 0 8px 25px rgba(15,42,74,0.08);
+            border: 1px solid #e5e7eb;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(15,42,74,0.12);
+        }
+
+        .date {
+            display: inline-block;
+            background: #c49a45;
+            color: #ffffff;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            color: #0f2a4a;
+            margin-bottom: 12px;
+            font-size: 21px;
+        }
+
+        .card p {
+            color: #64748b;
+            font-size: 15px;
+        }
+
+        .announcement-section {
+            background: #eef3f8;
+        }
+
+        .announcement-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .announcement-card {
+            background: #ffffff;
+            border-left: 5px solid #c49a45;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 6px 20px rgba(15,42,74,0.07);
+        }
+
+        .announcement-card h3 {
+            color: #0f2a4a;
+            margin-bottom: 10px;
+        }
+
+        .achievement-card {
+            text-align: center;
+        }
+
+        .achievement-icon {
+            width: 65px;
+            height: 65px;
+            margin: 0 auto 18px;
+            border-radius: 50%;
+            background: #eef3f8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+        }
+
+        .events-section {
+            background: #ffffff;
+        }
+
+        .event-card {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .event-date {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 18px;
+        }
+
+        .event-day {
+            background: #0f2a4a;
+            color: #ffffff;
+            padding: 10px 14px;
+            border-radius: 8px;
+            text-align: center;
+            min-width: 65px;
+        }
+
+        .event-day strong {
+            display: block;
+            font-size: 22px;
+        }
+
+        .event-day span {
+            font-size: 11px;
+            text-transform: uppercase;
+        }
+
+        .event-info {
+            color: #64748b;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        .celebration-section {
+            background: #eef3f8;
+        }
+
+        .celebration-card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 7px 22px rgba(15,42,74,0.08);
+        }
+
+        .cta {
+            background: #0f2a4a;
+            color: #ffffff;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .cta h2 {
+            font-size: 34px;
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            max-width: 700px;
+            margin: 0 auto 28px;
+            color: #dbe4ef;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 22px;
+            border-radius: 6px;
+            font-weight: bold;
+            margin: 5px;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: #c49a45;
+            color: #ffffff;
+        }
+
+        .btn-primary:hover {
+            background: #a97e30;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 1px solid #ffffff;
+            color: #ffffff;
+        }
+
+        .btn-secondary:hover {
+            background: #ffffff;
+            color: #0f2a4a;
+        }
+
+        footer {
+            background: #0a1c31;
+            color: #dbe4ef;
+            padding: 50px 20px 25px;
+        }
+
+        .footer-grid {
+            width: 92%;
+            max-width: 1150px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+        }
+
+        footer h3,
+        footer h4 {
+            color: #ffffff;
+            margin-bottom: 15px;
+        }
+
+        footer p {
+            color: #b8c5d4;
+            font-size: 14px;
+        }
+
+        footer ul {
+            list-style: none;
+        }
+
+        footer li {
+            margin-bottom: 8px;
+        }
+
+        footer a {
+            color: #b8c5d4;
+            font-size: 14px;
+        }
+
+        footer a:hover {
+            color: #c49a45;
+        }
+
+        .copyright {
+            width: 92%;
+            max-width: 1150px;
+            margin: 35px auto 0;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.12);
+            text-align: center;
+            font-size: 13px;
+            color: #94a3b8;
+        }
+
+        @media (max-width: 900px) {
+            .nav-container {
+                flex-direction: column;
+                padding: 18px 0;
+            }
+
+            nav ul {
+                gap: 12px;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .news-grid,
+            .achievement-grid,
+            .event-grid,
+            .celebration-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .announcement-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero {
+                padding: 75px 20px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            section {
+                padding: 55px 15px;
+            }
+
+            .section-heading h2 {
+                font-size: 28px;
+            }
+
+            .news-grid,
+            .achievement-grid,
+            .event-grid,
+            .celebration-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            nav ul {
+                gap: 9px;
+            }
+
+            nav a {
+                font-size: 12px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-  <!-- DEMO NOTICE -->
-  <div class="demo-bar">
-    FICTIONAL DEMO WEBSITE — CREATED BY NOVATECH SOLUTIONS
-  </div>
-
-  <!-- HEADER -->
-  <header>
-    <div class="nav-container">
-
-      <a href="index.html" class="logo">
-        Crestfield International Academy
-        <span>EXCELLENCE • CHARACTER • PURPOSE</span>
-      </a>
-
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="academics.html">Academics</a>
-        <a href="admissions.html">Admissions</a>
-        <a href="facilities.html">Facilities</a>
-        <a href="student-life.html">Student Life</a>
-        <a href="news.html" class="active">News & Events</a>
-        <a href="contact.html">Contact</a>
-        <a href="admissions.html" class="nav-button">Apply Now</a>
-      </nav>
-
+    <div class="demo-bar">
+        FICTIONAL DEMO WEBSITE — CREATED BY NOVATECH SOLUTIONS
     </div>
-  </header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-content">
+    <header>
+        <div class="nav-container">
 
-      <h1>
-        News & <span>Events</span>
-      </h1>
+            <div class="logo">
+                Crestfield International Academy
+                <span>EXCELLENCE • CHARACTER • FUTURE</span>
+            </div>
 
-      <p>
-        Stay connected with the latest announcements, achievements,
-        celebrations and upcoming events at Crestfield International Academy.
-      </p>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="academics.html">Academics</a></li>
+                    <li><a href="admissions.html">Admissions</a></li>
+                    <li><a href="facilities.html">Facilities</a></li>
+                    <li><a href="student-life.html">Student Life</a></li>
+                    <li><a href="news.htm1" class="active">News & Events</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="admissions.html" class="apply-btn">Apply Now</a></li>
+                </ul>
+            </nav>
 
-    </div>
-  </section>
+        </div>
+    </header>
 
-  <!-- LATEST NEWS -->
-  <section>
-    <div class="container">
+    <section class="hero">
+        <div class="hero-content">
+            <h1>News & Events</h1>
+            <p>
+                Stay informed about the latest happenings, achievements,
+                announcements and upcoming events at Crestfield International Academy.
+            </p>
+        </div>
+    </section>
 
-      <div class="section-heading">
-        <h2>Latest News</h2>
-        <div class="gold-line"></div>
-        <p>
-          Discover recent stories, school updates and moments from
-          across the Crestfield community.
-        </p>
-      </div>
+    <section>
+        <div class="container">
 
-      <div class="news-grid">
+            <div class="section-heading">
+                <h2>Latest News</h2>
+                <p>
+                    Discover recent updates and stories from across the Crestfield community.
+                </p>
+            </div>
 
-        <article class="news-card">
-          <div class="news-image">📰</div>
+            <div class="news-grid">
 
-          <div class="news-content">
-            <div class="news-date">September 2026</div>
+                <div class="card">
+                    <span class="date">School Update</span>
+                    <h3>Preparing for a New Academic Session</h3>
+                    <p>
+                        Crestfield International Academy is preparing students,
+                        families and staff for another exciting academic session
+                        focused on learning, growth and personal development.
+                    </p>
+                </div>
 
-            <h3>
-              New Academic Year Begins
-            </h3>
+                <div class="card">
+                    <span class="date">Academic News</span>
+                    <h3>Expanding Learning Opportunities</h3>
+                    <p>
+                        Students continue to benefit from practical learning,
+                        digital tools, collaborative projects and academic enrichment
+                        opportunities across different levels.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <span class="date">Community</span>
+                    <h3>Building a Stronger School Community</h3>
+                    <p>
+                        Crestfield continues to encourage meaningful relationships
+                        between students, families, teachers and the wider school community.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <section class="announcement-section">
+        <div class="container">
+
+            <div class="section-heading">
+                <h2>Important Announcements</h2>
+                <p>
+                    Important notices and information for students, parents and staff.
+                </p>
+            </div>
+
+            <div class="announcement-grid">
+
+                <div class="announcement-card">
+                    <h3>New Term Information</h3>
+                    <p>
+                        Families are encouraged to review school communications
+                        and prepare students for the beginning of the new term.
+                    </p>
+                </div>
+
+                <div class="announcement-card">
+                    <h3>Parent Communication</h3>
+                    <p>
+                        Parents and guardians are encouraged to stay connected
+                        with the school for important academic and administrative updates.
+                    </p>
+                </div>
+
+                <div class="announcement-card">
+                    <h3>School Activities</h3>
+                    <p>
+                        Students should check school announcements for information
+                        about upcoming activities, competitions and special programmes.
+                    </p>
+                </div>
+
+                <div class="announcement-card">
+                    <h3>Admissions Updates</h3>
+                    <p>
+                        Families interested in joining Crestfield can visit the
+                        Admissions page for information about the application process.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+
+            <div class="section-heading">
+                <h2>Student Achievements</h2>
+                <p>
+                    Celebrating progress, creativity, leadership and achievement.
+                </p>
+            </div>
+
+            <div class="achievement-grid">
+
+                <div class="card achievement-card">
+                    <div class="achievement-icon">🏆</div>
+                    <h3>Academic Achievement</h3>
+                    <p>
+                        Recognising students who demonstrate commitment,
+                        consistency and excellence in their studies.
+                    </p>
+                </div>
+
+                <div class="card achievement-card">
+                    <div class="achievement-icon">💡</div>
+                    <h3>Innovation & Creativity</h3>
+                    <p>
+                        Celebrating students who develop creative ideas,
+                        projects and solutions to real-world challenges.
+                    </p>
+                </div>
+
+                <div class="card achievement-card">
+                    <div class="achievement-icon">🌟</div>
+                    <h3>Leadership & Character</h3>
+                    <p>
+                        Highlighting students who demonstrate responsibility,
+                        teamwork, respect and positive leadership.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <section class="events-section">
+        <div class="container">
+
+            <div class="section-heading">
+                <h2>Upcoming Events</h2>
+                <p>
+                    Important dates and activities happening across the school community.
+                </p>
+            </div>
+
+            <div class="event-grid">
+
+                <div class="card event-card">
+                    <div class="event-date">
+                        <div class="event-day">
+                            <strong>05</strong>
+                            <span>Oct</span>
+                        </div>
+
+                        <div>
+                            <h3>New Term Orientation</h3>
+                        </div>
+                    </div>
+
+                    <p>
+                        An orientation programme designed to welcome students
+                        and families into the new academic term.
+                    </p>
+
+                    <p class="event-info">
+                        📍 Crestfield International Academy
+                    </p>
+                </div>
+
+                <div class="card event-card">
+                    <div class="event-date">
+                        <div class="event-day">
+                            <strong>18</strong>
+                            <span>Oct</span>
+                        </div>
+
+                        <div>
+                            <h3>Academic Enrichment Day</h3>
+                        </div>
+                    </div>
+
+                    <p>
+                        A special day focused on academic exploration,
+                        projects, presentations and collaborative learning.
+                    </p>
+
+                    <p class="event-info">
+                        📍 Crestfield International Academy
+                    </p>
+                </div>
+
+                <div class="card event-card">
+                    <div class="event-date">
+                        <div class="event-day">
+                            <strong>07</strong>
+                            <span>Nov</span>
+                        </div>
+
+                        <div>
+                            <h3>Family & Community Celebration</h3>
+                        </div>
+                    </div>
+
+                    <p>
+                        A community gathering celebrating students,
+                        families, staff and the wider Crestfield community.
+                    </p>
+
+                    <p class="event-info">
+                        📍 Crestfield International Academy
+                    </p>
+                </div>
+
+                <div class="card event-card">
+                    <div class="event-date">
+                        <div class="event-day">
+                            <strong>21</strong>
+                            <span>Nov</span>
+                        </div>
+
+                        <div>
+                            <h3>Inter-House Sports Day</h3>
+                        </div>
+                    </div>
+
+                    <p>
+                        Students participate in sporting activities that promote
+                        teamwork, discipline, confidence and healthy competition.
+                    </p>
+
+                    <p class="event-info">
+                        📍 Crestfield International Academy
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <section class="celebration-section">
+        <div class="container">
+
+            <div class="section-heading">
+                <h2>School Celebrations</h2>
+                <p>
+                    Moments that bring the Crestfield community together.
+                </p>
+            </div>
+
+            <div class="celebration-grid">
+
+                <div class="celebration-card">
+                    <h3>🎓 Graduation & Milestones</h3>
+                    <p>
+                        Celebrating important educational milestones
+                        and preparing students for their next stage.
+                    </p>
+                </div>
+
+                <div class="celebration-card">
+                    <h3>🎉 Cultural Celebrations</h3>
+                    <p>
+                        Creating opportunities for students to appreciate
+                        culture, creativity, diversity and community.
+                    </p>
+                </div>
+
+                <div class="celebration-card">
+                    <h3>👏 Recognition Events</h3>
+                    <p>
+                        Recognising students for academic progress,
+                        leadership, service and extracurricular achievements.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+
+            <h2>Be Part of the Crestfield Community</h2>
 
             <p>
-              Crestfield International Academy welcomes students and
-              families into another exciting academic year focused on
-              learning, growth and personal development.
+                Interested in learning more about Crestfield International Academy?
+                Explore our admissions information or contact the school for further enquiries.
             </p>
 
-            <a href="#announcements" class="read-more">
-              Read More →
+            <a href="admissions.html" class="btn btn-primary">
+                Explore Admissions
             </a>
-          </div>
-        </article>
 
-
-        <article class="news-card">
-          <div class="news-image">🏆</div>
-
-          <div class="news-content">
-            <div class="news-date">August 2026</div>
-
-            <h3>
-              Celebrating Student Achievement
-            </h3>
-
-            <p>
-              The school community celebrates students who demonstrated
-              commitment, creativity and determination throughout the
-              academic session.
-            </p>
-
-            <a href="#achievements" class="read-more">
-              Read More →
+            <a href="contact.html" class="btn btn-secondary">
+                Contact Us
             </a>
-          </div>
-        </article>
 
+        </div>
+    </section>
 
-        <article class="news-card">
-          <div class="news-image">🎓</div>
+    <footer>
 
-          <div class="news-content">
-            <div class="news-date">July 2026</div>
+        <div class="footer-grid">
 
-            <h3>
-              Preparing Students for the Future
-            </h3>
+            <div>
+                <h3>Crestfield International Academy</h3>
+                <p>
+                    A fictional international school demonstration website
+                    created by NovaTech Solutions to showcase modern educational
+                    website design.
+                </p>
+                <p style="margin-top: 12px;">
+                    📍 Asaba, Delta State, Nigeria
+                </p>
+            </div>
 
-            <p>
-              Through academic enrichment, digital learning and
-              practical experiences, students continue developing
-              skills for a changing world.
-            </p>
+            <div>
+                <h4>Quick Links</h4>
 
-            <a href="academics.html" class="read-more">
-              Explore Academics →
-            </a>
-          </div>
-        </article>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="academics.html">Academics</a></li>
+                    <li><a href="admissions.html">Admissions</a></li>
+                    <li><a href="facilities.html">Facilities</a></li>
+                </ul>
+            </div>
 
-      </div>
+            <div>
+                <h4>Explore</h4>
 
-    </div>
-  </section>
-
-  <!-- ANNOUNCEMENTS -->
-  <section class="announcement-section" id="announcements">
-
-    <div class="container">
-
-      <div class="section-heading">
-        <h2>Important Announcements</h2>
-        <div class="gold-line"></div>
-
-        <p>
-          Key notices and updates for students, parents and the
-          wider school community.
-        </p>
-      </div>
-
-      <div class="announcement-list">
-
-        <div class="announcement">
-
-          <div class="announcement-icon">
-            📢
-          </div>
-
-          <div>
-            <h3>New Session Information</h3>
-
-            <p>
-              Families are encouraged to review the academic calendar,
-              school expectations and important preparation information
-              before the beginning of each session.
-            </p>
-          </div>
+                <ul>
+                    <li><a href="student-life.html">Student Life</a></li>
+                    <li><a href="news.htm1">News & Events</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="admissions.html">Apply Now</a></li>
+                </ul>
+            </div>
 
         </div>
 
-
-        <div class="announcement">
-
-          <div class="announcement-icon">
-            📚
-          </div>
-
-          <div>
-            <h3>Academic Support Available</h3>
-
-            <p>
-              Students requiring additional academic guidance can access
-              appropriate support through the school's teaching and
-              learning programmes.
-            </p>
-          </div>
-
+        <div class="copyright">
+            © 2026 Crestfield International Academy Demo Website.
+            Created by NovaTech Solutions.
         </div>
 
-
-        <div class="announcement">
-
-          <div class="announcement-icon">
-            👨‍👩‍👧
-          </div>
-
-          <div>
-            <h3>Parent Engagement</h3>
-
-            <p>
-              Parents and guardians are encouraged to remain actively
-              involved in their children's educational journey through
-              regular communication with the school.
-            </p>
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- ACHIEVEMENTS -->
-  <section class="achievement-section" id="achievements">
-
-    <div class="container">
-
-      <div class="section-heading">
-        <h2>Student Achievements</h2>
-        <div class="gold-line"></div>
-
-        <p>
-          We celebrate effort, progress, creativity and excellence
-          across different areas of school life.
-        </p>
-      </div>
-
-      <div class="achievement-grid">
-
-        <div class="achievement-card">
-
-          <div class="number">01</div>
-
-          <h3>Academic Excellence</h3>
-
-          <p>
-            Recognising students who demonstrate strong academic
-            commitment, consistent effort and a passion for learning.
-          </p>
-
-        </div>
-
-
-        <div class="achievement-card">
-
-          <div class="number">02</div>
-
-          <h3>Creative Achievement</h3>
-
-          <p>
-            Celebrating students who express imagination and originality
-            through arts, music, drama and creative projects.
-          </p>
-
-        </div>
-
-
-        <div class="achievement-card">
-
-          <div class="number">03</div>
-
-          <h3>Leadership & Service</h3>
-
-          <p>
-            Highlighting students who demonstrate responsibility,
-            teamwork, initiative and positive contributions to others.
-          </p>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- UPCOMING EVENTS -->
-  <section class="events-section">
-
-    <div class="container">
-
-      <div class="section-heading">
-
-        <h2>Upcoming Events</h2>
-
-        <div class="gold-line"></div>
-
-        <p>
-          Keep track of important activities and events planned
-          throughout the school calendar.
-        </p>
-
-      </div>
-
-
-      <div class="event-list">
-
-        <div class="event-card">
-
-          <div class="event-date">
-            <span class="month">Oct</span>
-            <span class="day">05</span>
-          </div>
-
-          <div class="event-info">
-
-            <h3>New Term Orientation</h3>
-
-            <p>
-              An orientation programme designed to help students and
-              families begin the new term with clarity, confidence and
-              a strong sense of community.
-            </p>
-
-            <span class="event-tag">
-              School Event
-            </span>
-
-          </div>
-
-        </div>
-
-
-        <div class="event-card">
-
-          <div class="event-date">
-            <span class="month">Oct</span>
-            <span class="day">18</span>
-          </div>
-
-          <div class="event-info">
-
-            <h3>Academic Enrichment Day</h3>
-
-            <p>
-              A special day dedicated to learning activities,
-              educational challenges, projects and opportunities for
-              students to explore new ideas.
-            </p>
-
-            <span class="event-tag">
-              Academic
-            </span>
-
-          </div>
-
-        </div>
-
-
-        <div class="event-card">
-
-          <div class="event-date">
-            <span class="month">Nov</span>
-            <span class="day">07</span>
-          </div>
-
-          <div class="event-info">
-
-            <h3>Family & Community Celebration</h3>
-
-            <p>
-              A school community gathering designed to bring students,
-              parents, staff and families together for a memorable day.
-            </p>
-
-            <span class="event-tag">
-              Community
-            </span>
-
-          </div>
-
-        </div>
-
-
-        <div class="event-card">
-
-          <div class="event-date">
-            <span class="month">Nov</span>
-            <span class="day">21</span>
-          </div>
-
-          <div class="event-info">
-
-            <h3>Inter-House Sports Day</h3>
-
-            <p>
-              Students come together for friendly sporting competitions
-              that encourage teamwork, discipline, participation and
-              healthy competition.
-            </p>
-
-            <span class="event-tag">
-              Sports
-            </span>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- CELEBRATIONS -->
-  <section class="celebration-section">
-
-    <div class="container">
-
-      <div class="section-heading">
-
-        <h2>School Celebrations</h2>
-
-        <div class="gold-line"></div>
-
-        <p>
-          Important moments that bring the Crestfield community
-          together throughout the year.
-        </p>
-
-      </div>
-
-
-      <div class="celebration-grid">
-
-        <div class="celebration-card">
-
-          <div class="celebration-icon">🎉</div>
-
-          <h3>School Celebrations</h3>
-
-          <p>
-            Special occasions that create memorable experiences
-            for students, families and staff.
-          </p>
-
-        </div>
-
-
-        <div class="celebration-card">
-
-          <div class="celebration-icon">🏅</div>
-
-          <h3>Recognition Days</h3>
-
-          <p>
-            Opportunities to recognise student effort,
-            progress, achievement and positive contribution.
-          </p>
-
-        </div>
-
-
-        <div class="celebration-card">
-
-          <div class="celebration-icon">🌟</div>
-
-          <h3>Community Moments</h3>
-
-          <p>
-            Shared experiences that strengthen relationships
-            and build a positive school community.
-          </p>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- CTA -->
-  <section class="cta">
-
-    <div class="container">
-
-      <h2>Want to Become Part of Crestfield?</h2>
-
-      <p>
-        Explore our admissions process or contact the school to
-        learn more about the Crestfield International Academy experience.
-      </p>
-
-      <div class="cta-buttons">
-
-        <a href="admissions.html" class="btn btn-dark">
-          Explore Admissions
-        </a>
-
-        <a href="contact.html" class="btn btn-light">
-          Contact the School
-        </a>
-
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-
-    <div class="footer-grid">
-
-      <div>
-
-        <h3>Crestfield International Academy</h3>
-
-        <p>
-          A fictional demonstration website created by
-          NovaTech Solutions to showcase modern school website design.
-        </p>
-
-        <p style="margin-top: 12px;">
-          Asaba, Delta State, Nigeria
-        </p>
-
-      </div>
-
-
-      <div>
-
-        <h3>Quick Links</h3>
-
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="academics.html">Academics</a></li>
-          <li><a href="admissions.html">Admissions</a></li>
-        </ul>
-
-      </div>
-
-
-      <div>
-
-        <h3>Explore</h3>
-
-        <ul>
-          <li><a href="facilities.html">Facilities</a></li>
-          <li><a href="student-life.html">Student Life</a></li>
-          <li><a href="news.html">News & Events</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-
-      </div>
-
-    </div>
-
-
-    <div class="footer-bottom">
-
-      © 2026 Crestfield International Academy Demo.
-      Created by NovaTech Solutions.
-
-    </div>
-
-  </footer>
+    </footer>
 
 </body>
 </html>
