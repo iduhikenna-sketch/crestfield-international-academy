@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Facilities | Crestfield International Academy</title>
+
+  <meta name="description" content="Explore the learning spaces, facilities, resources and campus environment at Crestfield International Academy.">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f7f9fc;
+      color: #172033;
+      line-height: 1.7;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .demo-bar {
+      background: #101b3a;
+      color: #ffffff;
+      text-align: center;
+      padding: 9px 15px;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+    }
+
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid #e7ebf2;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-container {
+      width: 92%;
+      max-width: 1200px;
+      margin: auto;
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      color: #10204a;
+      font-size: 17px;
+    }
+
+    .logo-mark {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: #c9a227;
+      color: #10204a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 17px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      font-size: 13px;
+      font-weight: 700;
+      color: #35415c;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #b18a16;
+    }
+
+    .nav-apply {
+      background: #10204a;
+      color: #ffffff !important;
+      padding: 11px 17px;
+      border-radius: 6px;
+    }
+
+    .nav-apply:hover {
+      background: #c9a227;
+      color: #10204a !important;
+    }
+
+    .hero {
+      background:
+        linear-gradient(rgba(10, 24, 55, 0.86), rgba(10, 24, 55, 0.86)),
+        linear-gradient(135deg, #18366f, #071329);
+      color: #ffffff;
+      text-align: center;
+      padding: 95px 20px;
+    }
+
+    .hero-content {
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .eyebrow {
+      color: #e0bf4f;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .hero h1 {
+      font-size: clamp(38px, 6vw, 64px);
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      max-width: 720px;
+      margin: auto;
+      color: #e8edf7;
+      font-size: 17px;
+    }
+
+    .hero-buttons {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 22px;
+      border-radius: 6px;
+      font-weight: 800;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    .btn-primary {
+      background: #c9a227;
+      color: #10204a;
+    }
+
+    .btn-primary:hover {
+      background: #e0bf4f;
+      transform: translateY(-2px);
+    }
+
+    .btn-light {
+      border: 1px solid rgba(255,255,255,0.45);
+      color: #ffffff;
+    }
+
+    .btn-light:hover {
+      background: #ffffff;
+      color: #10204a;
+    }
+
+    .section {
+      width: 92%;
+      max-width: 1150px;
+      margin: auto;
+      padding: 80px 0;
+    }
+
+    .section-heading {
+      max-width: 730px;
+      margin-bottom: 45px;
+    }
+
+    .section-heading.center {
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+
+    .section-heading span {
+      color: #b18a16;
+      text-transform: uppercase;
+      font-weight: 800;
+      font-size: 12px;
+      letter-spacing: 2px;
+    }
+
+    .section-heading h2 {
+      color: #10204a;
+      font-size: clamp(30px, 4vw, 44px);
+      line-height: 1.2;
+      margin: 10px 0 15px;
+    }
+
+    .section-heading p {
+      color: #657089;
+    }
+
+    .intro-box {
+      background: #ffffff;
+      border: 1px solid #e7ebf2;
+      border-radius: 14px;
+      padding: 35px;
+      box-shadow: 0 10px 35px rgba(20, 35, 70, 0.07);
+    }
+
+    .intro-box p {
+      color: #59657c;
+      margin-bottom: 14px;
+    }
+
+    .intro-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    .facility-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .facility-card {
+      background: #ffffff;
+      border: 1px solid #e7ebf2;
+      border-radius: 14px;
+      padding: 30px;
+      box-shadow: 0 8px 28px rgba(20, 35, 70, 0.05);
+      transition: 0.3s;
+    }
+
+    .facility-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 14px 35px rgba(20, 35, 70, 0.09);
+    }
+
+    .facility-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 12px;
+      background: #eef2fa;
+      color: #10204a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 21px;
+      font-weight: 900;
+      margin-bottom: 18px;
+    }
+
+    .facility-card h3 {
+      color: #10204a;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .facility-card p {
+      color: #657089;
+      font-size: 14px;
+    }
+
+    .feature-section {
+      background: #eef2f8;
+      max-width: none;
+      width: 100%;
+    }
+
+    .feature-inner {
+      width: 92%;
+      max-width: 1150px;
+      margin: auto;
+    }
+
+    .feature-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 45px;
+      align-items: center;
+      margin-bottom: 55px;
+    }
+
+    .feature-row:last-child {
+      margin-bottom: 0;
+    }
+
+    .feature-row.reverse .feature-visual {
+      order: 2;
+    }
+
+    .feature-row.reverse .feature-content {
+      order: 1;
+    }
+
+    .feature-visual {
+      min-height: 300px;
+      border-radius: 16px;
+      background:
+        linear-gradient(135deg, #152e62, #0a1836);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      text-align: center;
+      padding: 30px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .feature-visual::after {
+      content: "";
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      border: 1px solid rgba(224,191,79,0.35);
+      border-radius: 50%;
+    }
+
+    .visual-text {
+      position: relative;
+      z-index: 2;
+    }
+
+    .visual-text strong {
+      display: block;
+      color: #e0bf4f;
+      font-size: 42px;
+      margin-bottom: 8px;
+    }
+
+    .visual-text span {
+      color: #dbe2ef;
+      font-size: 14px;
+    }
+
+    .feature-content h3 {
+      color: #10204a;
+      font-size: 30px;
+      margin-bottom: 15px;
+    }
+
+    .feature-content p {
+      color: #657089;
+      margin-bottom: 14px;
+    }
+
+    .feature-list {
+      list-style: none;
+      margin-top: 18px;
+    }
+
+    .feature-list li {
+      color: #536078;
+      margin-bottom: 9px;
+      font-size: 14px;
+    }
+
+    .feature-list li::before {
+      content: "✓";
+      color: #b18a16;
+      font-weight: 900;
+      margin-right: 10px;
+    }
+
+    .safety-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .safety-card {
+      background: #ffffff;
+      border: 1px solid #e7ebf2;
+      padding: 25px 20px;
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    .safety-card h3 {
+      color: #10204a;
+      font-size: 17px;
+      margin-bottom: 7px;
+    }
+
+    .safety-card p {
+      color: #68738a;
+      font-size: 13px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+    }
+
+    .gallery-item {
+      height: 190px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #10204a, #294d8e);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      text-align: center;
+      padding: 20px;
+      font-weight: 800;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .gallery-item:nth-child(2) {
+      background: linear-gradient(135deg, #263e70, #10204a);
+    }
+
+    .gallery-item:nth-child(3) {
+      background: linear-gradient(135deg, #10204a, #3a5688);
+    }
+
+    .gallery-item:nth-child(4) {
+      background: linear-gradient(135deg, #1b315e, #0b1733);
+    }
+
+    .gallery-item:nth-child(5) {
+      background: linear-gradient(135deg, #334e7e, #10204a);
+    }
+
+    .gallery-item:nth-child(6) {
+      background: linear-gradient(135deg, #10204a, #45618e);
+    }
+
+    .gallery-item:nth-child(7) {
+      background: linear-gradient(135deg, #203963, #0a1732);
+    }
+
+    .gallery-item:nth-child(8) {
+      background: linear-gradient(135deg, #415b87, #10204a);
+    }
+
+    .gallery-item span {
+      position: relative;
+      z-index: 2;
+    }
+
+    .cta {
+      background: #10204a;
+      color: #ffffff;
+      padding: 75px 20px;
+      text-align: center;
+    }
+
+    .cta h2 {
+      font-size: clamp(30px, 4vw, 45px);
+      margin-bottom: 15px;
+    }
+
+    .cta p {
+      max-width: 700px;
+      margin: 0 auto 28px;
+      color: #d9dfec;
+    }
+
+    footer {
+      background: #08132d;
+      color: #ffffff;
+      padding: 55px 20px 25px;
+    }
+
+    .footer-grid {
+      width: 92%;
+      max-width: 1150px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 45px;
+    }
+
+    footer h3 {
+      margin-bottom: 15px;
+      color: #ffffff;
+    }
+
+    footer p,
+    footer a {
+      color: #aeb8ca;
+      font-size: 14px;
+    }
+
+    footer a {
+      display: block;
+      margin-bottom: 7px;
+    }
+
+    footer a:hover {
+      color: #e0bf4f;
+    }
+
+    .footer-bottom {
+      width: 92%;
+      max-width: 1150px;
+      margin: 40px auto 0;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      text-align: center;
+      color: #8994a9;
+      font-size: 12px;
+    }
+
+    @media (max-width: 1000px) {
+      nav {
+        gap: 12px;
+      }
+
+      nav a {
+        font-size: 11px;
+      }
+
+      .facility-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .safety-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 760px) {
+      .nav-container {
+        flex-direction: column;
+        padding: 18px 0;
+      }
+
+      nav {
+        justify-content: center;
+      }
+
+      .facility-grid,
+      .feature-row,
+      .safety-grid,
+      .gallery-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .feature-row.reverse .feature-visual,
+      .feature-row.reverse .feature-content {
+        order: initial;
+      }
+
+      .feature-visual {
+        min-height: 240px;
+      }
+
+      .hero {
+        padding: 75px 20px;
+      }
+
+      .section {
+        padding: 60px 0;
+      }
+
+      .intro-box {
+        padding: 25px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="demo-bar">
+    FICTIONAL DEMO WEBSITE — CREATED BY NOVATECH SOLUTIONS
+  </div>
+
+  <header>
+    <div class="nav-container">
+
+      <a href="index.html" class="logo">
+        <div class="logo-mark">CIA</div>
+        <span>Crestfield International Academy</span>
+      </a>
+
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="academics.html">Academics</a>
+        <a href="admissions.html">Admissions</a>
+        <a href="facilities.html">Facilities</a>
+        <a href="student-life.html">Student Life</a>
+        <a href="news.html">News & Events</a>
+        <a href="contact.html">Contact</a>
+        <a href="admissions.html" class="nav-apply">Apply Now</a>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <!-- HERO -->
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <div class="eyebrow">Our Facilities</div>
+
+      <h1>Spaces Designed for Learning</h1>
+
+      <p>
+        Explore the environments, resources and shared spaces that support
+        learning, creativity, collaboration and student wellbeing at
+        Crestfield International Academy.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#facilities" class="btn btn-primary">Explore Facilities</a>
+        <a href="contact.html" class="btn btn-light">Contact the School</a>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- INTRODUCTION -->
+  <section class="section">
+
+    <div class="section-heading center">
+      <span>Campus Environment</span>
+      <h2>A Place to Learn, Explore and Grow</h2>
+      <p>
+        Crestfield's campus is designed to provide students with spaces that
+        support different aspects of school life.
+      </p>
+    </div>
+
+    <div class="intro-box">
+
+      <p>
+        A strong learning environment extends beyond the classroom. Students
+        benefit from spaces where they can study, experiment, create,
+        collaborate, relax and participate in school activities.
+      </p>
+
+      <p>
+        Our facilities concept brings together academic resources,
+        technology, creativity, recreation and wellbeing in an environment
+        designed around the needs of students.
+      </p>
+
+      <p>
+        This page presents the facilities planned for this fictional
+        demonstration school website. Actual facilities would be confirmed
+        and updated by the school before a real-world launch.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- FACILITY OVERVIEW -->
+  <section class="section feature-section" id="facilities">
+
+    <div class="feature-inner">
+
+      <div class="section-heading center">
+        <span>Facility Overview</span>
+        <h2>Resources Across the Campus</h2>
+        <p>
+          Dedicated spaces support academic learning, student development
+          and everyday school activities.
+        </p>
+      </div>
+
+      <div class="facility-grid">
+
+        <div class="facility-card">
+          <div class="facility-icon">01</div>
+          <h3>Modern Classrooms</h3>
+          <p>
+            Comfortable learning spaces designed to encourage focused
+            instruction, discussion and collaborative classroom activities.
+          </p>
+        </div>
+
+        <div class="facility-card">
+          <div class="facility-icon">02</div>
+          <h3>Science Laboratories</h3>
+          <p>
+            Practical learning environments where students can explore
+            scientific concepts through observation and experimentation.
+          </p>
+        </div>
+
+        <div class="facility-card">
+          <div class="facility-icon">03</div>
+          <h3>ICT & Computer Lab</h3>
+          <p>
+            Technology-focused spaces supporting digital literacy, research,
+            computing and technology-based learning.
+          </p>
+        </div>
+
+        <div class="facility-card">
+          <div class="facility-icon">04</div>
+          <h3>Library</h3>
+          <p>
+            A dedicated environment for reading, independent study,
+            research and developing a lifelong interest in learning.
+          </p>
+        </div>
+
+        <div class="facility-card">
+          <div class="facility-icon">05</div>
+          <h3>Sports Facilities</h3>
+          <p>
+            Recreational and sporting spaces that encourage physical activity,
+            teamwork, discipline and healthy competition.
+          </p>
+        </div>
+
+        <div class="facility-card">
+          <div class="facility-icon">06</div>
+          <h3>Creative Arts Spaces</h3>
+          <p>
+            Flexible spaces for visual arts, music, drama, creative projects
+            and student expression.
+          </p>
+        </div>
+
+        <div class="facility-card">
+          <div class="facility-icon">07</div>
+          <h3>Dining & Cafeteria</h3>
+          <p>
+            Shared dining spaces designed to provide students with a
+            comfortable environment during meal and break periods.
+          </p>
+        </div>
+
+        <div class="facility-card">
+          <div class="facility-icon">08</div>
+          <h3>Health & Wellbeing</h3>
+          <p>
+            Spaces and procedures intended to support student welfare,
+            basic health needs and a safe school environment.
+          </p>
+        </div>
+
+        <div class="facility-card">
+          <div class="facility-icon">09</div>
+          <h3>Campus Common Areas</h3>
+          <p>
+            Shared spaces that allow students and staff to interact,
+            collaborate and build a strong school community.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FEATURED FACILITIES -->
+  <section class="section">
+
+    <div class="section-heading center">
+      <span>Featured Spaces</span>
+      <h2>Built Around the Student Experience</h2>
+      <p>
+        Different learning environments provide opportunities for students
+        to engage in different ways.
+      </p>
+    </div>
+
+
+    <div class="feature-row">
+
+      <div class="feature-visual">
+        <div class="visual-text">
+          <strong>01</strong>
+          <span>Technology-Enabled Learning</span>
+        </div>
+      </div>
+
+      <div class="feature-content">
+
+        <h3>ICT & Digital Learning</h3>
+
+        <p>
+          Technology plays an important role in modern education. A dedicated
+          ICT environment can give students opportunities to develop practical
+          digital skills and use technology responsibly.
+        </p>
+
+        <ul class="feature-list">
+          <li>Computer-based learning activities</li>
+          <li>Digital research and information access</li>
+          <li>Technology literacy</li>
+          <li>Interactive learning resources</li>
+        </ul>
+
+      </div>
+
+    </div>
+
+
+    <div class="feature-row reverse">
+
+      <div class="feature-visual">
+        <div class="visual-text">
+          <strong>02</strong>
+          <span>Discovery Through Practical Learning</span>
+        </div>
+      </div>
+
+      <div class="feature-content">
+
+        <h3>Science & Practical Spaces</h3>
+
+        <p>
+          Practical spaces give students opportunities to connect classroom
+          concepts with observation, experimentation and problem-solving.
+        </p>
+
+        <ul class="feature-list">
+          <li>Practical science activities</li>
+          <li>Observation and experimentation</li>
+          <li>Research-based learning</li>
+          <li>Problem-solving experiences</li>
+        </ul>
+
+      </div>
+
+    </div>
+
+
+    <div class="feature-row">
+
+      <div class="feature-visual">
+        <div class="visual-text">
+          <strong>03</strong>
+          <span>Movement, Teamwork & Recreation</span>
+        </div>
+      </div>
+
+      <div class="feature-content">
+
+        <h3>Sports & Recreation</h3>
+
+        <p>
+          Physical activity provides students with opportunities to develop
+          teamwork, discipline, confidence and healthy habits.
+        </p>
+
+        <ul class="feature-list">
+          <li>Team sports</li>
+          <li>Physical activity</li>
+          <li>Recreational opportunities</li>
+          <li>Teamwork and sportsmanship</li>
+        </ul>
+
+      </div>
+
+    </div>
+
+
+    <div class="feature-row reverse">
+
+      <div class="feature-visual">
+        <div class="visual-text">
+          <strong>04</strong>
+          <span>Reading, Research & Independent Study</span>
+        </div>
+      </div>
+
+      <div class="feature-content">
+
+        <h3>Library & Study Spaces</h3>
+
+        <p>
+          Quiet study and reading areas provide students with an environment
+          for independent learning, research and exploration of new ideas.
+        </p>
+
+        <ul class="feature-list">
+          <li>Reading and research</li>
+          <li>Independent study</li>
+          <li>Academic reference materials</li>
+          <li>Quiet learning environment</li>
+        </ul>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- SAFETY -->
+  <section class="section feature-section">
+
+    <div class="feature-inner">
+
+      <div class="section-heading center">
+        <span>Student Safety</span>
+        <h2>A Safe & Supportive Environment</h2>
+        <p>
+          A positive campus environment includes clear procedures that
+          support the safety and wellbeing of students and staff.
+        </p>
+      </div>
+
+      <div class="safety-grid">
+
+        <div class="safety-card">
+          <h3>Secure Campus</h3>
+          <p>
+            Controlled access and responsible campus management.
+          </p>
+        </div>
+
+        <div class="safety-card">
+          <h3>Student Welfare</h3>
+          <p>
+            Attention to student wellbeing and pastoral support.
+          </p>
+        </div>
+
+        <div class="safety-card">
+          <h3>Health Support</h3>
+          <p>
+            Procedures designed to respond to basic student health needs.
+          </p>
+        </div>
+
+        <div class="safety-card">
+          <h3>Emergency Procedures</h3>
+          <p>
+            Clear procedures for responding to unexpected situations.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- GALLERY -->
+  <section class="section">
+
+    <div class="section-heading center">
+      <span>Facility Gallery</span>
+      <h2>Explore Our Spaces</h2>
+      <p>
+        Visual highlights can be added here to showcase the school's
+        classrooms, laboratories, library, sports areas and other facilities.
+      </p>
+    </div>
+
+    <div class="gallery-grid">
+
+      <div class="gallery-item">
+        <span>Modern Classrooms</span>
+      </div>
+
+      <div class="gallery-item">
+        <span>Science Laboratory</span>
+      </div>
+
+      <div class="gallery-item">
+        <span>ICT & Computer Lab</span>
+      </div>
+
+      <div class="gallery-item">
+        <span>School Library</span>
+      </div>
+
+      <div class="gallery-item">
+        <span>Sports & Recreation</span>
+      </div>
+
+      <div class="gallery-item">
+        <span>Creative Arts Space</span>
+      </div>
+
+      <div class="gallery-item">
+        <span>Dining & Cafeteria</span>
+      </div>
+
+      <div class="gallery-item">
+        <span>Campus Environment</span>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CTA -->
+  <section class="cta">
+
+    <h2>See Where Learning Happens</h2>
+
+    <p>
+      Discover more about the Crestfield student experience or speak with
+      the school about admissions and enquiries.
+    </p>
+
+    <a href="student-life.html" class="btn btn-primary">
+      Explore Student Life
+    </a>
+
+    <a href="contact.html" class="btn btn-light" style="margin-left:10px;">
+      Contact the School
+    </a>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <div class="footer-grid">
+
+      <div>
+        <h3>Crestfield International Academy</h3>
+        <p>
+          A fictional school website created by NovaTech Solutions as a
+          professional educational website demonstration.
+        </p>
+      </div>
+
+      <div>
+        <h3>Explore</h3>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="academics.html">Academics</a>
+        <a href="admissions.html">Admissions</a>
+        <a href="student-life.html">Student Life</a>
+        <a href="news.html">News & Events</a>
+      </div>
+
+      <div>
+        <h3>Facilities</h3>
+        <a href="facilities.html">Our Facilities</a>
+        <a href="facilities.html#facilities">Facility Overview</a>
+        <a href="student-life.html">Student Life</a>
+        <a href="admissions.html">Admissions</a>
+        <a href="contact.html">Contact School</a>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      © 2026 Crestfield International Academy Demo · Created by NovaTech Solutions
+    </div>
+
+  </footer>
+
+</body>
+</html>
