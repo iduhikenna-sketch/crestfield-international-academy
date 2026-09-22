@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>News & Events | Crestfield International Academy</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f7fa;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #0b2d5c;
+      color: white;
+      text-align: center;
+      padding: 35px 20px;
+    }
+
+    header h1 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 16px;
+    }
+
+    nav {
+      background: white;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    nav a {
+      color: #0b2d5c;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #d4a017;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .section-title {
+      text-align: center;
+      color: #0b2d5c;
+      margin-bottom: 30px;
+      font-size: 28px;
+    }
+
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .news-card {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    }
+
+    .news-card h3 {
+      color: #0b2d5c;
+      margin-bottom: 12px;
+    }
+
+    .date {
+      color: #d4a017;
+      font-weight: bold;
+      margin-bottom: 12px;
+    }
+
+    .news-card p {
+      color: #555;
+    }
+
+    footer {
+      margin-top: 50px;
+      background: #0b2d5c;
+      color: white;
+      text-align: center;
+      padding: 25px 15px;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 26px;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 6px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Crestfield International Academy</h1>
+    <p>News & Events</p>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="academics.html">Academics</a>
+    <a href="admissions.html">Admissions</a>
+    <a href="student-life.html">Student Life</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <div class="container">
+
+    <h2 class="section-title">Latest News & Events</h2>
+
+    <div class="news-grid">
+
+      <div class="news-card">
+        <div class="date">School News</div>
+        <h3>Welcome to Crestfield International Academy</h3>
+        <p>
+          We are committed to providing quality education and creating
+          an environment where every student can learn, grow and succeed.
+        </p>
+      </div>
+
+      <div class="news-card">
+        <div class="date">Upcoming Event</div>
+        <h3>New Academic Session</h3>
+        <p>
+          Students and parents are encouraged to stay updated with the
+          school's announcements and important academic activities.
+        </p>
+      </div>
+
+      <div class="news-card">
+        <div class="date">School Activities</div>
+        <h3>Student Development Programmes</h3>
+        <p>
+          Crestfield International Academy provides activities designed
+          to support students' academic, social and personal development.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+  <footer>
+    <p>&copy; 2026 Crestfield International Academy. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
