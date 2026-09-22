@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>CTE & Future Skills | Crestfield International Academy</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      color: #172033;
+      background: #f7f8fb;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .demo-label {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #c89b3c;
+      color: #101827;
+      text-align: center;
+      padding: 7px 10px;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      z-index: 9999;
+    }
+
+    header {
+      background: #101827;
+      color: white;
+      padding: 55px 7% 18px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 21px;
+      font-weight: bold;
+      color: #d6aa4a;
+      letter-spacing: .5px;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 18px;
+    }
+
+    nav a {
+      color: #fff;
+      font-size: 14px;
+      font-weight: 600;
+      transition: .3s;
+    }
+
+    nav a:hover {
+      color: #d6aa4a;
+    }
+
+    .hero {
+      min-height: 570px;
+      background:
+        linear-gradient(rgba(8,18,35,.78), rgba(8,18,35,.84)),
+        url("https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1800&q=85")
+        center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      color: white;
+      padding: 80px 7%;
+    }
+
+    .hero-content {
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .hero small {
+      display: inline-block;
+      color: #e0bb63;
+      font-weight: bold;
+      letter-spacing: 2px;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      font-size: clamp(40px, 7vw, 72px);
+      line-height: 1.05;
+      margin-bottom: 22px;
+    }
+
+    .hero p {
+      max-width: 760px;
+      margin: auto;
+      color: #e5e9f0;
+      font-size: 18px;
+    }
+
+    .hero-buttons {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 23px;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: .3s;
+    }
+
+    .btn-gold {
+      background: #d6aa4a;
+      color: #101827;
+    }
+
+    .btn-gold:hover {
+      background: #f0ce78;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      border: 1px solid #fff;
+      color: #fff;
+    }
+
+    .btn-outline:hover {
+      background: white;
+      color: #101827;
+    }
+
+    section {
+      padding: 80px 7%;
+    }
+
+    .section-container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section-heading {
+      text-align: center;
+      max-width: 780px;
+      margin: 0 auto 45px;
+    }
+
+    .section-heading span {
+      color: #b4862c;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .section-heading h2 {
+      font-size: 38px;
+      color: #101827;
+      margin: 10px 0 15px;
+    }
+
+    .section-heading p {
+      color: #667085;
+    }
+
+    .intro {
+      background: white;
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 45px;
+      align-items: center;
+    }
+
+    .intro-image img {
+      width: 100%;
+      height: 430px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 15px 40px rgba(16,24,39,.12);
+    }
+
+    .intro-text h2 {
+      color: #101827;
+      font-size: 34px;
+      margin-bottom: 18px;
+    }
+
+    .intro-text p {
+      color: #667085;
+      margin-bottom: 16px;
+    }
+
+    .feature-list {
+      list-style: none;
+      margin-top: 20px;
+    }
+
+    .feature-list li {
+      padding: 10px 0;
+      border-bottom: 1px solid #e8ebf0;
+      font-weight: 600;
+    }
+
+    .feature-list li::before {
+      content: "✓";
+      color: #b4862c;
+      font-weight: bold;
+      margin-right: 10px;
+    }
+
+    .skills-section {
+      background: #f1f3f7;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .skill-card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(16,24,39,.07);
+      transition: .3s;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(16,24,39,.12);
+    }
+
+    .skill-card img {
+      width: 100%;
+      height: 210px;
+      object-fit: cover;
+    }
+
+    .skill-content {
+      padding: 24px;
+    }
+
+    .skill-content h3 {
+      color: #101827;
+      margin-bottom: 10px;
+      font-size: 21px;
+    }
+
+    .skill-content p {
+      color: #667085;
+      font-size: 15px;
+      margin-bottom: 15px;
+    }
+
+    .skill-content ul {
+      padding-left: 18px;
+      color: #475467;
+      font-size: 14px;
+    }
+
+    .skill-content li {
+      margin-bottom: 6px;
+    }
+
+    .pathways {
+      background: white;
+    }
+
+    .pathway-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .pathway {
+      border: 1px solid #e2e6ed;
+      border-radius: 12px;
+      padding: 28px;
+      background: #fff;
+    }
+
+    .pathway h3 {
+      color: #101827;
+      margin-bottom: 10px;
+    }
+
+    .pathway p {
+      color: #667085;
+      margin-bottom: 12px;
+    }
+
+    .pathway strong {
+      color: #b4862c;
+      font-size: 14px;
+    }
+
+    .student-projects {
+      background: #101827;
+      color: white;
+    }
+
+    .student-projects .section-heading h2 {
+      color: white;
+    }
+
+    .student-projects .section-heading p {
+      color: #cbd2df;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .project-card {
+      background: #182235;
+      border: 1px solid rgba(255,255,255,.08);
+      padding: 27px;
+      border-radius: 12px;
+    }
+
+    .project-number {
+      font-size: 14px;
+      color: #d6aa4a;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .project-card h3 {
+      margin: 10px 0;
+      font-size: 21px;
+    }
+
+    .project-card p {
+      color: #c7ceda;
+      font-size: 14px;
+    }
+
+    .career {
+      background: #f7f8fb;
+    }
+
+    .career-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .career-card {
+      background: white;
+      padding: 25px 20px;
+      text-align: center;
+      border-radius: 10px;
+      border: 1px solid #e4e7ec;
+    }
+
+    .career-card .icon {
+      font-size: 35px;
+      margin-bottom: 10px;
+    }
+
+    .career-card h3 {
+      font-size: 17px;
+      color: #101827;
+      margin-bottom: 8px;
+    }
+
+    .career-card p {
+      color: #667085;
+      font-size: 13px;
+    }
+
+    .cta {
+      background:
+        linear-gradient(rgba(16,24,39,.9), rgba(16,24,39,.9)),
+        url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1800&q=85")
+        center/cover no-repeat;
+      color: white;
+      text-align: center;
+    }
+
+    .cta h2 {
+      font-size: 40px;
+      margin-bottom: 15px;
+    }
+
+    .cta p {
+      max-width: 700px;
+      margin: auto auto 25px;
+      color: #d5dbe5;
+    }
+
+    footer {
+      background: #080e18;
+      color: #bfc6d2;
+      padding: 45px 7% 25px;
+    }
+
+    .footer-grid {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 35px;
+    }
+
+    footer h3,
+    footer h4 {
+      color: white;
+      margin-bottom: 12px;
+    }
+
+    footer p,
+    footer a {
+      font-size: 14px;
+      color: #aeb7c5;
+    }
+
+    footer a:hover {
+      color: #d6aa4a;
+    }
+
+    .footer-links a {
+      display: block;
+      margin-bottom: 7px;
+    }
+
+    .copyright {
+      max-width: 1200px;
+      margin: 30px auto 0;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,.1);
+      text-align: center;
+      font-size: 13px;
+    }
+
+    @media (max-width: 900px) {
+      .intro-grid,
+      .skills-grid,
+      .pathway-grid,
+      .projects-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .career-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .nav-container {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 650px) {
+      header {
+        padding-top: 50px;
+      }
+
+      nav {
+        gap: 10px;
+      }
+
+      nav a {
+        font-size: 12px;
+      }
+
+      .hero {
+        min-height: 500px;
+      }
+
+      section {
+        padding: 60px 5%;
+      }
+
+      .intro-grid,
+      .skills-grid,
+      .pathway-grid,
+      .projects-grid,
+      .career-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-heading h2 {
+        font-size: 30px;
+      }
+
+      .intro-image img {
+        height: 300px;
+      }
+
+      .cta h2 {
+        font-size: 31px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="demo-label">
+    FICTIONAL DEMO WEBSITE — CREATED BY NOVATECH SOLUTIONS
+  </div>
+
+  <header>
+    <div class="nav-container">
+
+      <div class="logo">
+        Crestfield International Academy
+      </div>
+
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About & Academics</a>
+        <a href="admissions.html">Admissions</a>
+        <a href="cte.html">CTE & Future Skills</a>
+        <a href="sports.html">Student Life</a>
+        <a href="news.html">News & Events</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+
+      <small>Career & Technical Education</small>
+
+      <h1>
+        Preparing Students for the Future
+      </h1>
+
+      <p>
+        Crestfield's CTE & Future Skills programme gives students opportunities
+        to explore practical skills, technology, creativity, entrepreneurship
+        and career pathways beyond the traditional classroom.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#skills" class="btn btn-gold">
+          Explore Skills
+        </a>
+
+        <a href="#pathways" class="btn btn-outline">
+          View Pathways
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="intro">
+
+    <div class="section-container">
+
+      <div class="intro-grid">
+
+        <div class="intro-image">
+          <img
+            src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1200&q=85"
+            alt="Students collaborating on a practical learning project"
+          >
+        </div>
+
+        <div class="intro-text">
+
+          <h2>
+            Learning Beyond the Classroom
+          </h2>
+
+          <p>
+            Future-ready education combines strong academic foundations
+            with practical experiences that help students discover what
+            they enjoy, develop useful skills and understand different
+            career possibilities.
+          </p>
+
+          <p>
+            Through structured workshops, projects and guided exploration,
+            students can build confidence while learning how knowledge
+            can be applied to real-world situations.
+          </p>
+
+          <ul class="feature-list">
+            <li>Hands-on project-based learning</li>
+            <li>Digital and technology exposure</li>
+            <li>Creative and technical skill development</li>
+            <li>Entrepreneurship and financial literacy</li>
+            <li>Career exploration and mentorship</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="skills-section" id="skills">
+
+    <div class="section-container">
+
+      <div class="section-heading">
+        <span>Future-Ready Learning</span>
+
+        <h2>
+          Explore Our Skill Areas
+        </h2>
+
+        <p>
+          Students can explore different areas according to their interests,
+          age level and developing abilities.
+        </p>
+      </div>
+
+      <div class="skills-grid">
+
+        <div class="skill-card">
+
+          <img
+            src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1000&q=85"
+            alt="Fashion and creative skills"
+          >
+
+          <div class="skill-content">
+
+            <h3>Fashion & Creative Skills</h3>
+
+            <p>
+              Creative workshops designed to develop practical artistic
+              and design abilities.
+            </p>
+
+            <ul>
+              <li>Fashion design</li>
+              <li>Tailoring & garment making</li>
+              <li>Craft making</li>
+              <li>Graphic design</li>
+              <li>Photography & video production</li>
+            </ul>
+
+          </div>
+
+        </div>
+
+        <div class="skill-card">
+
+          <img
+            src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1000&q=85"
+            alt="Engineering and technical learning"
+          >
+
+          <div class="skill-content">
+
+            <h3>Engineering & Technical</h3>
+
+            <p>
+              Practical introduction to how machines, systems and
+              technology work.
+            </p>
+
+            <ul>
+              <li>Basic electronics</li>
+              <li>Electrical fundamentals</li>
+              <li>Robotics</li>
+              <li>3D design</li>
+              <li>Woodwork & basic mechanics</li>
+            </ul>
+
+          </div>
+
+        </div>
+
+        <div class="skill-card">
+
+          <img
+            src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1000&q=85"
+            alt="Students learning programming"
+          >
+
+          <div class="skill-content">
+
+            <h3>Digital & Technology</h3>
+
+            <p>
+              Students develop digital confidence and explore how
+              technology can solve problems.
+            </p>
+
+            <ul>
+              <li>Computer literacy</li>
+              <li>Web design</li>
+              <li>Coding & programming</li>
+              <li>AI literacy</li>
+              <li>Data & spreadsheets</li>
+            </ul>
+
+          </div>
+
+        </div>
+
+        <div class="skill-card">
+
+          <img
+            src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1000&q=85"
+            alt="Students learning entrepreneurship"
+          >
+
+          <div class="skill-content">
+
+            <h3>Business & Entrepreneurship</h3>
+
+            <p>
+              Practical business education helps students understand
+              ideas, markets, money and responsible decision-making.
+            </p>
+
+            <ul>
+              <li>Entrepreneurship</li>
+              <li>Financial literacy</li>
+              <li>Business planning</li>
+              <li>Marketing & sales</li>
+              <li>Customer service</li>
+            </ul>
+
+          </div>
+
+        </div>
+
+        <div class="skill-card">
+
+          <img
+            src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1000&q=85"
+            alt="Students learning agriculture and sustainability"
+          >
+
+          <div class="skill-content">
+
+            <h3>Agriculture & Life Skills</h3>
+
+            <p>
+              Students discover practical life skills and responsible
+              approaches to food, agriculture and the environment.
+            </p>
+
+            <ul>
+              <li>Gardening</li>
+              <li>Agriculture</li>
+              <li>Food processing</li>
+              <li>Cooking & nutrition</li>
+              <li>Environmental sustainability</li>
+            </ul>
+
+          </div>
+
+        </div>
+
+        <div class="skill-card">
+
+          <img
+            src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1000&q=85"
+            alt="Students exploring career opportunities"
+          >
+
+          <div class="skill-content">
+
+            <h3>Career Exploration</h3>
+
+            <p>
+              Guided exposure helps students understand different
+              professions and the skills they may require.
+            </p>
+
+            <ul>
+              <li>Healthcare</li>
+              <li>Engineering</li>
+              <li>Architecture</li>
+              <li>Law & education</li>
+              <li>Technology & creative industries</li>
+            </ul>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="pathways" id="pathways">
+
+    <div class="section-container">
+
+      <div class="section-heading">
+
+        <span>Student Pathways</span>
+
+        <h2>
+          From Interest to Practical Skills
+        </h2>
+
+        <p>
+          The programme can be structured around student interests,
+          school level and available workshops.
+        </p>
+
+      </div>
+
+      <div class="pathway-grid">
+
+        <div class="pathway">
+
+          <h3>Creative Pathway</h3>
+
+          <p>
+            Students interested in design and creativity can explore
+            fashion, crafts, graphics, photography and media production.
+          </p>
+
+          <strong>Design • Fashion • Media • Creativity</strong>
+
+        </div>
+
+        <div class="pathway">
+
+          <h3>Technology Pathway</h3>
+
+          <p>
+            Students can explore computing, coding, web design,
+            robotics, artificial intelligence and digital problem-solving.
+          </p>
+
+          <strong>Coding • AI • Robotics • Digital Skills</strong>
+
+        </div>
+
+        <div class="pathway">
+
+          <h3>Engineering Pathway</h3>
+
+          <p>
+            Practical activities introduce students to electronics,
+            mechanics, design thinking and technical problem-solving.
+          </p>
+
+          <strong>Electronics • Mechanics • Design • Engineering</strong>
+
+        </div>
+
+        <div class="pathway">
+
+          <h3>Business Pathway</h3>
+
+          <p>
+            Students learn about entrepreneurship, financial literacy,
+            marketing and responsible business decision-making.
+          </p>
+
+          <strong>Business • Finance • Marketing • Enterprise</strong>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="student-projects">
+
+    <div class="section-container">
+
+      <div class="section-heading">
+
+        <span>Project-Based Learning</span>
+
+        <h2>
+          Students Learn by Creating
+        </h2>
+
+        <p>
+          Practical projects give students opportunities to turn ideas
+          into useful outcomes while developing teamwork and confidence.
+        </p>
+
+      </div>
+
+      <div class="projects-grid">
+
+        <div class="project-card">
+
+          <div class="project-number">PROJECT 01</div>
+
+          <h3>Build & Design</h3>
+
+          <p>
+            Students develop simple prototypes, models or technical
+            solutions using age-appropriate tools and materials.
+          </p>
+
+        </div>
+
+        <div class="project-card">
+
+          <div class="project-number">PROJECT 02</div>
+
+          <h3>Digital Creation</h3>
+
+          <p>
+            Students can create simple websites, presentations,
+            digital graphics, data projects or coding experiments.
+          </p>
+
+        </div>
+
+        <div class="project-card">
+
+          <div class="project-number">PROJECT 03</div>
+
+          <h3>Mini Enterprise</h3>
+
+          <p>
+            Students can explore how ideas become products or services
+            through supervised entrepreneurship projects.
+          </p>
+
+        </div>
+
+        <div class="project-card">
+
+          <div class="project-number">PROJECT 04</div>
+
+          <h3>Creative Showcase</h3>
+
+          <p>
+            Students can present fashion pieces, artwork, photography,
+            media projects and other creative work.
+          </p>
+
+        </div>
+
+        <div class="project-card">
+
+          <div class="project-number">PROJECT 05</div>
+
+          <h3>Green Project</h3>
+
+          <p>
+            Students explore gardening, recycling, sustainability and
+            responsible environmental practices.
+          </p>
+
+        </div>
+
+        <div class="project-card">
+
+          <div class="project-number">PROJECT 06</div>
+
+          <h3>Career Challenge</h3>
+
+          <p>
+            Students investigate a profession and present the skills,
+            education and responsibilities connected with it.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="career">
+
+    <div class="section-container">
+
+      <div class="section-heading">
+
+        <span>Future Possibilities</span>
+
+        <h2>
+          Discover Different Career Worlds
+        </h2>
+
+        <p>
+          CTE exposure is designed to help students discover interests,
+          not force them into a specific career.
+        </p>
+
+      </div>
+
+      <div class="career-grid">
+
+        <div class="career-card">
+          <div class="icon">🩺</div>
+          <h3>Healthcare</h3>
+          <p>Explore health, science and caring professions.</p>
+        </div>
+
+        <div class="career-card">
+          <div class="icon">⚙️</div>
+          <h3>Engineering</h3>
+          <p>Discover design, machines, systems and technical thinking.</p>
+        </div>
+
+        <div class="career-card">
+          <div class="icon">💻</div>
+          <h3>Technology</h3>
+          <p>Explore coding, AI, digital products and innovation.</p>
+        </div>
+
+        <div class="career-card">
+          <div class="icon">🎨</div>
+          <h3>Creative Industries</h3>
+          <p>Discover design, media, fashion, arts and communication.</p>
+        </div>
+
+        <div class="career-card">
+          <div class="icon">🏛️</div>
+          <h3>Architecture</h3>
+          <p>Explore spaces, structures, design and planning.</p>
+        </div>
+
+        <div class="career-card">
+          <div class="icon">⚖️</div>
+          <h3>Law & Public Service</h3>
+          <p>Understand communication, responsibility and civic roles.</p>
+        </div>
+
+        <div class="career-card">
+          <div class="icon">💼</div>
+          <h3>Business</h3>
+          <p>Explore entrepreneurship, finance, marketing and leadership.</p>
+        </div>
+
+        <div class="career-card">
+          <div class="icon">🌱</div>
+          <h3>Agriculture</h3>
+          <p>Discover food systems, farming and environmental sustainability.</p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="cta">
+
+    <div class="section-container">
+
+      <h2>
+        Education for Tomorrow
+      </h2>
+
+      <p>
+        Crestfield's future-skills approach is designed to complement
+        academic learning by helping students develop curiosity,
+        creativity, practical confidence and an understanding of the
+        changing world around them.
+      </p>
+
+      <a href="admissions.html" class="btn btn-gold">
+        Explore Admissions
+      </a>
+
+    </div>
+
+  </section>
+
+  <footer>
+
+    <div class="footer-grid">
+
+      <div>
+        <h3>Crestfield International Academy</h3>
+
+        <p>
+          A fictional school website demonstration created by
+          NovaTech Solutions to showcase modern digital school
+          experiences.
+        </p>
+      </div>
+
+      <div class="footer-links">
+
+        <h4>Explore</h4>
+
+        <a href="index.html">Home</a>
+        <a href="about.html">About & Academics</a>
+        <a href="admissions.html">Admissions</a>
+        <a href="cte.html">CTE & Future Skills</a>
+
+      </div>
+
+      <div class="footer-links">
+
+        <h4>More</h4>
+
+        <a href="sports.html">Student Life</a>
+        <a href="news.html">News & Events</a>
+        <a href="contact.html">Contact</a>
+
+      </div>
+
+    </div>
+
+    <div class="copyright">
+      © 2026 Crestfield International Academy Demo.
+      Fictional demonstration created by NovaTech Solutions.
+    </div>
+
+  </footer>
+
+</body>
+</html>
