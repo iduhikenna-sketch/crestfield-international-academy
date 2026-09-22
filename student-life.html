@@ -1,0 +1,1315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Student Life | Crestfield International Academy</title>
+
+  <meta name="description" content="Explore student life, sports, clubs and extracurricular activities at Crestfield International Academy — a fictional school website demonstration by NovaTech Solutions.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      color: #172033;
+      background: #f7f8fb;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+    }
+
+    .demo-label {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 9999;
+      background: #c99b32;
+      color: #111827;
+      text-align: center;
+      padding: 7px 10px;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    header {
+      background: #0b1730;
+      color: white;
+      position: sticky;
+      top: 28px;
+      z-index: 1000;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 18px 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      color: white;
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .logo span {
+      color: #d4a63b;
+    }
+
+    nav {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    nav a {
+      color: white;
+      font-size: 14px;
+      font-weight: 600;
+      transition: .3s;
+    }
+
+    nav a:hover {
+      color: #d4a63b;
+    }
+
+    .apply-btn {
+      background: #d4a63b;
+      color: #0b1730 !important;
+      padding: 10px 16px;
+      border-radius: 6px;
+    }
+
+    .apply-btn:hover {
+      background: white;
+    }
+
+    .hero {
+      min-height: 560px;
+      display: flex;
+      align-items: center;
+      color: white;
+
+      background:
+        linear-gradient(rgba(5,16,37,.78), rgba(5,16,37,.78)),
+        url("https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&w=1800&q=80")
+        center/cover;
+
+      padding: 100px 25px 70px;
+    }
+
+    .hero-content {
+      max-width: 1200px;
+      width: 100%;
+      margin: auto;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      border: 1px solid #d4a63b;
+      color: #f0c85c;
+      padding: 8px 14px;
+      border-radius: 30px;
+      font-size: 13px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      max-width: 800px;
+      font-size: clamp(42px, 7vw, 72px);
+      line-height: 1.05;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: #d4a63b;
+    }
+
+    .hero p {
+      max-width: 700px;
+      font-size: 18px;
+      color: #e3e8f1;
+      margin-bottom: 28px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 22px;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: .3s;
+    }
+
+    .btn-primary {
+      background: #d4a63b;
+      color: #0b1730;
+    }
+
+    .btn-primary:hover {
+      background: white;
+    }
+
+    .btn-outline {
+      border: 1px solid white;
+      color: white;
+      margin-left: 8px;
+    }
+
+    .btn-outline:hover {
+      background: white;
+      color: #0b1730;
+    }
+
+    section {
+      padding: 80px 25px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section-heading {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 50px;
+    }
+
+    .small-title {
+      color: #b08322;
+      font-size: 13px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+    }
+
+    .section-heading h2 {
+      font-size: 38px;
+      color: #0b1730;
+      margin-bottom: 14px;
+    }
+
+    .section-heading p {
+      color: #687386;
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .intro-image {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 15px 35px rgba(0,0,0,.12);
+    }
+
+    .intro-image img {
+      height: 430px;
+      object-fit: cover;
+    }
+
+    .intro-text h2 {
+      font-size: 38px;
+      color: #0b1730;
+      margin-bottom: 18px;
+    }
+
+    .intro-text p {
+      color: #687386;
+      margin-bottom: 17px;
+    }
+
+    .schedule-section {
+      background: #0b1730;
+      color: white;
+    }
+
+    .schedule-section .section-heading h2 {
+      color: white;
+    }
+
+    .schedule-section .section-heading p {
+      color: #cbd3e0;
+    }
+
+    .schedule-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+    }
+
+    .schedule-card {
+      background: #132344;
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 12px;
+      padding: 32px;
+    }
+
+    .schedule-day {
+      color: #d4a63b;
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .schedule-card h3 {
+      font-size: 27px;
+      margin-bottom: 12px;
+    }
+
+    .schedule-card p {
+      color: #cbd3e0;
+      margin-bottom: 18px;
+    }
+
+    .schedule-card ul {
+      list-style: none;
+    }
+
+    .schedule-card li {
+      padding: 9px 0;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      color: #e3e8f1;
+      font-size: 14px;
+    }
+
+    .schedule-card li:last-child {
+      border-bottom: none;
+    }
+
+    .club-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .club-card {
+      background: white;
+      border: 1px solid #e2e6ed;
+      border-radius: 10px;
+      padding: 25px;
+      transition: .3s;
+    }
+
+    .club-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(0,0,0,.08);
+    }
+
+    .club-icon {
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+
+    .club-card h3 {
+      color: #0b1730;
+      margin-bottom: 8px;
+      font-size: 18px;
+    }
+
+    .club-card p {
+      color: #687386;
+      font-size: 14px;
+    }
+
+    .sports {
+      background: #eef1f6;
+    }
+
+    .sports-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+    }
+
+    .sport-card {
+      background: white;
+      text-align: center;
+      padding: 28px 15px;
+      border-radius: 10px;
+      border: 1px solid #dfe4eb;
+    }
+
+    .sport-card .icon {
+      font-size: 35px;
+      margin-bottom: 10px;
+    }
+
+    .sport-card h3 {
+      color: #0b1730;
+      font-size: 16px;
+    }
+
+    .sports-note {
+      max-width: 750px;
+      margin: 30px auto 0;
+      text-align: center;
+      color: #687386;
+      font-size: 14px;
+    }
+
+    .student-growth {
+      background: white;
+    }
+
+    .growth-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .growth-card {
+      border-top: 4px solid #d4a63b;
+      background: #f8f9fb;
+      padding: 28px;
+      border-radius: 8px;
+    }
+
+    .growth-card h3 {
+      color: #0b1730;
+      margin-bottom: 9px;
+    }
+
+    .growth-card p {
+      color: #687386;
+      font-size: 14px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr .8fr;
+      gap: 15px;
+    }
+
+    .gallery-grid img {
+      height: 260px;
+      object-fit: cover;
+      border-radius: 9px;
+    }
+
+    .gallery-grid img:first-child {
+      height: 535px;
+      grid-row: span 2;
+    }
+
+    .future-section {
+      background: #f0f2f6;
+    }
+
+    .future-box {
+      background: white;
+      border-radius: 14px;
+      padding: 45px;
+      border: 1px solid #e1e5eb;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 45px;
+      align-items: center;
+    }
+
+    .future-box h2 {
+      color: #0b1730;
+      font-size: 35px;
+      margin-bottom: 15px;
+    }
+
+    .future-box p {
+      color: #687386;
+      margin-bottom: 20px;
+    }
+
+    .future-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .future-item {
+      background: #eef1f6;
+      padding: 15px;
+      border-radius: 7px;
+      font-size: 14px;
+      color: #25314a;
+    }
+
+    .cta {
+      background:
+        linear-gradient(rgba(11,23,48,.92), rgba(11,23,48,.92)),
+        url("https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1800&q=80")
+        center/cover;
+
+      text-align: center;
+      color: white;
+    }
+
+    .cta h2 {
+      font-size: 42px;
+      margin-bottom: 15px;
+    }
+
+    .cta p {
+      max-width: 650px;
+      margin: 0 auto 25px;
+      color: #d4dbe6;
+    }
+
+    footer {
+      background: #071124;
+      color: #bfc7d5;
+      padding: 55px 25px 25px;
+    }
+
+    .footer-grid {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.3fr 1fr 1fr;
+      gap: 45px;
+      padding-bottom: 35px;
+    }
+
+    footer h3 {
+      color: white;
+      margin-bottom: 15px;
+    }
+
+    footer p,
+    footer a {
+      color: #aeb7c8;
+      font-size: 14px;
+    }
+
+    footer a {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    footer a:hover {
+      color: #d4a63b;
+    }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: auto;
+      border-top: 1px solid rgba(255,255,255,.08);
+      padding-top: 20px;
+      text-align: center;
+      font-size: 13px;
+      color: #8f99ab;
+    }
+
+    @media (max-width: 950px) {
+
+      .intro-grid,
+      .future-box {
+        grid-template-columns: 1fr;
+      }
+
+      .club-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .sports-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .growth-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 700px) {
+
+      header {
+        position: relative;
+        top: 28px;
+      }
+
+      .nav-container {
+        flex-direction: column;
+      }
+
+      nav {
+        justify-content: center;
+        gap: 12px;
+      }
+
+      nav a {
+        font-size: 13px;
+      }
+
+      .hero {
+        min-height: 560px;
+        padding-top: 70px;
+      }
+
+      .hero h1 {
+        font-size: 44px;
+      }
+
+      section {
+        padding: 60px 18px;
+      }
+
+      .schedule-grid,
+      .club-grid,
+      .sports-grid,
+      .growth-grid,
+      .future-list {
+        grid-template-columns: 1fr;
+      }
+
+      .intro-image img {
+        height: 300px;
+      }
+
+      .intro-text h2,
+      .section-heading h2 {
+        font-size: 31px;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-grid img,
+      .gallery-grid img:first-child {
+        height: 280px;
+        grid-row: auto;
+      }
+
+      .future-box {
+        padding: 30px 22px;
+      }
+
+      .future-box h2 {
+        font-size: 30px;
+      }
+
+      .cta h2 {
+        font-size: 32px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="demo-label">
+    FICTIONAL DEMO WEBSITE — CREATED BY NOVATECH SOLUTIONS
+  </div>
+
+
+  <!-- HEADER -->
+  <header>
+
+    <div class="nav-container">
+
+      <a href="index.html" class="logo">
+        Crestfield <span>Academy</span>
+      </a>
+
+      <nav>
+
+        <a href="index.html">Home</a>
+
+        <a href="about.html">
+          About & Academics
+        </a>
+
+        <a href="admissions.html">
+          Admissions
+        </a>
+
+        <a href="cte.html">
+          CTE & Future Skills
+        </a>
+
+        <a href="student-life.html">
+          Student Life
+        </a>
+
+        <a href="index.html#contact">
+          Contact
+        </a>
+
+        <a href="admissions.html" class="apply-btn">
+          Apply Now
+        </a>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <!-- HERO -->
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <div class="hero-badge">
+        STUDENT LIFE
+      </div>
+
+      <h1>
+        Learn. Connect.<br>
+        <span>Belong.</span>
+      </h1>
+
+      <p>
+        Student life at Crestfield is designed to give learners
+        opportunities to develop confidence, teamwork, creativity,
+        leadership and healthy interests beyond the classroom.
+      </p>
+
+      <a href="#clubs" class="btn btn-primary">
+        Explore Activities
+      </a>
+
+      <a href="#sports" class="btn btn-outline">
+        View Sports
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- INTRODUCTION -->
+  <section>
+
+    <div class="container">
+
+      <div class="intro-grid">
+
+        <div class="intro-image">
+
+          <img
+            src="https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&w=1200&q=80"
+            alt="Students collaborating"
+          >
+
+        </div>
+
+        <div class="intro-text">
+
+          <div class="small-title">
+            Beyond the Classroom
+          </div>
+
+          <h2>
+            A School Experience That Encourages Participation
+          </h2>
+
+          <p>
+            School life is more than lessons and examinations. Students
+            benefit from opportunities to collaborate with classmates,
+            discover interests and participate in activities that help
+            them grow as individuals.
+          </p>
+
+          <p>
+            Crestfield's student-life programme combines weekly clubs,
+            organised sports and additional activities that encourage
+            communication, discipline, creativity and teamwork.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- WEEKLY SCHEDULE -->
+  <section class="schedule-section">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <div class="small-title">
+          Weekly Activities
+        </div>
+
+        <h2>
+          Wednesdays & Fridays
+        </h2>
+
+        <p>
+          Structured activity days give students regular opportunities
+          to participate outside their normal academic timetable.
+        </p>
+
+      </div>
+
+
+      <div class="schedule-grid">
+
+        <div class="schedule-card">
+
+          <div class="schedule-day">
+            Wednesday
+          </div>
+
+          <h3>
+            Club Activities
+          </h3>
+
+          <p>
+            Students participate in interest-based clubs and collaborative
+            activities during the weekly club programme.
+          </p>
+
+          <ul>
+
+            <li>Technology & Robotics</li>
+            <li>Science Club</li>
+            <li>Debate & Public Speaking</li>
+            <li>Creative Arts</li>
+            <li>Music</li>
+            <li>Chess</li>
+            <li>Literary Club</li>
+            <li>Environmental Club</li>
+            <li>Young Entrepreneurs</li>
+
+          </ul>
+
+        </div>
+
+
+        <div class="schedule-card">
+
+          <div class="schedule-day">
+            Friday
+          </div>
+
+          <h3>
+            Sports Activities
+          </h3>
+
+          <p>
+            Students are organised into sports groups and participate
+            in supervised physical activities.
+          </p>
+
+          <ul>
+
+            <li>Football</li>
+            <li>Basketball</li>
+            <li>Volleyball</li>
+            <li>Athletics</li>
+            <li>Badminton</li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CLUBS -->
+  <section id="clubs">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <div class="small-title">
+          Wednesday Clubs
+        </div>
+
+        <h2>
+          Discover an Interest
+        </h2>
+
+        <p>
+          Each club provides a different environment for students
+          to explore interests, work with others and develop practical
+          personal skills.
+        </p>
+
+      </div>
+
+
+      <div class="club-grid">
+
+        <div class="club-card">
+          <div class="club-icon">🤖</div>
+          <h3>Technology & Robotics</h3>
+          <p>
+            Explore technology concepts, robotics projects and creative
+            problem solving.
+          </p>
+        </div>
+
+        <div class="club-card">
+          <div class="club-icon">🔬</div>
+          <h3>Science Club</h3>
+          <p>
+            Discover science through experiments, observation and
+            collaborative investigations.
+          </p>
+        </div>
+
+        <div class="club-card">
+          <div class="club-icon">🎤</div>
+          <h3>Debate & Public Speaking</h3>
+          <p>
+            Build confidence, communication skills and structured
+            reasoning.
+          </p>
+        </div>
+
+        <div class="club-card">
+          <div class="club-icon">🎨</div>
+          <h3>Creative Arts</h3>
+          <p>
+            Explore drawing, crafts, visual creativity and artistic
+            expression.
+          </p>
+        </div>
+
+        <div class="club-card">
+          <div class="club-icon">🎵</div>
+          <h3>Music</h3>
+          <p>
+            Develop musical interests through rhythm, performance
+            and creative collaboration.
+          </p>
+        </div>
+
+        <div class="club-card">
+          <div class="club-icon">♟️</div>
+          <h3>Chess</h3>
+          <p>
+            Develop strategic thinking, patience and decision-making
+            through chess.
+          </p>
+        </div>
+
+        <div class="club-card">
+          <div class="club-icon">📖</div>
+          <h3>Literary Club</h3>
+          <p>
+            Encourage reading, writing, storytelling and appreciation
+            of literature.
+          </p>
+        </div>
+
+        <div class="club-card">
+          <div class="club-icon">🌱</div>
+          <h3>Environmental Club</h3>
+          <p>
+            Learn about environmental responsibility, sustainability
+            and practical conservation.
+          </p>
+        </div>
+
+        <div class="club-card">
+          <div class="club-icon">💼</div>
+          <h3>Young Entrepreneurs</h3>
+          <p>
+            Explore ideas, teamwork, simple business concepts and
+            responsible enterprise.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- SPORTS -->
+  <section id="sports" class="sports">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <div class="small-title">
+          Friday Sports
+        </div>
+
+        <h2>
+          Find Your Team
+        </h2>
+
+        <p>
+          Students can be assigned to a sports group and participate
+          in weekly physical activities.
+        </p>
+
+      </div>
+
+
+      <div class="sports-grid">
+
+        <div class="sport-card">
+          <div class="icon">⚽</div>
+          <h3>Football</h3>
+        </div>
+
+        <div class="sport-card">
+          <div class="icon">🏀</div>
+          <h3>Basketball</h3>
+        </div>
+
+        <div class="sport-card">
+          <div class="icon">🏐</div>
+          <h3>Volleyball</h3>
+        </div>
+
+        <div class="sport-card">
+          <div class="icon">🏃</div>
+          <h3>Athletics</h3>
+        </div>
+
+        <div class="sport-card">
+          <div class="icon">🏸</div>
+          <h3>Badminton</h3>
+        </div>
+
+      </div>
+
+
+      <p class="sports-note">
+        In the planned digital school platform, a student's assigned
+        sports group could also appear automatically inside the
+        Parent Portal.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- PERSONAL DEVELOPMENT -->
+  <section class="student-growth">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <div class="small-title">
+          Student Development
+        </div>
+
+        <h2>
+          Skills That Grow Through Participation
+        </h2>
+
+        <p>
+          Extracurricular experiences can support important personal
+          and social development alongside academic learning.
+        </p>
+
+      </div>
+
+
+      <div class="growth-grid">
+
+        <div class="growth-card">
+          <h3>Leadership</h3>
+          <p>
+            Students can take responsibility, organise activities
+            and learn to work with others.
+          </p>
+        </div>
+
+        <div class="growth-card">
+          <h3>Teamwork</h3>
+          <p>
+            Group activities create opportunities to cooperate,
+            communicate and support teammates.
+          </p>
+        </div>
+
+        <div class="growth-card">
+          <h3>Confidence</h3>
+          <p>
+            Performance, discussion and participation can help
+            students become more comfortable expressing themselves.
+          </p>
+        </div>
+
+        <div class="growth-card">
+          <h3>Discipline</h3>
+          <p>
+            Regular practice and participation encourage consistency,
+            responsibility and commitment.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- GALLERY -->
+  <section>
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <div class="small-title">
+          School Community
+        </div>
+
+        <h2>
+          Moments Beyond the Classroom
+        </h2>
+
+        <p>
+          Representative images are used for this fictional demonstration.
+          Real school photography can replace them later.
+        </p>
+
+      </div>
+
+
+      <div class="gallery-grid">
+
+        <img
+          src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=1200&q=80"
+          alt="Students and teacher"
+        >
+
+        <img
+          src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=1000&q=80"
+          alt="Students participating in sports"
+        >
+
+        <img
+          src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1000&q=80"
+          alt="Students learning"
+        >
+
+        <img
+          src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=1000&q=80"
+          alt="Students working together"
+        >
+
+        <img
+          src="https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&w=1000&q=80"
+          alt="Student collaboration"
+        >
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FUTURE CONNECTION -->
+  <section class="future-section">
+
+    <div class="container">
+
+      <div class="future-box">
+
+        <div>
+
+          <div class="small-title">
+            Digital School Platform
+          </div>
+
+          <h2>
+            Student Life Can Follow the Student
+          </h2>
+
+          <p>
+            In the planned Crestfield digital school platform, important
+            student-life information could be connected to the student's
+            secure profile.
+          </p>
+
+          <a href="admissions.html" class="btn btn-primary">
+            Explore the School Experience
+          </a>
+
+        </div>
+
+
+        <div class="future-list">
+
+          <div class="future-item">
+            🏅 Assigned Sports Group
+          </div>
+
+          <div class="future-item">
+            🎯 Club Membership
+          </div>
+
+          <div class="future-item">
+            📅 Activity Schedule
+          </div>
+
+          <div class="future-item">
+            📢 Activity Announcements
+          </div>
+
+          <div class="future-item">
+            🏆 Achievements
+          </div>
+
+          <div class="future-item">
+            👨‍👩‍👧 Parent Visibility
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CTA -->
+  <section class="cta">
+
+    <div class="container">
+
+      <h2>
+        Discover the Crestfield Experience
+      </h2>
+
+      <p>
+        This fictional demonstration shows how a modern school website
+        can bring academics, student life and digital services together.
+      </p>
+
+      <a href="admissions.html" class="btn btn-primary">
+        View Admissions
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <div class="footer-grid">
+
+      <div>
+
+        <h3>
+          Crestfield International Academy
+        </h3>
+
+        <p>
+          A fictional school website demonstration created by
+          NovaTech Solutions.
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <h3>
+          Quick Links
+        </h3>
+
+        <a href="index.html">Home</a>
+        <a href="about.html">About & Academics</a>
+        <a href="admissions.html">Admissions</a>
+        <a href="cte.html">CTE & Future Skills</a>
+        <a href="student-life.html">Student Life</a>
+
+      </div>
+
+
+      <div>
+
+        <h3>
+          Contact
+        </h3>
+
+        <p>
+          18 Crestfield Avenue,<br>
+          Asaba, Delta State, Nigeria
+        </p>
+
+        <p>
+          +234 800 000 2026
+        </p>
+
+        <p>
+          admissions@crestfieldacademy.example
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+      © 2026 Crestfield International Academy Demo.
+      Created by NovaTech Solutions.
+      This is a fictional website demonstration.
+
+    </div>
+
+  </footer>
+
+</body>
+</html>
