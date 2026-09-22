@@ -1,407 +1,1284 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Student Life | Crestfield International Academy</title>
+  <title>Student Life | Crestfield International Academy</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+  <meta name="description" content="Discover student life, sports, clubs, creativity, leadership, competitions and community activities at Crestfield International Academy.">
 
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            color: #222;
-            background-color: #f7f9fc;
-        }
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        header {
-            background: #0b2d5c;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
+    html {
+      scroll-behavior: smooth;
+    }
 
-        header h1 {
-            font-size: 30px;
-            margin-bottom: 5px;
-        }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f7f9fc;
+      color: #172033;
+      line-height: 1.7;
+    }
 
-        header p {
-            font-size: 15px;
-            color: #dbe8f7;
-        }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
-        nav {
-            background: #071f3f;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            padding: 12px;
-            gap: 8px;
-        }
+    .demo-bar {
+      background: #101b3a;
+      color: #ffffff;
+      text-align: center;
+      padding: 9px 15px;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+    }
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            padding: 10px 14px;
-            border-radius: 5px;
-            font-size: 14px;
-        }
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid #e7ebf2;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
 
-        nav a:hover,
-        nav a.active {
-            background: #d4a017;
-            color: #071f3f;
-        }
+    .nav-container {
+      width: 92%;
+      max-width: 1200px;
+      margin: auto;
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
 
-        .hero {
-            background: linear-gradient(rgba(11,45,92,0.82), rgba(11,45,92,0.82)),
-                        url("https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1600&q=80");
-            background-size: cover;
-            background-position: center;
-            color: white;
-            text-align: center;
-            padding: 90px 20px;
-        }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      color: #10204a;
+      font-size: 17px;
+    }
 
-        .hero h2 {
-            font-size: 42px;
-            margin-bottom: 15px;
-        }
+    .logo-mark {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: #c9a227;
+      color: #10204a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 17px;
+    }
 
-        .hero p {
-            max-width: 750px;
-            margin: auto;
-            font-size: 18px;
-        }
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
 
-        section {
-            max-width: 1100px;
-            margin: auto;
-            padding: 60px 20px;
-        }
+    nav a {
+      font-size: 13px;
+      font-weight: 700;
+      color: #35415c;
+      transition: 0.3s;
+    }
 
-        .section-title {
-            text-align: center;
-            color: #0b2d5c;
-            font-size: 32px;
-            margin-bottom: 15px;
-        }
+    nav a:hover {
+      color: #b18a16;
+    }
 
-        .section-intro {
-            text-align: center;
-            max-width: 750px;
-            margin: 0 auto 40px;
-            color: #555;
-        }
+    .nav-apply {
+      background: #10204a;
+      color: #ffffff !important;
+      padding: 11px 17px;
+      border-radius: 6px;
+    }
 
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-        }
+    .nav-apply:hover {
+      background: #c9a227;
+      color: #10204a !important;
+    }
 
-        .card {
-            background: white;
-            padding: 28px;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            text-align: center;
-        }
+    .hero {
+      background:
+        linear-gradient(rgba(10, 24, 55, 0.86), rgba(10, 24, 55, 0.86)),
+        linear-gradient(135deg, #18366f, #071329);
+      color: #ffffff;
+      text-align: center;
+      padding: 95px 20px;
+    }
 
-        .card .icon {
-            font-size: 42px;
-            margin-bottom: 15px;
-        }
+    .hero-content {
+      max-width: 850px;
+      margin: auto;
+    }
 
-        .card h3 {
-            color: #0b2d5c;
-            margin-bottom: 10px;
-        }
+    .eyebrow {
+      color: #e0bf4f;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
 
-        .card p {
-            color: #555;
-        }
+    .hero h1 {
+      font-size: clamp(38px, 6vw, 64px);
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
 
-        .activities {
-            background: white;
-        }
+    .hero p {
+      max-width: 730px;
+      margin: auto;
+      color: #e8edf7;
+      font-size: 17px;
+    }
 
-        .activity-list {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-            margin-top: 30px;
-        }
+    .hero-buttons {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
 
-        .activity {
-            padding: 25px;
-            border-left: 5px solid #d4a017;
-            background: #f7f9fc;
-            border-radius: 6px;
-        }
+    .btn {
+      display: inline-block;
+      padding: 13px 22px;
+      border-radius: 6px;
+      font-weight: 800;
+      font-size: 14px;
+      transition: 0.3s;
+    }
 
-        .activity h3 {
-            color: #0b2d5c;
-            margin-bottom: 8px;
-        }
+    .btn-primary {
+      background: #c9a227;
+      color: #10204a;
+    }
 
-        .events {
-            background: #eef3f9;
-        }
+    .btn-primary:hover {
+      background: #e0bf4f;
+      transform: translateY(-2px);
+    }
 
-        .event-card {
-            background: white;
-            margin-bottom: 20px;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 3px 12px rgba(0,0,0,0.07);
-        }
+    .btn-light {
+      border: 1px solid rgba(255,255,255,0.45);
+      color: #ffffff;
+    }
 
-        .event-date {
-            color: #d4a017;
-            font-weight: bold;
-            font-size: 14px;
-            margin-bottom: 8px;
-        }
+    .btn-light:hover {
+      background: #ffffff;
+      color: #10204a;
+    }
 
-        .event-card h3 {
-            color: #0b2d5c;
-            margin-bottom: 8px;
-        }
+    .section {
+      width: 92%;
+      max-width: 1150px;
+      margin: auto;
+      padding: 80px 0;
+    }
 
-        .cta {
-            background: #0b2d5c;
-            color: white;
-            text-align: center;
-            padding: 65px 20px;
-        }
+    .section-heading {
+      max-width: 730px;
+      margin-bottom: 45px;
+    }
 
-        .cta h2 {
-            font-size: 32px;
-            margin-bottom: 15px;
-        }
+    .section-heading.center {
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
 
-        .cta p {
-            max-width: 700px;
-            margin: 0 auto 25px;
-        }
+    .section-heading span {
+      color: #b18a16;
+      text-transform: uppercase;
+      font-weight: 800;
+      font-size: 12px;
+      letter-spacing: 2px;
+    }
 
-        .cta a {
-            display: inline-block;
-            background: #d4a017;
-            color: #071f3f;
-            text-decoration: none;
-            padding: 13px 25px;
-            border-radius: 6px;
-            font-weight: bold;
-        }
+    .section-heading h2 {
+      color: #10204a;
+      font-size: clamp(30px, 4vw, 44px);
+      line-height: 1.2;
+      margin: 10px 0 15px;
+    }
 
-        footer {
-            background: #071f3f;
-            color: white;
-            text-align: center;
-            padding: 25px 15px;
-        }
+    .section-heading p {
+      color: #657089;
+    }
 
-        footer p {
-            margin: 5px 0;
-            color: #dbe8f7;
-            font-size: 14px;
-        }
+    .intro-box {
+      background: #ffffff;
+      border: 1px solid #e7ebf2;
+      border-radius: 14px;
+      padding: 35px;
+      box-shadow: 0 10px 35px rgba(20, 35, 70, 0.07);
+    }
 
-        @media (max-width: 800px) {
-            .cards {
-                grid-template-columns: 1fr;
-            }
+    .intro-box p {
+      color: #59657c;
+      margin-bottom: 14px;
+    }
 
-            .activity-list {
-                grid-template-columns: 1fr;
-            }
+    .intro-box p:last-child {
+      margin-bottom: 0;
+    }
 
-            .hero h2 {
-                font-size: 32px;
-            }
+    .life-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
 
-            nav a {
-                font-size: 13px;
-                padding: 8px 10px;
-            }
-        }
-    </style>
+    .life-card {
+      background: #ffffff;
+      border: 1px solid #e7ebf2;
+      border-radius: 14px;
+      padding: 30px;
+      box-shadow: 0 8px 28px rgba(20, 35, 70, 0.05);
+      transition: 0.3s;
+    }
+
+    .life-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 14px 35px rgba(20, 35, 70, 0.09);
+    }
+
+    .life-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 12px;
+      background: #eef2fa;
+      color: #10204a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 21px;
+      font-weight: 900;
+      margin-bottom: 18px;
+    }
+
+    .life-card h3 {
+      color: #10204a;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .life-card p {
+      color: #657089;
+      font-size: 14px;
+    }
+
+    .highlight-section {
+      background: #eef2f8;
+      max-width: none;
+      width: 100%;
+    }
+
+    .highlight-inner {
+      width: 92%;
+      max-width: 1150px;
+      margin: auto;
+    }
+
+    .experience {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 45px;
+      align-items: center;
+      margin-bottom: 55px;
+    }
+
+    .experience:last-child {
+      margin-bottom: 0;
+    }
+
+    .experience.reverse .experience-visual {
+      order: 2;
+    }
+
+    .experience.reverse .experience-content {
+      order: 1;
+    }
+
+    .experience-visual {
+      min-height: 300px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #10204a, #2e5088);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      text-align: center;
+      padding: 30px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .experience-visual::before {
+      content: "";
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      border: 1px solid rgba(224,191,79,0.35);
+      border-radius: 50%;
+    }
+
+    .visual-text {
+      position: relative;
+      z-index: 2;
+    }
+
+    .visual-text strong {
+      display: block;
+      color: #e0bf4f;
+      font-size: 42px;
+      margin-bottom: 8px;
+    }
+
+    .visual-text span {
+      color: #dbe2ef;
+      font-size: 14px;
+    }
+
+    .experience-content h3 {
+      color: #10204a;
+      font-size: 30px;
+      margin-bottom: 15px;
+    }
+
+    .experience-content p {
+      color: #657089;
+      margin-bottom: 14px;
+    }
+
+    .experience-list {
+      list-style: none;
+      margin-top: 18px;
+    }
+
+    .experience-list li {
+      color: #536078;
+      margin-bottom: 9px;
+      font-size: 14px;
+    }
+
+    .experience-list li::before {
+      content: "✓";
+      color: #b18a16;
+      font-weight: 900;
+      margin-right: 10px;
+    }
+
+    .leadership {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .leadership-card {
+      background: #ffffff;
+      border: 1px solid #e7ebf2;
+      padding: 25px 20px;
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    .leadership-number {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background: #10204a;
+      color: #e0bf4f;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 14px;
+      font-weight: 900;
+    }
+
+    .leadership-card h3 {
+      color: #10204a;
+      font-size: 17px;
+      margin-bottom: 7px;
+    }
+
+    .leadership-card p {
+      color: #68738a;
+      font-size: 13px;
+    }
+
+    .values {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 15px;
+    }
+
+    .value-card {
+      background: #ffffff;
+      border: 1px solid #e7ebf2;
+      border-radius: 10px;
+      padding: 22px 15px;
+      text-align: center;
+    }
+
+    .value-card h3 {
+      color: #10204a;
+      font-size: 16px;
+      margin-bottom: 6px;
+    }
+
+    .value-card p {
+      color: #68738a;
+      font-size: 12px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+    }
+
+    .gallery-item {
+      height: 190px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #10204a, #294d8e);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      text-align: center;
+      padding: 20px;
+      font-weight: 800;
+    }
+
+    .gallery-item:nth-child(2) {
+      background: linear-gradient(135deg, #263e70, #10204a);
+    }
+
+    .gallery-item:nth-child(3) {
+      background: linear-gradient(135deg, #10204a, #3a5688);
+    }
+
+    .gallery-item:nth-child(4) {
+      background: linear-gradient(135deg, #1b315e, #0b1733);
+    }
+
+    .gallery-item:nth-child(5) {
+      background: linear-gradient(135deg, #334e7e, #10204a);
+    }
+
+    .gallery-item:nth-child(6) {
+      background: linear-gradient(135deg, #10204a, #45618e);
+    }
+
+    .cta {
+      background: #10204a;
+      color: #ffffff;
+      padding: 75px 20px;
+      text-align: center;
+    }
+
+    .cta h2 {
+      font-size: clamp(30px, 4vw, 45px);
+      margin-bottom: 15px;
+    }
+
+    .cta p {
+      max-width: 700px;
+      margin: 0 auto 28px;
+      color: #d9dfec;
+    }
+
+    footer {
+      background: #08132d;
+      color: #ffffff;
+      padding: 55px 20px 25px;
+    }
+
+    .footer-grid {
+      width: 92%;
+      max-width: 1150px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 45px;
+    }
+
+    footer h3 {
+      margin-bottom: 15px;
+      color: #ffffff;
+    }
+
+    footer p,
+    footer a {
+      color: #aeb8ca;
+      font-size: 14px;
+    }
+
+    footer a {
+      display: block;
+      margin-bottom: 7px;
+    }
+
+    footer a:hover {
+      color: #e0bf4f;
+    }
+
+    .footer-bottom {
+      width: 92%;
+      max-width: 1150px;
+      margin: 40px auto 0;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      text-align: center;
+      color: #8994a9;
+      font-size: 12px;
+    }
+
+    @media (max-width: 1000px) {
+      nav {
+        gap: 12px;
+      }
+
+      nav a {
+        font-size: 11px;
+      }
+
+      .life-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .leadership {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .values {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 760px) {
+      .nav-container {
+        flex-direction: column;
+        padding: 18px 0;
+      }
+
+      nav {
+        justify-content: center;
+      }
+
+      .life-grid,
+      .experience,
+      .leadership,
+      .values,
+      .gallery-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .experience.reverse .experience-visual,
+      .experience.reverse .experience-content {
+        order: initial;
+      }
+
+      .experience-visual {
+        min-height: 240px;
+      }
+
+      .hero {
+        padding: 75px 20px;
+      }
+
+      .section {
+        padding: 60px 0;
+      }
+
+      .intro-box {
+        padding: 25px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-    <h1>Crestfield International Academy</h1>
-    <p>Building Excellence, Character & Future Leaders</p>
-</header>
+  <div class="demo-bar">
+    FICTIONAL DEMO WEBSITE — CREATED BY NOVATECH SOLUTIONS
+  </div>
 
-<nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About Us</a>
-    <a href="academics.html">Academics</a>
-    <a href="admissions.html">Admissions</a>
-    <a href="facilities.html">Facilities</a>
-    <a href="student-life.html" class="active">Student Life</a>
-    <a href="contact.html">Contact</a>
-</nav>
+  <header>
+    <div class="nav-container">
 
-<section class="hero">
-    <h2>Student Life</h2>
+      <a href="index.html" class="logo">
+        <div class="logo-mark">CIA</div>
+        <span>Crestfield International Academy</span>
+      </a>
+
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="academics.html">Academics</a>
+        <a href="admissions.html">Admissions</a>
+        <a href="facilities.html">Facilities</a>
+        <a href="student-life.html">Student Life</a>
+        <a href="news.html">News & Events</a>
+        <a href="contact.html">Contact</a>
+        <a href="admissions.html" class="nav-apply">Apply Now</a>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <!-- HERO -->
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <div class="eyebrow">Student Life</div>
+
+      <h1>More Than the Classroom</h1>
+
+      <p>
+        At Crestfield, students are encouraged to discover their interests,
+        build meaningful relationships, develop confidence and take an active
+        role in school life.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#student-experience" class="btn btn-primary">
+          Explore Student Life
+        </a>
+
+        <a href="news.html" class="btn btn-light">
+          View News & Events
+        </a>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- INTRODUCTION -->
+  <section class="section">
+
+    <div class="section-heading center">
+      <span>The Student Experience</span>
+
+      <h2>Discover. Participate. Grow.</h2>
+
+      <p>
+        Student life creates opportunities for learners to develop talents,
+        confidence, leadership and a sense of belonging beyond their regular
+        academic lessons.
+      </p>
+    </div>
+
+    <div class="intro-box">
+
+      <p>
+        School is not only about what happens during a lesson. Students also
+        learn through teamwork, creative expression, sports, leadership,
+        friendships, competitions and participation in the wider school
+        community.
+      </p>
+
+      <p>
+        Crestfield's student-life programme is designed to give learners
+        opportunities to explore their interests while developing qualities
+        such as responsibility, confidence, resilience and respect.
+      </p>
+
+      <p>
+        The activities presented on this fictional demonstration website can
+        be adapted to reflect the actual clubs, programmes and events offered
+        by a real school.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- STUDENT LIFE AREAS -->
+  <section class="section highlight-section" id="student-experience">
+
+    <div class="highlight-inner">
+
+      <div class="section-heading center">
+
+        <span>Life Beyond Lessons</span>
+
+        <h2>Opportunities to Get Involved</h2>
+
+        <p>
+          Students can explore different interests and contribute to the
+          school community through a range of activities.
+        </p>
+
+      </div>
+
+
+      <div class="life-grid">
+
+        <div class="life-card">
+          <div class="life-icon">01</div>
+
+          <h3>Sports</h3>
+
+          <p>
+            Sporting activities encourage teamwork, discipline, physical
+            fitness, confidence and healthy competition.
+          </p>
+        </div>
+
+
+        <div class="life-card">
+          <div class="life-icon">02</div>
+
+          <h3>Clubs & Societies</h3>
+
+          <p>
+            Students can explore shared interests through clubs, societies
+            and enrichment activities.
+          </p>
+        </div>
+
+
+        <div class="life-card">
+          <div class="life-icon">03</div>
+
+          <h3>Arts & Creativity</h3>
+
+          <p>
+            Creative activities give students opportunities to express ideas,
+            develop talents and explore their imagination.
+          </p>
+        </div>
+
+
+        <div class="life-card">
+          <div class="life-icon">04</div>
+
+          <h3>Music & Drama</h3>
+
+          <p>
+            Music, drama and performance activities can help students develop
+            confidence, communication and creative expression.
+          </p>
+        </div>
+
+
+        <div class="life-card">
+          <div class="life-icon">05</div>
+
+          <h3>Leadership</h3>
+
+          <p>
+            Students can take on responsibilities that encourage initiative,
+            accountability and service to others.
+          </p>
+        </div>
+
+
+        <div class="life-card">
+          <div class="life-icon">06</div>
+
+          <h3>Competitions</h3>
+
+          <p>
+            Academic, creative and sporting competitions provide opportunities
+            for students to challenge themselves and celebrate achievement.
+          </p>
+        </div>
+
+
+        <div class="life-card">
+          <div class="life-icon">07</div>
+
+          <h3>Trips & Excursions</h3>
+
+          <p>
+            Educational outings can connect classroom learning with real-world
+            experiences and new environments.
+          </p>
+        </div>
+
+
+        <div class="life-card">
+          <div class="life-icon">08</div>
+
+          <h3>Community Activities</h3>
+
+          <p>
+            School-wide activities help students develop friendships,
+            cooperation and a strong sense of belonging.
+          </p>
+        </div>
+
+
+        <div class="life-card">
+          <div class="life-icon">09</div>
+
+          <h3>Student Participation</h3>
+
+          <p>
+            Learners are encouraged to contribute ideas, participate in
+            activities and take an active role in school life.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- SPORTS -->
+  <section class="section">
+
+    <div class="experience">
+
+      <div class="experience-visual">
+
+        <div class="visual-text">
+          <strong>01</strong>
+          <span>Teamwork • Discipline • Fitness</span>
+        </div>
+
+      </div>
+
+
+      <div class="experience-content">
+
+        <h3>Sports & Recreation</h3>
+
+        <p>
+          Sport gives students an opportunity to develop physical fitness
+          while learning important lessons about teamwork, discipline,
+          perseverance and sportsmanship.
+        </p>
+
+        <p>
+          Participation can range from recreational activities to organised
+          school competitions and team events.
+        </p>
+
+        <ul class="experience-list">
+          <li>Team sports and recreational activities</li>
+          <li>Physical fitness and healthy habits</li>
+          <li>Inter-house competitions</li>
+          <li>Teamwork and sportsmanship</li>
+        </ul>
+
+      </div>
+
+    </div>
+
+
+    <!-- CLUBS -->
+    <div class="experience reverse">
+
+      <div class="experience-visual">
+
+        <div class="visual-text">
+          <strong>02</strong>
+          <span>Interests • Discovery • Creativity</span>
+        </div>
+
+      </div>
+
+
+      <div class="experience-content">
+
+        <h3>Clubs & Societies</h3>
+
+        <p>
+          Clubs provide students with opportunities to explore interests
+          outside their regular lessons and connect with other learners who
+          share similar passions.
+        </p>
+
+        <p>
+          Activities can be adapted to suit different age groups and student
+          interests.
+        </p>
+
+        <ul class="experience-list">
+          <li>Technology and innovation clubs</li>
+          <li>Literary and reading activities</li>
+          <li>Science and discovery groups</li>
+          <li>Debate and communication activities</li>
+        </ul>
+
+      </div>
+
+    </div>
+
+
+    <!-- ARTS -->
+    <div class="experience">
+
+      <div class="experience-visual">
+
+        <div class="visual-text">
+          <strong>03</strong>
+          <span>Art • Music • Drama • Expression</span>
+        </div>
+
+      </div>
+
+
+      <div class="experience-content">
+
+        <h3>Arts, Music & Drama</h3>
+
+        <p>
+          Creative activities give students a platform to express themselves,
+          discover talents and develop confidence in presenting their ideas.
+        </p>
+
+        <ul class="experience-list">
+          <li>Visual arts and creative projects</li>
+          <li>Music and performance</li>
+          <li>Drama and stage activities</li>
+          <li>School performances and showcases</li>
+        </ul>
+
+      </div>
+
+    </div>
+
+
+    <!-- TRIPS -->
+    <div class="experience reverse">
+
+      <div class="experience-visual">
+
+        <div class="visual-text">
+          <strong>04</strong>
+          <span>Explore • Experience • Learn</span>
+        </div>
+
+      </div>
+
+
+      <div class="experience-content">
+
+        <h3>Trips & Educational Excursions</h3>
+
+        <p>
+          Learning can extend beyond the school campus. Carefully planned
+          excursions can give students opportunities to observe, explore and
+          connect learning with the wider world.
+        </p>
+
+        <ul class="experience-list">
+          <li>Educational visits</li>
+          <li>Cultural experiences</li>
+          <li>Environmental exploration</li>
+          <li>Team-building experiences</li>
+        </ul>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- LEADERSHIP -->
+  <section class="section highlight-section">
+
+    <div class="highlight-inner">
+
+      <div class="section-heading center">
+
+        <span>Student Leadership</span>
+
+        <h2>Developing Responsible Young Leaders</h2>
+
+        <p>
+          Leadership opportunities help students practise responsibility,
+          communication, initiative and service.
+        </p>
+
+      </div>
+
+
+      <div class="leadership">
+
+        <div class="leadership-card">
+
+          <div class="leadership-number">01</div>
+
+          <h3>Responsibility</h3>
+
+          <p>
+            Students learn to take ownership of assigned responsibilities.
+          </p>
+
+        </div>
+
+
+        <div class="leadership-card">
+
+          <div class="leadership-number">02</div>
+
+          <h3>Communication</h3>
+
+          <p>
+            Leadership activities encourage clear and respectful communication.
+          </p>
+
+        </div>
+
+
+        <div class="leadership-card">
+
+          <div class="leadership-number">03</div>
+
+          <h3>Initiative</h3>
+
+          <p>
+            Students are encouraged to identify opportunities and contribute
+            useful ideas.
+          </p>
+
+        </div>
+
+
+        <div class="leadership-card">
+
+          <div class="leadership-number">04</div>
+
+          <h3>Service</h3>
+
+          <p>
+            Learners can develop a spirit of service by supporting their
+            classmates and school community.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CHARACTER -->
+  <section class="section">
+
+    <div class="section-heading center">
+
+      <span>Character Development</span>
+
+      <h2>Growing Beyond Academics</h2>
+
+      <p>
+        Student activities can help learners develop qualities that support
+        them both inside and outside school.
+      </p>
+
+    </div>
+
+
+    <div class="values">
+
+      <div class="value-card">
+        <h3>Confidence</h3>
+        <p>
+          Encouraging students to participate and express themselves.
+        </p>
+      </div>
+
+      <div class="value-card">
+        <h3>Respect</h3>
+        <p>
+          Building positive relationships with others.
+        </p>
+      </div>
+
+      <div class="value-card">
+        <h3>Resilience</h3>
+        <p>
+          Learning to respond positively to challenges.
+        </p>
+      </div>
+
+      <div class="value-card">
+        <h3>Teamwork</h3>
+        <p>
+          Working together toward shared goals.
+        </p>
+      </div>
+
+      <div class="value-card">
+        <h3>Responsibility</h3>
+        <p>
+          Understanding the importance of personal responsibility.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- STUDENT-LIFE GALLERY -->
+  <section class="section">
+
+    <div class="section-heading center">
+
+      <span>Student Life Gallery</span>
+
+      <h2>Moments Beyond the Classroom</h2>
+
+      <p>
+        Real school photographs can be added here to showcase student
+        activities, clubs, sports, performances and excursions.
+      </p>
+
+    </div>
+
+
+    <div class="gallery-grid">
+
+      <div class="gallery-item">
+        <span>Sports Activities</span>
+      </div>
+
+      <div class="gallery-item">
+        <span>Student Clubs</span>
+      </div>
+
+      <div class="gallery-item">
+        <span>Creative Arts</span>
+      </div>
+
+      <div class="gallery-item">
+        <span>Music & Drama</span>
+      </div>
+
+      <div class="gallery-item">
+        <span>Leadership Activities</span>
+      </div>
+
+      <div class="gallery-item">
+        <span>School Competitions</span>
+      </div>
+
+      <div class="gallery-item">
+        <span>Educational Trips</span>
+      </div>
+
+      <div class="gallery-item">
+        <span>Community Activities</span>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CTA -->
+  <section class="cta">
+
+    <h2>Stay Connected With Crestfield</h2>
+
     <p>
-        Discover a vibrant school community where students learn,
-        grow, build friendships and develop the confidence to achieve
-        their full potential.
-    </p>
-</section>
-
-<section>
-    <h2 class="section-title">Life at Crestfield</h2>
-
-    <p class="section-intro">
-        At Crestfield International Academy, education goes beyond the classroom.
-        We provide opportunities for students to discover their talents,
-        develop leadership skills and participate actively in school life.
+      Discover what is happening across the school through our dedicated
+      News & Events page, or learn more about joining the Crestfield community.
     </p>
 
-    <div class="cards">
+    <a href="news.html" class="btn btn-primary">
+      News & Events
+    </a>
 
-        <div class="card">
-            <div class="icon">🎨</div>
-            <h3>Creative Activities</h3>
-            <p>
-                Students are encouraged to express themselves through
-                creative arts, projects and practical activities.
-            </p>
-        </div>
+    <a href="admissions.html" class="btn btn-light" style="margin-left:10px;">
+      Explore Admissions
+    </a>
 
-        <div class="card">
-            <div class="icon">⚽</div>
-            <h3>Sports & Recreation</h3>
-            <p>
-                Sports and recreational activities promote teamwork,
-                discipline, fitness and healthy competition.
-            </p>
-        </div>
+  </section>
 
-        <div class="card">
-            <div class="icon">👥</div>
-            <h3>Clubs & Societies</h3>
-            <p>
-                Students can explore their interests and develop new
-                skills through clubs and school societies.
-            </p>
-        </div>
 
-    </div>
-</section>
+  <!-- FOOTER -->
+  <footer>
 
-<section class="activities">
-    <h2 class="section-title">Student Activities</h2>
+    <div class="footer-grid">
 
-    <p class="section-intro">
-        Our students have opportunities to participate in activities
-        that support personal development, creativity and leadership.
-    </p>
+      <div>
 
-    <div class="activity-list">
+        <h3>Crestfield International Academy</h3>
 
-        <div class="activity">
-            <h3>📚 Academic Competitions</h3>
-            <p>
-                Students take part in quizzes, debates, spelling activities
-                and other academic competitions.
-            </p>
-        </div>
-
-        <div class="activity">
-            <h3>🎭 Cultural & Creative Events</h3>
-            <p>
-                Cultural presentations, drama, music and creative activities
-                allow students to celebrate their talents.
-            </p>
-        </div>
-
-        <div class="activity">
-            <h3>🏆 Sports Activities</h3>
-            <p>
-                Students participate in sporting activities designed to
-                encourage teamwork, discipline and physical fitness.
-            </p>
-        </div>
-
-        <div class="activity">
-            <h3>🌱 Leadership & Service</h3>
-            <p>
-                Students are encouraged to develop leadership qualities,
-                responsibility and a spirit of service.
-            </p>
-        </div>
-
-    </div>
-</section>
-
-<section class="events">
-    <h2 class="section-title">News & Events</h2>
-
-    <p class="section-intro">
-        Stay connected with important activities, celebrations and
-        announcements happening at Crestfield International Academy.
-    </p>
-
-    <div class="event-card">
-        <div class="event-date">SCHOOL EVENT</div>
-        <h3>Welcome to a New School Session</h3>
         <p>
-            We look forward to welcoming our students and families
-            for another exciting and rewarding academic session.
+          A fictional school website created by NovaTech Solutions as a
+          professional educational website demonstration.
         </p>
+
+      </div>
+
+
+      <div>
+
+        <h3>Explore</h3>
+
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="academics.html">Academics</a>
+        <a href="admissions.html">Admissions</a>
+        <a href="facilities.html">Facilities</a>
+        <a href="news.html">News & Events</a>
+
+      </div>
+
+
+      <div>
+
+        <h3>Student Life</h3>
+
+        <a href="student-life.html">Student Life</a>
+        <a href="student-life.html#student-experience">Activities</a>
+        <a href="news.html">News & Events</a>
+        <a href="admissions.html">Admissions</a>
+        <a href="contact.html">Contact School</a>
+
+      </div>
+
     </div>
 
-    <div class="event-card">
-        <div class="event-date">STUDENT DEVELOPMENT</div>
-        <h3>Building Skills Beyond the Classroom</h3>
-        <p>
-            Our students continue to participate in activities that
-            encourage creativity, teamwork, leadership and confidence.
-        </p>
+
+    <div class="footer-bottom">
+
+      © 2026 Crestfield International Academy Demo · Created by NovaTech Solutions
+
     </div>
 
-    <div class="event-card">
-        <div class="event-date">COMMUNITY</div>
-        <h3>Growing Together as a School Community</h3>
-        <p>
-            Crestfield International Academy is committed to creating
-            a supportive environment where students, parents and staff
-            work together.
-        </p>
-    </div>
-
-</section>
-
-<section class="cta">
-    <h2>Be Part of the Crestfield Community</h2>
-
-    <p>
-        Discover an environment where students are encouraged to learn,
-        grow and prepare for a successful future.
-    </p>
-
-    <a href="admissions.html">Explore Admissions</a>
-</section>
-
-<footer>
-    <p>&copy; 2026 Crestfield International Academy. All Rights Reserved.</p>
-    <p>Building Excellence, Character & Future Leaders.</p>
-</footer>
+  </footer>
 
 </body>
 </html>
