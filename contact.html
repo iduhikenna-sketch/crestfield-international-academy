@@ -1,389 +1,1200 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Contact Us | Crestfield International Academy</title>
+  <title>Contact | Crestfield International Academy</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+  <meta name="description" content="Contact Crestfield International Academy in Asaba, Delta State, Nigeria. Get in touch for admissions, enquiries, school information and more.">
 
-        body {
-            font-family: Arial, sans-serif;
-            background: #f5f7fa;
-            color: #222;
-            line-height: 1.6;
-        }
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        header {
-            background: #123c69;
-            color: white;
-            text-align: center;
-            padding: 25px 15px;
-        }
+    html {
+      scroll-behavior: smooth;
+    }
 
-        header h1 {
-            font-size: 32px;
-            margin-bottom: 5px;
-        }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.7;
+      color: #243447;
+      background: #f7f9fc;
+    }
 
-        header p {
-            font-size: 15px;
-        }
+    a {
+      text-decoration: none;
+    }
 
-        nav {
-            background: #0d2d4d;
-            text-align: center;
-            padding: 14px 10px;
-        }
+    img {
+      max-width: 100%;
+      display: block;
+    }
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 8px;
-            font-size: 14px;
-            font-weight: bold;
-        }
+    /* DEMO BAR */
+    .demo-bar {
+      background: #111827;
+      color: #ffffff;
+      text-align: center;
+      padding: 10px 15px;
+      font-size: 13px;
+      letter-spacing: 0.5px;
+    }
 
-        nav a:hover {
-            color: #ffd166;
-        }
+    /* HEADER */
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid #e5e7eb;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
 
-        .hero {
-            background: linear-gradient(rgba(18,60,105,0.88), rgba(18,60,105,0.88)),
-                        url("https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1400&q=80");
-            background-size: cover;
-            background-position: center;
-            color: white;
-            text-align: center;
-            padding: 75px 20px;
-        }
+    .nav-container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 18px 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 25px;
+    }
 
-        .hero h2 {
-            font-size: 42px;
-            margin-bottom: 12px;
-        }
+    .logo {
+      font-size: 22px;
+      font-weight: 800;
+      color: #0b1f3a;
+      letter-spacing: 0.3px;
+    }
 
-        .hero p {
-            max-width: 700px;
-            margin: auto;
-            font-size: 18px;
-        }
+    .logo span {
+      display: block;
+      font-size: 11px;
+      color: #b68a2c;
+      letter-spacing: 1.5px;
+      margin-top: 2px;
+    }
 
-        .container {
-            max-width: 1100px;
-            margin: auto;
-            padding: 60px 20px;
-        }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+    }
 
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            gap: 30px;
-        }
+    nav a {
+      color: #243447;
+      font-size: 14px;
+      font-weight: 600;
+      transition: 0.3s;
+    }
 
-        .contact-info,
-        .contact-form {
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-        }
+    nav a:hover,
+    nav a.active {
+      color: #b68a2c;
+    }
 
-        .contact-info h2,
-        .contact-form h2 {
-            color: #123c69;
-            margin-bottom: 20px;
-        }
+    .nav-apply {
+      background: #b68a2c;
+      color: #ffffff !important;
+      padding: 10px 16px;
+      border-radius: 6px;
+    }
 
-        .info-box {
-            margin-bottom: 20px;
-        }
+    .nav-apply:hover {
+      background: #946f20;
+    }
 
-        .info-box h3 {
-            color: #123c69;
-            font-size: 17px;
-            margin-bottom: 5px;
-        }
+    /* HERO */
+    .hero {
+      background:
+        linear-gradient(rgba(7, 28, 54, 0.88), rgba(7, 28, 54, 0.88)),
+        linear-gradient(135deg, #0b1f3a, #163d68);
 
-        .info-box p {
-            color: #666;
-        }
+      color: #ffffff;
+      padding: 90px 25px;
+      text-align: center;
+    }
 
-        .info-box a {
-            color: #123c69;
-            text-decoration: none;
-            font-weight: bold;
-        }
+    .hero-content {
+      max-width: 900px;
+      margin: auto;
+    }
 
-        form label {
-            display: block;
-            margin-bottom: 6px;
-            font-weight: bold;
-            color: #333;
-        }
+    .hero small {
+      color: #d6ad55;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
 
-        form input,
-        form textarea,
-        form select {
-            width: 100%;
-            padding: 13px;
-            margin-bottom: 18px;
-            border: 1px solid #ddd;
-            border-radius: 7px;
-            font-size: 15px;
-            font-family: Arial, sans-serif;
-        }
+    .hero h1 {
+      font-size: 52px;
+      line-height: 1.15;
+      margin: 15px 0 20px;
+    }
 
-        form textarea {
-            min-height: 140px;
-            resize: vertical;
-        }
+    .hero p {
+      max-width: 700px;
+      margin: auto;
+      font-size: 18px;
+      color: #e8eef5;
+    }
 
-        form input:focus,
-        form textarea:focus,
-        form select:focus {
-            outline: none;
-            border-color: #123c69;
-        }
+    /* GENERAL */
+    section {
+      padding: 80px 25px;
+    }
 
-        .submit-btn {
-            width: 100%;
-            background: #123c69;
-            color: white;
-            border: none;
-            padding: 14px;
-            border-radius: 7px;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-        }
+    .container {
+      max-width: 1150px;
+      margin: auto;
+    }
 
-        .submit-btn:hover {
-            background: #0d2d4d;
-        }
+    .section-heading {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 45px;
+    }
 
-        .whatsapp {
-            display: inline-block;
-            margin-top: 10px;
-            background: #25D366;
-            color: white !important;
-            padding: 12px 18px;
-            border-radius: 7px;
-            text-decoration: none;
-        }
+    .section-heading small {
+      color: #b68a2c;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
 
-        .map-section {
-            margin-top: 40px;
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            text-align: center;
-        }
+    .section-heading h2 {
+      color: #0b1f3a;
+      font-size: 36px;
+      margin: 10px 0 15px;
+    }
 
-        .map-section h2 {
-            color: #123c69;
-            margin-bottom: 15px;
-        }
+    .section-heading p {
+      color: #667085;
+    }
 
-        .map-placeholder {
-            background: #e9eef3;
-            min-height: 220px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 25px;
-            color: #555;
-        }
+    /* CONTACT CARDS */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
 
-        footer {
-            background: #0d2d4d;
-            color: white;
-            text-align: center;
-            padding: 25px 15px;
-            margin-top: 40px;
-        }
+    .contact-card {
+      background: #ffffff;
+      padding: 30px 22px;
+      border-radius: 12px;
+      border: 1px solid #e5e7eb;
+      text-align: center;
+      box-shadow: 0 8px 25px rgba(11, 31, 58, 0.05);
+    }
 
-        footer p {
-            font-size: 14px;
-        }
+    .contact-icon {
+      width: 55px;
+      height: 55px;
+      margin: 0 auto 18px;
+      border-radius: 50%;
+      background: #f5ead0;
+      color: #9b7423;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 23px;
+      font-weight: 700;
+    }
 
-        @media (max-width: 800px) {
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
+    .contact-card h3 {
+      color: #0b1f3a;
+      margin-bottom: 8px;
+      font-size: 19px;
+    }
 
-            .hero h2 {
-                font-size: 32px;
-            }
+    .contact-card p {
+      color: #667085;
+      font-size: 14px;
+    }
 
-            nav a {
-                display: inline-block;
-                margin: 5px 6px;
-            }
-        }
-    </style>
+    .contact-card a {
+      color: #9b7423;
+      font-weight: 600;
+    }
+
+    /* CONTACT MAIN */
+    .contact-main {
+      background: #ffffff;
+    }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 45px;
+      align-items: start;
+    }
+
+    .contact-info h2 {
+      color: #0b1f3a;
+      font-size: 32px;
+      margin-bottom: 15px;
+    }
+
+    .contact-info > p {
+      color: #667085;
+      margin-bottom: 25px;
+    }
+
+    .info-list {
+      display: grid;
+      gap: 18px;
+    }
+
+    .info-item {
+      display: flex;
+      gap: 15px;
+      align-items: flex-start;
+      padding: 18px;
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      background: #f8fafc;
+    }
+
+    .info-item strong {
+      color: #0b1f3a;
+      display: block;
+      margin-bottom: 3px;
+    }
+
+    .info-item span {
+      color: #667085;
+      font-size: 14px;
+    }
+
+    .info-item a {
+      color: #9b7423;
+      font-weight: 600;
+    }
+
+    .info-icon {
+      width: 40px;
+      height: 40px;
+      min-width: 40px;
+      border-radius: 8px;
+      background: #0b1f3a;
+      color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 17px;
+    }
+
+    /* FORM */
+    .form-box {
+      background: #f7f9fc;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      padding: 35px;
+    }
+
+    .form-box h2 {
+      color: #0b1f3a;
+      margin-bottom: 8px;
+      font-size: 28px;
+    }
+
+    .form-box > p {
+      color: #667085;
+      font-size: 14px;
+      margin-bottom: 25px;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 7px;
+      color: #243447;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 13px 14px;
+      border: 1px solid #d5dae1;
+      border-radius: 7px;
+      font-family: inherit;
+      font-size: 14px;
+      background: #ffffff;
+      outline: none;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: #b68a2c;
+    }
+
+    .form-group textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    .submit-btn {
+      width: 100%;
+      border: none;
+      background: #0b1f3a;
+      color: #ffffff;
+      padding: 14px 20px;
+      border-radius: 7px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .submit-btn:hover {
+      background: #b68a2c;
+    }
+
+    /* ADMISSIONS */
+    .admissions-contact {
+      background: #f7f9fc;
+    }
+
+    .admissions-box {
+      background: #0b1f3a;
+      color: #ffffff;
+      border-radius: 16px;
+      padding: 50px;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .admissions-box small {
+      color: #d6ad55;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-weight: 700;
+    }
+
+    .admissions-box h2 {
+      font-size: 34px;
+      margin: 10px 0 15px;
+    }
+
+    .admissions-box p {
+      color: #dbe4ef;
+    }
+
+    .admissions-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .gold-btn,
+    .outline-btn {
+      display: inline-block;
+      text-align: center;
+      padding: 13px 20px;
+      border-radius: 7px;
+      font-weight: 700;
+      transition: 0.3s;
+    }
+
+    .gold-btn {
+      background: #b68a2c;
+      color: #ffffff;
+    }
+
+    .gold-btn:hover {
+      background: #946f20;
+    }
+
+    .outline-btn {
+      border: 1px solid #ffffff;
+      color: #ffffff;
+    }
+
+    .outline-btn:hover {
+      background: #ffffff;
+      color: #0b1f3a;
+    }
+
+    /* LOCATION */
+    .location {
+      background: #ffffff;
+    }
+
+    .location-box {
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      overflow: hidden;
+      background: #f7f9fc;
+    }
+
+    .map-placeholder {
+      min-height: 300px;
+      background:
+        linear-gradient(rgba(11, 31, 58, 0.78), rgba(11, 31, 58, 0.78)),
+        repeating-linear-gradient(
+          45deg,
+          #dfe5ec,
+          #dfe5ec 12px,
+          #eef2f6 12px,
+          #eef2f6 24px
+        );
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 30px;
+      color: #ffffff;
+    }
+
+    .map-content {
+      max-width: 600px;
+    }
+
+    .map-content h2 {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .map-content p {
+      color: #e3eaf2;
+      margin-bottom: 20px;
+    }
+
+    /* HOURS */
+    .hours {
+      background: #f7f9fc;
+    }
+
+    .hours-grid {
+      max-width: 750px;
+      margin: auto;
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .hours-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 17px 22px;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .hours-row:last-child {
+      border-bottom: none;
+    }
+
+    .hours-row strong {
+      color: #0b1f3a;
+    }
+
+    .hours-row span {
+      color: #667085;
+      text-align: right;
+    }
+
+    /* SOCIAL */
+    .social {
+      text-align: center;
+      background: #ffffff;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 25px;
+    }
+
+    .social-links a {
+      border: 1px solid #d8dde5;
+      padding: 11px 18px;
+      border-radius: 7px;
+      color: #0b1f3a;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .social-links a:hover {
+      background: #0b1f3a;
+      color: #ffffff;
+      border-color: #0b1f3a;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #071c36;
+      color: #ffffff;
+      padding: 55px 25px 25px;
+    }
+
+    .footer-grid {
+      max-width: 1150px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 35px;
+    }
+
+    .footer-col h3 {
+      margin-bottom: 15px;
+      font-size: 18px;
+    }
+
+    .footer-col p,
+    .footer-col a {
+      color: #c5d0dc;
+      font-size: 14px;
+    }
+
+    .footer-col a {
+      display: block;
+      margin-bottom: 7px;
+    }
+
+    .footer-col a:hover {
+      color: #d6ad55;
+    }
+
+    .footer-bottom {
+      max-width: 1150px;
+      margin: 40px auto 0;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.15);
+      text-align: center;
+      color: #aebac8;
+      font-size: 13px;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 1000px) {
+      .contact-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .admissions-box {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 800px) {
+      .nav-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      nav {
+        gap: 11px;
+      }
+
+      nav a {
+        font-size: 13px;
+      }
+
+      .hero h1 {
+        font-size: 40px;
+      }
+
+      .contact-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .admissions-box {
+        padding: 35px 25px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      section {
+        padding: 60px 18px;
+      }
+
+      .hero {
+        padding: 70px 18px;
+      }
+
+      .hero h1 {
+        font-size: 34px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .section-heading h2 {
+        font-size: 29px;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .form-box {
+        padding: 25px 20px;
+      }
+
+      .hours-row {
+        flex-direction: column;
+        gap: 3px;
+      }
+
+      .hours-row span {
+        text-align: left;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-    <header>
-        <h1>Crestfield International Academy</h1>
-        <p>Excellence • Character • Knowledge</p>
-    </header>
+  <!-- DEMO NOTICE -->
+  <div class="demo-bar">
+    FICTIONAL DEMO WEBSITE — CREATED BY NOVATECH SOLUTIONS
+  </div>
 
-    <nav>
+  <!-- HEADER -->
+  <header>
+    <div class="nav-container">
+
+      <div class="logo">
+        Crestfield International Academy
+        <span>ASABA • DELTA STATE • NIGERIA</span>
+      </div>
+
+      <nav>
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="academics.html">Academics</a>
         <a href="admissions.html">Admissions</a>
         <a href="facilities.html">Facilities</a>
-        <a href="gallery.html">Gallery</a>
         <a href="student-life.html">Student Life</a>
-        <a href="news-events.html">News & Events</a>
-        <a href="contact.html">Contact</a>
-    </nav>
+        <a href="news.htm1">News & Events</a>
+        <a href="contact.html" class="active">Contact</a>
+        <a href="admissions.html" class="nav-apply">Apply Now</a>
+      </nav>
 
-    <section class="hero">
-        <h2>Contact Us</h2>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <small>Connect With Crestfield</small>
+
+      <h1>We’re Here to Help</h1>
+
+      <p>
+        Whether you are a prospective parent, current family, student,
+        or visitor, our team is ready to provide information and support.
+      </p>
+    </div>
+  </section>
+
+  <!-- QUICK CONTACT -->
+  <section>
+    <div class="container">
+
+      <div class="section-heading">
+        <small>Get In Touch</small>
+        <h2>Contact Crestfield International Academy</h2>
+
         <p>
-            We would love to hear from you. Get in touch with
-            Crestfield International Academy today.
+          Reach out to us for admissions enquiries, school information,
+          general questions, or other assistance.
         </p>
-    </section>
+      </div>
 
-    <main class="container">
+      <div class="contact-grid">
 
-        <div class="contact-grid">
+        <div class="contact-card">
+          <div class="contact-icon">📍</div>
+          <h3>Our Location</h3>
+          <p>Asaba, Delta State, Nigeria</p>
+        </div>
 
-            <section class="contact-info">
+        <div class="contact-card">
+          <div class="contact-icon">☎</div>
+          <h3>Phone</h3>
+          <p>
+            <a href="tel:+2348000002026">
+              +234 800 000 2026
+            </a>
+          </p>
+        </div>
 
-                <h2>Get In Touch</h2>
+        <div class="contact-card">
+          <div class="contact-icon">✉</div>
+          <h3>Email</h3>
+          <p>
+            <a href="mailto:admissions@crestfieldacademy.example">
+              admissions@crestfieldacademy.example
+            </a>
+          </p>
+        </div>
 
-                <div class="info-box">
-                    <h3>📍 School Address</h3>
-                    <p>
-                        Crestfield International Academy<br>
-                        Nigeria
-                    </p>
-                </div>
+        <div class="contact-card">
+          <div class="contact-icon">⏰</div>
+          <h3>Office Hours</h3>
+          <p>Monday – Friday<br>8:00 AM – 4:00 PM</p>
+        </div>
 
-                <div class="info-box">
-                    <h3>📞 Phone</h3>
-                    <p>
-                        <a href="tel:+2340000000000">
-                            +234 000 000 0000
-                        </a>
-                    </p>
-                </div>
+      </div>
 
-                <div class="info-box">
-                    <h3>📧 Email</h3>
-                    <p>
-                        <a href="mailto:info@crestfieldacademy.com">
-                            info@crestfieldacademy.com
-                        </a>
-                    </p>
-                </div>
+    </div>
+  </section>
 
-                <div class="info-box">
-                    <h3>🕘 School Hours</h3>
-                    <p>
-                        Monday – Friday<br>
-                        8:00 AM – 4:00 PM
-                    </p>
-                </div>
+  <!-- CONTACT DETAILS + FORM -->
+  <section class="contact-main">
+    <div class="container">
 
-                <a class="whatsapp" href="https://wa.me/2340000000000" target="_blank">
-                    💬 Chat With Us on WhatsApp
-                </a>
+      <div class="contact-layout">
 
-            </section>
+        <div class="contact-info">
 
-            <section class="contact-form">
+          <h2>Let’s Start a Conversation</h2>
 
-                <h2>Send Us a Message</h2>
+          <p>
+            Our school office can assist with admissions, academic
+            information, school programmes, appointments, and general
+            enquiries.
+          </p>
 
-                <form action="#" method="post">
+          <div class="info-list">
 
-                    <label for="name">Full Name</label>
-                    <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        placeholder="Enter your full name"
-                        required
-                    >
+            <div class="info-item">
+              <div class="info-icon">📍</div>
 
-                    <label for="email">Email Address</label>
-                    <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        placeholder="Enter your email"
-                        required
-                    >
+              <div>
+                <strong>School Address</strong>
+                <span>
+                  Crestfield International Academy<br>
+                  Asaba, Delta State, Nigeria
+                </span>
+              </div>
+            </div>
 
-                    <label for="phone">Phone Number</label>
-                    <input
-                        type="tel"
-                        id="phone"
-                        name="phone"
-                        placeholder="Enter your phone number"
-                    >
+            <div class="info-item">
+              <div class="info-icon">☎</div>
 
-                    <label for="subject">Subject</label>
-                    <select id="subject" name="subject">
-                        <option value="admission">Admission Enquiry</option>
-                        <option value="general">General Enquiry</option>
-                        <option value="academic">Academic Enquiry</option>
-                        <option value="other">Other</option>
-                    </select>
+              <div>
+                <strong>School Office</strong>
+                <span>
+                  <a href="tel:+2348000002026">
+                    +234 800 000 2026
+                  </a>
+                </span>
+              </div>
+            </div>
 
-                    <label for="message">Message</label>
-                    <textarea
-                        id="message"
-                        name="message"
-                        placeholder="Write your message here..."
-                        required
-                    ></textarea>
+            <div class="info-item">
+              <div class="info-icon">✉</div>
 
-                    <button class="submit-btn" type="submit">
-                        Send Message
-                    </button>
+              <div>
+                <strong>Email Address</strong>
+                <span>
+                  <a href="mailto:admissions@crestfieldacademy.example">
+                    admissions@crestfieldacademy.example
+                  </a>
+                </span>
+              </div>
+            </div>
 
-                </form>
+            <div class="info-item">
+              <div class="info-icon">🎓</div>
 
-            </section>
+              <div>
+                <strong>Admissions Enquiries</strong>
+                <span>
+                  Contact the admissions office for application
+                  information and entry requirements.
+                </span>
+              </div>
+            </div>
+
+          </div>
 
         </div>
 
-        <section class="map-section">
+        <!-- ENQUIRY FORM -->
+        <div class="form-box">
 
-            <h2>Find Our School</h2>
+          <h2>Send an Enquiry</h2>
 
-            <div class="map-placeholder">
-                📍 Google Maps location will be added here once the
-                school's exact address is confirmed.
+          <p>
+            Complete the form below and the school team can follow up
+            with your enquiry.
+          </p>
+
+          <form action="#" method="post">
+
+            <div class="form-group">
+              <label for="name">Full Name</label>
+
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Enter your full name"
+                required
+              >
             </div>
 
-        </section>
+            <div class="form-group">
+              <label for="email">Email Address</label>
 
-    </main>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Enter your email address"
+                required
+              >
+            </div>
 
-    <footer>
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="Enter your phone number"
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="subject">Enquiry Type</label>
+
+              <select id="subject" name="subject">
+
+                <option value="">
+                  Select an enquiry type
+                </option>
+
+                <option value="admissions">
+                  Admissions
+                </option>
+
+                <option value="academics">
+                  Academics
+                </option>
+
+                <option value="school-information">
+                  General School Information
+                </option>
+
+                <option value="visit">
+                  School Visit
+                </option>
+
+                <option value="other">
+                  Other
+                </option>
+
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Your Message</label>
+
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Write your enquiry here..."
+                required
+              ></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">
+              Send Enquiry
+            </button>
+
+          </form>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ADMISSIONS -->
+  <section class="admissions-contact">
+
+    <div class="container">
+
+      <div class="admissions-box">
+
+        <div>
+          <small>Admissions Office</small>
+
+          <h2>Interested in Joining Crestfield?</h2>
+
+          <p>
+            Explore our admissions process, requirements, assessment
+            information, and enrolment steps.
+          </p>
+        </div>
+
+        <div class="admissions-actions">
+
+          <a href="admissions.html" class="gold-btn">
+            Explore Admissions
+          </a>
+
+          <a href="tel:+2348000002026" class="outline-btn">
+            Call the School
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- LOCATION -->
+  <section class="location">
+
+    <div class="container">
+
+      <div class="section-heading">
+        <small>Find Us</small>
+
+        <h2>Our Location</h2>
+
         <p>
-            &copy; 2026 Crestfield International Academy.
-            All Rights Reserved.
+          Crestfield International Academy is presented in this
+          demonstration website as being located in Asaba, Delta State,
+          Nigeria.
         </p>
-    </footer>
+      </div>
+
+      <div class="location-box">
+
+        <div class="map-placeholder">
+
+          <div class="map-content">
+
+            <h2>📍 Asaba, Delta State</h2>
+
+            <p>
+              Crestfield International Academy<br>
+              Asaba, Delta State, Nigeria
+            </p>
+
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=Asaba%2C%20Delta%20State%2C%20Nigeria"
+              target="_blank"
+              class="gold-btn"
+            >
+              View Location on Google Maps
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- OFFICE HOURS -->
+  <section class="hours">
+
+    <div class="container">
+
+      <div class="section-heading">
+        <small>School Office</small>
+
+        <h2>Opening Hours</h2>
+
+        <p>
+          These are demonstration office hours for the Crestfield
+          International Academy website.
+        </p>
+      </div>
+
+      <div class="hours-grid">
+
+        <div class="hours-row">
+          <strong>Monday</strong>
+          <span>8:00 AM – 4:00 PM</span>
+        </div>
+
+        <div class="hours-row">
+          <strong>Tuesday</strong>
+          <span>8:00 AM – 4:00 PM</span>
+        </div>
+
+        <div class="hours-row">
+          <strong>Wednesday</strong>
+          <span>8:00 AM – 4:00 PM</span>
+        </div>
+
+        <div class="hours-row">
+          <strong>Thursday</strong>
+          <span>8:00 AM – 4:00 PM</span>
+        </div>
+
+        <div class="hours-row">
+          <strong>Friday</strong>
+          <span>8:00 AM – 4:00 PM</span>
+        </div>
+
+        <div class="hours-row">
+          <strong>Saturday</strong>
+          <span>By Appointment</span>
+        </div>
+
+        <div class="hours-row">
+          <strong>Sunday</strong>
+          <span>Closed</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- SOCIAL -->
+  <section class="social">
+
+    <div class="container">
+
+      <div class="section-heading">
+
+        <small>Stay Connected</small>
+
+        <h2>Follow Crestfield</h2>
+
+        <p>
+          Connect with the school community through its official
+          communication channels.
+        </p>
+
+      </div>
+
+      <div class="social-links">
+
+        <a href="#" aria-label="Facebook">
+          Facebook
+        </a>
+
+        <a href="#" aria-label="Instagram">
+          Instagram
+        </a>
+
+        <a href="#" aria-label="LinkedIn">
+          LinkedIn
+        </a>
+
+        <a href="#" aria-label="YouTube">
+          YouTube
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+
+    <div class="footer-grid">
+
+      <div class="footer-col">
+
+        <h3>Crestfield International Academy</h3>
+
+        <p>
+          A fictional international-school demonstration website
+          created by NovaTech Solutions to showcase modern educational
+          web design.
+        </p>
+
+      </div>
+
+      <div class="footer-col">
+
+        <h3>Explore</h3>
+
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="academics.html">Academics</a>
+        <a href="admissions.html">Admissions</a>
+
+      </div>
+
+      <div class="footer-col">
+
+        <h3>Campus</h3>
+
+        <a href="facilities.html">Facilities</a>
+        <a href="student-life.html">Student Life</a>
+        <a href="news.htm1">News & Events</a>
+        <a href="contact.html">Contact</a>
+
+      </div>
+
+      <div class="footer-col">
+
+        <h3>Contact</h3>
+
+        <p>Asaba, Delta State, Nigeria</p>
+
+        <p>
+          +234 800 000 2026
+        </p>
+
+        <p>
+          admissions@crestfieldacademy.example
+        </p>
+
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+      © 2026 Crestfield International Academy —
+      Fictional Demo Website by NovaTech Solutions.
+
+    </div>
+
+  </footer>
 
 </body>
 </html>
