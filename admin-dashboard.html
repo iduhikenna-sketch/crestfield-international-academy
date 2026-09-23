@@ -92,6 +92,9 @@
       text-decoration: none;
       border-radius: 7px;
       font-weight: bold;
+      border: none;
+      cursor: pointer;
+      font-size: 15px;
     }
 
     .manage-link:hover {
@@ -144,6 +147,7 @@
 
     <div class="welcome">
       <h2>👋 Welcome, Administrator</h2>
+
       <p>
         Manage students, teachers, results, examination timetables,
         announcements and school settings from this dashboard.
@@ -154,80 +158,121 @@
 
       <!-- Students -->
       <div class="dashboard-card">
+
         <div class="icon">👨‍🎓</div>
+
         <h3>Students</h3>
-        <p>Manage student records and information.</p>
+
+        <p>
+          Manage student records and information.
+        </p>
 
         <a href="students.html" class="manage-link">
           Manage Students
         </a>
+
       </div>
+
 
       <!-- Teachers -->
       <div class="dashboard-card">
+
         <div class="icon">👨‍🏫</div>
+
         <h3>Teachers</h3>
-        <p>Manage teachers and teaching information.</p>
+
+        <p>
+          Manage teachers and teaching information.
+        </p>
 
         <a href="teachers.html" class="manage-link">
           Manage Teachers
         </a>
+
       </div>
+
 
       <!-- Results -->
       <div class="dashboard-card">
-        <div class="icon">📊</div>
-        <h3>Results</h3>
-        <p>Manage student academic results.</p>
 
-        <button
-          class="manage-link"
-          onclick="alert('Results Management will be added next.')">
+        <div class="icon">📊</div>
+
+        <h3>Results</h3>
+
+        <p>
+          Manage student academic results.
+        </p>
+
+        <a href="results.html" class="manage-link">
           Manage Results
-        </button>
+        </a>
+
       </div>
+
 
       <!-- Exam Timetable -->
       <div class="dashboard-card">
+
         <div class="icon">📅</div>
+
         <h3>Exam Timetable</h3>
-        <p>Manage examination schedules and timetable.</p>
+
+        <p>
+          Manage examination schedules and timetable.
+        </p>
 
         <button
           class="manage-link"
           onclick="alert('Exam Timetable Management will be added next.')">
           Manage Timetable
         </button>
+
       </div>
+
 
       <!-- Announcements -->
       <div class="dashboard-card">
+
         <div class="icon">📢</div>
+
         <h3>Announcements</h3>
-        <p>Manage important school announcements.</p>
+
+        <p>
+          Manage important school announcements.
+        </p>
 
         <button
           class="manage-link"
           onclick="alert('Announcements Management will be added next.')">
           Manage Announcements
         </button>
+
       </div>
+
 
       <!-- School Settings -->
       <div class="dashboard-card">
+
         <div class="icon">⚙️</div>
+
         <h3>School Settings</h3>
-        <p>Manage school portal settings.</p>
+
+        <p>
+          Manage school portal settings.
+        </p>
 
         <button
           class="manage-link"
           onclick="alert('School Settings will be added next.')">
           Settings
         </button>
+
       </div>
 
     </div>
 
+
+    <!-- Logout -->
     <a href="login.html" class="logout">
       🚪 Logout
     </a>
