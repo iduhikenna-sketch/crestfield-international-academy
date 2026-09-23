@@ -60,6 +60,7 @@
       padding: 15px;
       background: #f4f6f8;
       border-radius: 10px;
+      line-height: 1.8;
     }
 
     .student-info strong {
@@ -123,10 +124,6 @@
       font-weight: bold;
     }
 
-    .logout:hover {
-      background: #650000;
-    }
-
     footer {
       text-align: center;
       padding: 25px;
@@ -138,132 +135,154 @@
 
 <body>
 
-  <header>
-    <h1>Crestfield International Academy</h1>
-    <p>Parent Dashboard</p>
-  </header>
+<header>
+  <h1>Crestfield International Academy</h1>
+  <p>Parent Dashboard</p>
+</header>
 
-  <div class="container">
+<div class="container">
 
-    <div class="welcome">
-      <h2>Welcome, Parent 👋</h2>
+  <div class="welcome">
 
-      <p>
-        Welcome to the Crestfield International Academy parent portal.
-        You can monitor your child's academic information and school
-        activities from here.
-      </p>
+    <h2>Welcome, Parent 👋</h2>
 
-      <div class="student-info">
-        <strong>Student:</strong> John Doe<br>
-        <strong>Student ID:</strong> CFA001<br>
-        <strong>Class:</strong> JSS 1<br>
-        <strong>Academic Session:</strong> 2026/2027
-      </div>
-    </div>
+    <p>
+      Welcome to the Crestfield International Academy parent portal.
+      You can monitor your child's academic information and school
+      activities from here.
+    </p>
 
-    <div class="dashboard-grid">
+    <div class="student-info">
 
-      <!-- RESULTS -->
-
-      <div class="card">
-        <h3>📊 View Results</h3>
-
-        <p>
-          View your child's examination and assessment results.
-        </p>
-
-        <a href="parent-results.html">
-          View Results
-        </a>
-      </div>
-
-
-      <!-- EXAM TIMETABLE -->
-
-      <div class="card">
-        <h3>📅 Exam Timetable</h3>
-
-        <p>
-          View upcoming examinations and their scheduled dates.
-        </p>
-
-        <a href="timetable.html">
-          View Timetable
-        </a>
-      </div>
-
-
-      <!-- ANNOUNCEMENTS -->
-
-      <div class="card">
-        <h3>📢 Announcements</h3>
-
-        <p>
-          Stay updated with important school announcements and notices.
-        </p>
-
-        <a href="announcements.html">
-          View Announcements
-        </a>
-      </div>
-
-
-      <!-- SCHOOL FEES -->
-
-      <div class="card">
-        <h3>💰 School Fees</h3>
-
-        <p>
-          View school fee information and payment status.
-        </p>
-
-        <button onclick="alert('School fee information will be added next.')">
-          View Fees
-        </button>
-      </div>
-
-
-      <!-- STUDENT PROFILE -->
-
-      <div class="card">
-        <h3>👤 Student Profile</h3>
-
-        <p>
-          View your child's profile and registered school information.
-        </p>
-
-        <button onclick="alert('Student profile will be added next.')">
-          View Profile
-        </button>
-      </div>
-
-
-      <!-- ATTENDANCE -->
-
-      <div class="card">
-        <h3>📚 Attendance</h3>
-
-        <p>
-          View your child's school attendance record.
-        </p>
-
-        <button onclick="alert('Attendance records will be added next.')">
-          View Attendance
-        </button>
-      </div>
+      <strong>Student:</strong> John Doe<br>
+      <strong>Student ID:</strong> CFA001<br>
+      <strong>Class:</strong> JSS 1<br>
+      <strong>Academic Session:</strong> 2026/2027
 
     </div>
-
-    <a href="login.html" class="logout">
-      Logout
-    </a>
 
   </div>
 
-  <footer>
-    © 2026 Crestfield International Academy. All Rights Reserved.
-  </footer>
+
+  <div class="dashboard-grid">
+
+
+    <!-- RESULTS -->
+
+    <div class="card">
+
+      <h3>📊 View Results</h3>
+
+      <p>
+        View your child's examination and assessment results.
+      </p>
+
+      <a href="parent-results.html">
+        View Results
+      </a>
+
+    </div>
+
+
+    <!-- PARENT TIMETABLE -->
+
+    <div class="card">
+
+      <h3>📅 Exam Timetable</h3>
+
+      <p>
+        View your child's examination timetable,
+        including subjects, dates, times and venues.
+      </p>
+
+      <a href="parent-timetable.html">
+        View Timetable
+      </a>
+
+    </div>
+
+
+    <!-- PARENT ANNOUNCEMENTS -->
+
+    <div class="card">
+
+      <h3>📢 Announcements</h3>
+
+      <p>
+        Stay updated with important school announcements
+        and notices.
+      </p>
+
+      <a href="parent-announcements.html">
+        View Announcements
+      </a>
+
+    </div>
+
+
+    <!-- SCHOOL FEES -->
+
+    <div class="card">
+
+      <h3>💰 School Fees</h3>
+
+      <p>
+        View school fee information and payment status.
+      </p>
+
+      <button onclick="alert('School fee information will be added next.')">
+        View Fees
+      </button>
+
+    </div>
+
+
+    <!-- STUDENT PROFILE -->
+
+    <div class="card">
+
+      <h3>👤 Student Profile</h3>
+
+      <p>
+        View your child's profile and registered school information.
+      </p>
+
+      <button onclick="alert('Student profile will be added next.')">
+        View Profile
+      </button>
+
+    </div>
+
+
+    <!-- ATTENDANCE -->
+
+    <div class="card">
+
+      <h3>📚 Attendance</h3>
+
+      <p>
+        View your child's school attendance record.
+      </p>
+
+      <button onclick="alert('Attendance records will be added next.')">
+        View Attendance
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <a href="login.html" class="logout">
+    Logout
+  </a>
+
+</div>
+
+
+<footer>
+  © 2026 Crestfield International Academy. All Rights Reserved.
+</footer>
 
 </body>
 </html>
