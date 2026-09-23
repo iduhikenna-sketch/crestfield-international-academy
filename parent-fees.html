@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>School Fees | Crestfield International Academy</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+      color: #222;
+    }
+
+    header {
+      background: #123c69;
+      color: white;
+      padding: 25px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin-bottom: 8px;
+    }
+
+    header p {
+      font-size: 15px;
+    }
+
+    .container {
+      width: 92%;
+      max-width: 950px;
+      margin: 30px auto;
+    }
+
+    .back-button {
+      display: inline-block;
+      background: #123c69;
+      color: white;
+      text-decoration: none;
+      padding: 10px 18px;
+      border-radius: 6px;
+      margin-bottom: 20px;
+    }
+
+    .back-button:hover {
+      background: #0d2e50;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+      margin-bottom: 25px;
+    }
+
+    .card h2 {
+      color: #123c69;
+      margin-bottom: 20px;
+    }
+
+    .student-info {
+      line-height: 1.9;
+      font-size: 16px;
+    }
+
+    .fee-summary {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin-bottom: 25px;
+    }
+
+    .summary-box {
+      background: #f4f6f8;
+      padding: 18px;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .summary-box h3 {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 8px;
+    }
+
+    .summary-box p {
+      font-size: 22px;
+      font-weight: bold;
+      color: #123c69;
+    }
+
+    .table-container {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 650px;
+    }
+
+    th,
+    td {
+      padding: 13px;
+      border: 1px solid #ddd;
+      text-align: left;
+    }
+
+    th {
+      background: #123c69;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background: #f8f9fa;
+    }
+
+    .status {
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 5px;
+      font-weight: bold;
+      font-size: 13px;
+    }
+
+    .paid {
+      background: #e8f5e9;
+      color: #2e7d32;
+    }
+
+    .pending {
+      background: #fff3e0;
+      color: #ef6c00;
+    }
+
+    .note {
+      background: #eef4fb;
+      padding: 15px;
+      border-left: 4px solid #123c69;
+      line-height: 1.6;
+      margin-top: 20px;
+    }
+
+    @media (max-width: 700px) {
+      .fee-summary {
+        grid-template-columns: 1fr;
+      }
+
+      .card {
+        padding: 18px;
+      }
+
+      header h1 {
+        font-size: 23px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Crestfield International Academy</h1>
+    <p>Parent Portal — School Fees</p>
+  </header>
+
+  <div class="container">
+
+    <a href="parent-dashboard.html" class="back-button">
+      ← Back to Parent Dashboard
+    </a>
+
+    <div class="card">
+
+      <h2>💰 School Fees</h2>
+
+      <p style="margin-bottom: 20px;">
+        View your child's school fee information and payment status.
+      </p>
+
+      <div class="student-info">
+        <strong>Student:</strong> John Doe<br>
+        <strong>Student ID:</strong> CFA001<br>
+        <strong>Class:</strong> JSS 1<br>
+        <strong>Academic Session:</strong> 2026/2027
+      </div>
+
+    </div>
+
+    <div class="card">
+
+      <h2>Fee Summary</h2>
+
+      <div class="fee-summary">
+
+        <div class="summary-box">
+          <h3>Total Fees</h3>
+          <p>₦150,000</p>
+        </div>
+
+        <div class="summary-box">
+          <h3>Amount Paid</h3>
+          <p>₦100,000</p>
+        </div>
+
+        <div class="summary-box">
+          <h3>Balance</h3>
+          <p>₦50,000</p>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="card">
+
+      <h2>📋 Fee Details</h2>
+
+      <div class="table-container">
+
+        <table>
+
+          <thead>
+            <tr>
+              <th>Fee Description</th>
+              <th>Amount</th>
+              <th>Paid</th>
+              <th>Balance</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+
+          <tbody>
+
+            <tr>
+              <td>Tuition Fee</td>
+              <td>₦120,000</td>
+              <td>₦80,000</td>
+              <td>₦40,000</td>
+              <td>
+                <span class="status pending">
+                  Partially Paid
+                </span>
+              </td>
+            </tr>
+
+            <tr>
+              <td>Development Levy</td>
+              <td>₦20,000</td>
+              <td>₦20,000</td>
+              <td>₦0</td>
+              <td>
+                <span class="status paid">
+                  Paid
+                </span>
+              </td>
+            </tr>
+
+            <tr>
+              <td>ICT Fee</td>
+              <td>₦10,000</td>
+              <td>₦0</td>
+              <td>₦10,000</td>
+              <td>
+                <span class="status pending">
+                  Pending
+                </span>
+              </td>
+            </tr>
+
+          </tbody>
+
+        </table>
+
+      </div>
+
+      <div class="note">
+        <strong>Note:</strong>
+        This is a demonstration school portal. The fee figures shown are sample information and are not real payment records.
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>
