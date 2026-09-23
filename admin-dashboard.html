@@ -79,7 +79,9 @@
       line-height: 1.6;
     }
 
-    .card button {
+    .card button,
+    .manage-link {
+      display: inline-block;
       margin-top: 15px;
       padding: 11px 16px;
       border: none;
@@ -88,9 +90,12 @@
       color: white;
       cursor: pointer;
       font-weight: bold;
+      text-decoration: none;
+      font-size: 14px;
     }
 
-    .card button:hover {
+    .card button:hover,
+    .manage-link:hover {
       background: #123f63;
     }
 
@@ -139,61 +144,73 @@
 
     <div class="dashboard-grid">
 
+      <!-- STUDENTS -->
       <div class="card">
         <h3>👨‍🎓 Students</h3>
         <p>
           Manage student records, classes and basic student information.
         </p>
-        <button onclick="alert('Student Management will be added next.')">
+
+        <a href="students.html" class="manage-link">
           Manage Students
-        </button>
+        </a>
       </div>
 
+      <!-- TEACHERS -->
       <div class="card">
         <h3>👩‍🏫 Teachers</h3>
         <p>
           Manage teachers and their assigned classes and subjects.
         </p>
+
         <button onclick="alert('Teacher Management will be added next.')">
           Manage Teachers
         </button>
       </div>
 
+      <!-- RESULTS -->
       <div class="card">
         <h3>📊 Results</h3>
         <p>
           Upload and manage student examination results.
         </p>
+
         <button onclick="alert('Result Management will be added next.')">
           Manage Results
         </button>
       </div>
 
+      <!-- EXAM TIMETABLE -->
       <div class="card">
         <h3>📅 Exam Timetable</h3>
         <p>
           Create and manage examination timetables for students.
         </p>
+
         <button onclick="alert('Exam Timetable will be added next.')">
           Manage Timetable
         </button>
       </div>
 
+      <!-- ANNOUNCEMENTS -->
       <div class="card">
         <h3>📢 Announcements</h3>
         <p>
           Create important announcements for parents, students and teachers.
         </p>
+
         <button onclick="alert('Announcements will be added next.')">
           Manage Announcements
         </button>
       </div>
 
+      <!-- SCHOOL SETTINGS -->
       <div class="card">
         <h3>⚙️ School Settings</h3>
         <p>
           Manage school information and portal settings.
         </p>
+
         <button onclick="alert('School Settings will be added next.')">
           Settings
         </button>
