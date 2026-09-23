@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Parent Dashboard | Crestfield International Academy</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f4f6f8;
+      color: #222;
+    }
+
+    header {
+      background: #0b1f3a;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 24px;
+      margin-bottom: 5px;
+    }
+
+    header p {
+      font-size: 14px;
+      opacity: 0.9;
+    }
+
+    .container {
+      width: 92%;
+      max-width: 1100px;
+      margin: 30px auto;
+    }
+
+    .welcome {
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      margin-bottom: 25px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    }
+
+    .welcome h2 {
+      color: #0b1f3a;
+      margin-bottom: 8px;
+    }
+
+    .student-info {
+      margin-top: 15px;
+      padding: 15px;
+      background: #f4f6f8;
+      border-radius: 10px;
+    }
+
+    .student-info strong {
+      color: #0b1f3a;
+    }
+
+    .dashboard-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    }
+
+    .card h3 {
+      color: #0b1f3a;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #666;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .card button {
+      margin-top: 15px;
+      padding: 11px 16px;
+      border: none;
+      border-radius: 8px;
+      background: #0b1f3a;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .card button:hover {
+      background: #123f63;
+    }
+
+    .logout {
+      display: block;
+      width: 180px;
+      margin: 30px auto;
+      padding: 13px;
+      text-align: center;
+      background: #8b0000;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    .logout:hover {
+      background: #650000;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      color: #777;
+      font-size: 13px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Crestfield International Academy</h1>
+    <p>Parent Dashboard</p>
+  </header>
+
+  <div class="container">
+
+    <div class="welcome">
+      <h2>Welcome, Parent 👋</h2>
+
+      <p>
+        Welcome to the Crestfield International Academy parent portal.
+        You can monitor your child's academic information and school
+        activities from here.
+      </p>
+
+      <div class="student-info">
+        <strong>Student:</strong> Sample Student<br>
+        <strong>Class:</strong> JSS 2<br>
+        <strong>Academic Session:</strong> 2026/2027
+      </div>
+    </div>
+
+    <div class="dashboard-grid">
+
+      <div class="card">
+        <h3>📊 View Results</h3>
+        <p>
+          View your child's examination and assessment results.
+        </p>
+        <button onclick="alert('Student results will be added next.')">
+          View Results
+        </button>
+      </div>
+
+      <div class="card">
+        <h3>📅 Exam Timetable</h3>
+        <p>
+          View upcoming examinations and their scheduled dates.
+        </p>
+        <button onclick="alert('Exam timetable will be added next.')">
+          View Timetable
+        </button>
+      </div>
+
+      <div class="card">
+        <h3>📢 Announcements</h3>
+        <p>
+          Stay updated with important school announcements and notices.
+        </p>
+        <button onclick="alert('Announcements will be added next.')">
+          View Announcements
+        </button>
+      </div>
+
+      <div class="card">
+        <h3>💰 School Fees</h3>
+        <p>
+          View school fee information and payment status.
+        </p>
+        <button onclick="alert('School fee information will be added next.')">
+          View Fees
+        </button>
+      </div>
+
+      <div class="card">
+        <h3>👤 Student Profile</h3>
+        <p>
+          View your child's profile and registered school information.
+        </p>
+        <button onclick="alert('Student profile will be added next.')">
+          View Profile
+        </button>
+      </div>
+
+      <div class="card">
+        <h3>📚 Attendance</h3>
+        <p>
+          View your child's school attendance record.
+        </p>
+        <button onclick="alert('Attendance records will be added next.')">
+          View Attendance
+        </button>
+      </div>
+
+    </div>
+
+    <a href="login.html" class="logout">
+      Logout
+    </a>
+
+  </div>
+
+  <footer>
+    © 2026 Crestfield International Academy. All Rights Reserved.
+  </footer>
+
+</body>
+</html>
