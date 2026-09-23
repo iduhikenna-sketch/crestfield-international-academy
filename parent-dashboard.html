@@ -90,7 +90,8 @@
       line-height: 1.6;
     }
 
-    .card a {
+    .card a,
+    .card button {
       display: inline-block;
       margin-top: 15px;
       padding: 11px 16px;
@@ -98,24 +99,13 @@
       background: #0b1f3a;
       color: white;
       text-decoration: none;
-      font-weight: bold;
-    }
-
-    .card a:hover {
-      background: #123f63;
-    }
-
-    .card button {
-      margin-top: 15px;
-      padding: 11px 16px;
       border: none;
-      border-radius: 8px;
-      background: #0b1f3a;
-      color: white;
       cursor: pointer;
       font-weight: bold;
+      font-size: 14px;
     }
 
+    .card a:hover,
     .card button:hover {
       background: #123f63;
     }
@@ -165,15 +155,16 @@
       </p>
 
       <div class="student-info">
-        <strong>Student:</strong> Sample Student<br>
-        <strong>Class:</strong> JSS 2<br>
+        <strong>Student:</strong> John Doe<br>
+        <strong>Student ID:</strong> CFA001<br>
+        <strong>Class:</strong> JSS 1<br>
         <strong>Academic Session:</strong> 2026/2027
       </div>
     </div>
 
     <div class="dashboard-grid">
 
-      <!-- VIEW RESULTS -->
+      <!-- RESULTS -->
 
       <div class="card">
         <h3>📊 View Results</h3>
@@ -263,7 +254,6 @@
       </div>
 
     </div>
-
 
     <a href="login.html" class="logout">
       Logout
