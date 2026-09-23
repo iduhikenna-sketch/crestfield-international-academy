@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Admin Dashboard | Crestfield International Academy</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f4f6f8;
+      color: #222;
+    }
+
+    header {
+      background: #0b1f3a;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 24px;
+      margin-bottom: 5px;
+    }
+
+    header p {
+      font-size: 14px;
+      opacity: 0.9;
+    }
+
+    .container {
+      width: 92%;
+      max-width: 1100px;
+      margin: 30px auto;
+    }
+
+    .welcome {
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      margin-bottom: 25px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    }
+
+    .welcome h2 {
+      color: #0b1f3a;
+      margin-bottom: 8px;
+    }
+
+    .dashboard-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    }
+
+    .card h3 {
+      color: #0b1f3a;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #666;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .card button {
+      margin-top: 15px;
+      padding: 11px 16px;
+      border: none;
+      border-radius: 8px;
+      background: #0b1f3a;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .card button:hover {
+      background: #123f63;
+    }
+
+    .logout {
+      display: block;
+      width: 180px;
+      margin: 30px auto;
+      padding: 13px;
+      text-align: center;
+      background: #8b0000;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    .logout:hover {
+      background: #650000;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      color: #777;
+      font-size: 13px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Crestfield International Academy</h1>
+    <p>Administrator Dashboard</p>
+  </header>
+
+  <div class="container">
+
+    <div class="welcome">
+      <h2>Welcome, Administrator 👋</h2>
+      <p>
+        Manage students, teachers, results, examinations and school
+        information from your administrator portal.
+      </p>
+    </div>
+
+    <div class="dashboard-grid">
+
+      <div class="card">
+        <h3>👨‍🎓 Students</h3>
+        <p>
+          Manage student records, classes and basic student information.
+        </p>
+        <button onclick="alert('Student Management will be added next.')">
+          Manage Students
+        </button>
+      </div>
+
+      <div class="card">
+        <h3>👩‍🏫 Teachers</h3>
+        <p>
+          Manage teachers and their assigned classes and subjects.
+        </p>
+        <button onclick="alert('Teacher Management will be added next.')">
+          Manage Teachers
+        </button>
+      </div>
+
+      <div class="card">
+        <h3>📊 Results</h3>
+        <p>
+          Upload and manage student examination results.
+        </p>
+        <button onclick="alert('Result Management will be added next.')">
+          Manage Results
+        </button>
+      </div>
+
+      <div class="card">
+        <h3>📅 Exam Timetable</h3>
+        <p>
+          Create and manage examination timetables for students.
+        </p>
+        <button onclick="alert('Exam Timetable will be added next.')">
+          Manage Timetable
+        </button>
+      </div>
+
+      <div class="card">
+        <h3>📢 Announcements</h3>
+        <p>
+          Create important announcements for parents, students and teachers.
+        </p>
+        <button onclick="alert('Announcements will be added next.')">
+          Manage Announcements
+        </button>
+      </div>
+
+      <div class="card">
+        <h3>⚙️ School Settings</h3>
+        <p>
+          Manage school information and portal settings.
+        </p>
+        <button onclick="alert('School Settings will be added next.')">
+          Settings
+        </button>
+      </div>
+
+    </div>
+
+    <a href="login.html" class="logout">
+      Logout
+    </a>
+
+  </div>
+
+  <footer>
+    © 2026 Crestfield International Academy. All Rights Reserved.
+  </footer>
+
+</body>
+</html>
