@@ -11,45 +11,51 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      font-family: Arial, sans-serif;
     }
 
     body {
-      font-family: Arial, sans-serif;
       background: #f4f6f8;
       color: #222;
     }
 
     header {
-      background: #123c69;
+      background: #0b1f3a;
       color: white;
       padding: 25px 20px;
       text-align: center;
     }
 
     header h1 {
+      font-size: 28px;
       margin-bottom: 8px;
     }
 
+    header p {
+      font-size: 15px;
+      opacity: 0.9;
+    }
+
     .container {
-      width: 92%;
+      width: 90%;
       max-width: 1100px;
-      margin: 30px auto;
+      margin: 35px auto;
     }
 
     .welcome {
       background: white;
       padding: 25px;
-      border-radius: 10px;
+      border-radius: 12px;
       margin-bottom: 25px;
-      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     }
 
     .welcome h2 {
-      color: #123c69;
+      color: #0b1f3a;
       margin-bottom: 8px;
     }
 
-    .dashboard-grid {
+    .cards {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 20px;
@@ -58,58 +64,62 @@
     .card {
       background: white;
       padding: 25px;
-      border-radius: 10px;
+      border-radius: 12px;
       text-align: center;
-      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     }
 
     .card h3 {
-      color: #123c69;
-      margin-bottom: 15px;
+      color: #0b1f3a;
+      margin-bottom: 10px;
     }
 
     .card p {
       color: #666;
-      margin-bottom: 20px;
-      line-height: 1.5;
+      margin-bottom: 18px;
+      font-size: 14px;
     }
 
-    .manage-link {
+    .card a {
       display: inline-block;
-      background: #123c69;
+      background: #0b1f3a;
       color: white;
       text-decoration: none;
-      padding: 10px 18px;
-      border-radius: 6px;
+      padding: 11px 18px;
+      border-radius: 7px;
+      font-weight: bold;
     }
 
-    .manage-link:hover {
-      background: #0d2e50;
+    .card a:hover {
+      background: #163b68;
     }
 
     .logout {
-      display: block;
-      width: fit-content;
-      margin: 30px auto;
+      text-align: center;
+      margin-top: 35px;
+    }
+
+    .logout a {
+      display: inline-block;
       background: #c62828;
       color: white;
       text-decoration: none;
       padding: 12px 25px;
-      border-radius: 6px;
+      border-radius: 7px;
+      font-weight: bold;
     }
 
-    .logout:hover {
-      background: #a61f1f;
+    .logout a:hover {
+      background: #a51f1f;
     }
 
-    @media (max-width: 600px) {
-      .container {
-        width: 95%;
-      }
-
-      header h1 {
-        font-size: 23px;
-      }
+    footer {
+      margin-top: 45px;
+      background: #0b1f3a;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
     }
   </style>
 </head>
@@ -118,80 +128,59 @@
 
   <header>
     <h1>Crestfield International Academy</h1>
-    <p>Teacher Portal</p>
+    <p>Teacher Dashboard</p>
   </header>
 
   <div class="container">
 
     <div class="welcome">
-      <h2>Welcome, Teacher</h2>
-      <p>
-        Access student results, examination timetables,
-        announcements and other teacher resources.
-      </p>
+      <h2>Welcome, Teacher 👨‍🏫</h2>
+      <p>Manage student results, records, examinations and school announcements from your teacher portal.</p>
     </div>
 
-    <div class="dashboard-grid">
+    <div class="cards">
 
-      <!-- View Student Results -->
       <div class="card">
-        <h3>Student Results</h3>
-        <p>
-          View student examination results,
-          scores and grades.
-        </p>
-
-        <a href="teacher-results.html" class="manage-link">
-          View Student Results
-        </a>
+        <h3>📊 Student Results</h3>
+        <p>View and search student academic results.</p>
+        <a href="teacher-results.html">View Results</a>
       </div>
 
-      <!-- Exam Timetable -->
       <div class="card">
-        <h3>Exam Timetable</h3>
-        <p>
-          View upcoming examination dates,
-          times and venues.
-        </p>
-
-        <a href="timetable.html" class="manage-link">
-          View Timetable
-        </a>
+        <h3>📝 Enter Student Results</h3>
+        <p>Enter and save students' scores and grades.</p>
+        <a href="teacher-enter-results.html">Enter Results</a>
       </div>
 
-      <!-- Announcements -->
       <div class="card">
-        <h3>Announcements</h3>
-        <p>
-          View important school announcements
-          and notices.
-        </p>
-
-        <a href="announcements.html" class="manage-link">
-          View Announcements
-        </a>
+        <h3>📅 Exam Timetable</h3>
+        <p>View the school's examination timetable.</p>
+        <a href="timetable.html">View Timetable</a>
       </div>
 
-      <!-- Student Records -->
       <div class="card">
-        <h3>Student Records</h3>
-        <p>
-          View available student information
-          and class records.
-        </p>
+        <h3>📢 Announcements</h3>
+        <p>View important school announcements.</p>
+        <a href="announcements.html">View Announcements</a>
+      </div>
 
-        <a href="students.html" class="manage-link">
-          View Students
-        </a>
+      <div class="card">
+        <h3>👨‍🎓 Student Records</h3>
+        <p>View and manage student records.</p>
+        <a href="students.html">Student Records</a>
       </div>
 
     </div>
 
-    <a href="login.html" class="logout">
-      Logout
-    </a>
+    <div class="logout">
+      <a href="login.html">Logout</a>
+    </div>
 
   </div>
+
+  <footer>
+    <p>© 2026 Crestfield International Academy. All Rights Reserved.</p>
+  </footer>
 
 </body>
 </html>
