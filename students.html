@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Manage Students | Crestfield International Academy</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f4f6f9;
+      color: #222;
+    }
+
+    header {
+      background: #123b63;
+      color: white;
+      padding: 25px 20px;
+    }
+
+    header h1 {
+      margin-bottom: 8px;
+    }
+
+    header p {
+      opacity: 0.9;
+    }
+
+    .container {
+      width: 95%;
+      max-width: 1100px;
+      margin: 25px auto;
+    }
+
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .top-bar h2 {
+      color: #123b63;
+    }
+
+    .back-btn {
+      background: #555;
+      color: white;
+      text-decoration: none;
+      padding: 11px 18px;
+      border-radius: 6px;
+    }
+
+    .card {
+      background: white;
+      padding: 22px;
+      border-radius: 10px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+      margin-bottom: 25px;
+    }
+
+    .card h3 {
+      color: #123b63;
+      margin-bottom: 18px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 15px;
+    }
+
+    .add-btn {
+      margin-top: 15px;
+      background: #123b63;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 15px;
+    }
+
+    .search-box {
+      margin-bottom: 15px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 750px;
+    }
+
+    th, td {
+      padding: 13px;
+      border-bottom: 1px solid #ddd;
+      text-align: left;
+    }
+
+    th {
+      background: #123b63;
+      color: white;
+    }
+
+    .table-wrapper {
+      overflow-x: auto;
+    }
+
+    .delete-btn {
+      background: #c62828;
+      color: white;
+      border: none;
+      padding: 7px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .empty-message {
+      text-align: center;
+      padding: 25px;
+      color: #777;
+    }
+
+    @media (max-width: 650px) {
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      header h1 {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Crestfield International Academy</h1>
+    <p>Administrator Portal — Student Management</p>
+  </header>
+
+  <div class="container">
+
+    <div class="top-bar">
+      <h2>👨‍🎓 Manage Students</h2>
+
+      <a href="admin-dashboard.html" class="back-btn">
+        ← Back to Dashboard
+      </a>
+    </div>
+
+    <div class="card">
+
+      <h3>➕ Add New Student</h3>
+
+      <div class="form-grid">
+
+        <input
+          type="text"
+          id="studentName"
+          placeholder="Student Full Name"
+        >
+
+        <input
+          type="text"
+          id="studentId"
+          placeholder="Student ID"
+        >
+
+        <select id="studentClass">
+          <option value="">Select Class</option>
+          <option>JSS 1</option>
+          <option>JSS 2</option>
+          <option>JSS 3</option>
+          <option>SS 1</option>
+          <option>SS 2</option>
+          <option>SS 3</option>
+        </select>
+
+        <input
+          type="text"
+          id="studentParent"
+          placeholder="Parent/Guardian Name"
+        >
+
+      </div>
+
+      <button class="add-btn" onclick="addStudent()">
+        Add Student
+      </button>
+
+    </div>
+
+    <div class="card">
+
+      <h3>📋 Student Records</h3>
+
+      <input
+        class="search-box"
+        type="text"
+        id="searchStudent"
+        placeholder="🔎 Search student..."
+        onkeyup="searchStudents()"
+      >
+
+      <div class="table-wrapper">
+
+        <table>
+
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Student ID</th>
+              <th>Class</th>
+              <th>Parent/Guardian</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+
+          <tbody id="studentTable">
+
+            <tr class="empty-row">
+              <td colspan="5" class="empty-message">
+                No students added yet.
+              </td>
+            </tr>
+
+          </tbody>
+
+        </table>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <script>
+
+    let students = JSON.parse(
+      localStorage.getItem("crestfieldStudents")
+    ) || [];
+
+    function displayStudents(list = students) {
+
+      const table = document.getElementById("studentTable");
+
+      table.innerHTML = "";
+
+      if (list.length === 0) {
+
+        table.innerHTML = `
+          <tr>
+            <td colspan="5" class="empty-message">
+              No students found.
+            </td>
+          </tr>
+        `;
+
+        return;
+      }
+
+      list.forEach((student, index) => {
+
+        const row = document.createElement("tr");
+
+        row.innerHTML = `
+          <td>${student.name}</td>
+          <td>${student.id}</td>
+          <td>${student.className}</td>
+          <td>${student.parent}</td>
+          <td>
+            <button
+              class="delete-btn"
+              onclick="deleteStudent(${index})"
+            >
+              Delete
+            </button>
+          </td>
+        `;
+
+        table.appendChild(row);
+
+      });
+
+    }
+
+    function addStudent() {
+
+      const name =
+        document.getElementById("studentName").value.trim();
+
+      const id =
+        document.getElementById("studentId").value.trim();
+
+      const className =
+        document.getElementById("studentClass").value;
+
+      const parent =
+        document.getElementById("studentParent").value.trim();
+
+      if (!name || !id || !className || !parent) {
+
+        alert("Please fill in all student information.");
+
+        return;
+      }
+
+      students.push({
+        name: name,
+        id: id,
+        className: className,
+        parent: parent
+      });
+
+      localStorage.setItem(
+        "crestfieldStudents",
+        JSON.stringify(students)
+      );
+
+      document.getElementById("studentName").value = "";
+      document.getElementById("studentId").value = "";
+      document.getElementById("studentClass").value = "";
+      document.getElementById("studentParent").value = "";
+
+      displayStudents();
+
+      alert("Student added successfully!");
+
+    }
+
+    function deleteStudent(index) {
+
+      const confirmDelete =
+        confirm("Are you sure you want to delete this student?");
+
+      if (!confirmDelete) {
+        return;
+      }
+
+      students.splice(index, 1);
+
+      localStorage.setItem(
+        "crestfieldStudents",
+        JSON.stringify(students)
+      );
+
+      displayStudents();
+
+    }
+
+    function searchStudents() {
+
+      const search =
+        document.getElementById("searchStudent")
+        .value
+        .toLowerCase();
+
+      const filtered = students.filter(student =>
+
+        student.name.toLowerCase().includes(search) ||
+        student.id.toLowerCase().includes(search) ||
+        student.className.toLowerCase().includes(search) ||
+        student.parent.toLowerCase().includes(search)
+
+      );
+
+      displayStudents(filtered);
+
+    }
+
+    displayStudents();
+
+  </script>
+
+</body>
+</html>
