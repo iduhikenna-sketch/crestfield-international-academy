@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Results Management | Crestfield International Academy</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f7fb;
+      color: #222;
+    }
+
+    header {
+      background: #12355b;
+      color: white;
+      padding: 25px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+
+    header p {
+      font-size: 15px;
+    }
+
+    .container {
+      width: 92%;
+      max-width: 1100px;
+      margin: 30px auto;
+    }
+
+    .back {
+      display: inline-block;
+      margin-bottom: 20px;
+      text-decoration: none;
+      color: #12355b;
+      font-weight: bold;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      margin-bottom: 25px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    .card h2 {
+      color: #12355b;
+      margin-bottom: 20px;
+    }
+
+    form {
+      display: grid;
+      gap: 15px;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #ccc;
+      border-radius: 7px;
+      font-size: 15px;
+    }
+
+    button {
+      padding: 13px 20px;
+      border: none;
+      border-radius: 7px;
+      background: #12355b;
+      color: white;
+      font-size: 15px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+
+    .search-box {
+      margin-bottom: 20px;
+    }
+
+    .table-container {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 800px;
+    }
+
+    th,
+    td {
+      padding: 12px;
+      border: 1px solid #ddd;
+      text-align: left;
+    }
+
+    th {
+      background: #12355b;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background: #f8f9fa;
+    }
+
+    .delete-btn {
+      background: #c62828;
+      padding: 8px 12px;
+      font-size: 13px;
+    }
+
+    .empty {
+      text-align: center;
+      padding: 20px;
+      color: #777;
+    }
+
+    .grade {
+      font-weight: bold;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 22px;
+      }
+
+      .container {
+        width: 95%;
+      }
+
+      .card {
+        padding: 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Crestfield International Academy</h1>
+    <p>Administrator Portal — Results Management</p>
+  </header>
+
+  <div class="container">
+
+    <a href="admin-dashboard.html" class="back">
+      ← Back to Dashboard
+    </a>
+
+    <div class="card">
+
+      <h2>📊 Add Student Result</h2>
+
+      <form onsubmit="addResult(event)">
+
+        <input
+          type="text"
+          id="studentName"
+          placeholder="Student Full Name"
+          required
+        >
+
+        <input
+          type="text"
+          id="studentId"
+          placeholder="Student ID"
+          required
+        >
+
+        <select id="className" required>
+          <option value="">Select Class</option>
+          <option value="JSS 1">JSS 1</option>
+          <option value="JSS 2">JSS 2</option>
+          <option value="JSS 3">JSS 3</option>
+          <option value="SS 1">SS 1</option>
+          <option value="SS 2">SS 2</option>
+          <option value="SS 3">SS 3</option>
+        </select>
+
+        <input
+          type="text"
+          id="subject"
+          placeholder="Subject"
+          required
+        >
+
+        <input
+          type="number"
+          id="score"
+          placeholder="Score (0 - 100)"
+          min="0"
+          max="100"
+          required
+        >
+
+        <button type="submit">
+          ➕ Save Result
+        </button>
+
+      </form>
+
+    </div>
+
+    <div class="card">
+
+      <h2>📋 Student Results</h2>
+
+      <div class="search-box">
+        <input
+          type="text"
+          id="search"
+          placeholder="🔎 Search student, ID or subject..."
+          onkeyup="searchResults()"
+        >
+      </div>
+
+      <div class="table-container">
+
+        <table>
+
+          <thead>
+            <tr>
+              <th>Student Name</th>
+              <th>Student ID</th>
+              <th>Class</th>
+              <th>Subject</th>
+              <th>Score</th>
+              <th>Grade</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+
+          <tbody id="resultTable">
+          </tbody>
+
+        </table>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <script>
+
+    let results = JSON.parse(
+      localStorage.getItem("crestfieldResults")
+    ) || [];
+
+    function getGrade(score) {
+
+      if (score >= 70) {
+        return "A";
+      } else if (score >= 60) {
+        return "B";
+      } else if (score >= 50) {
+        return "C";
+      } else if (score >= 45) {
+        return "D";
+      } else if (score >= 40) {
+        return "E";
+      } else {
+        return "F";
+      }
+
+    }
+
+    function displayResults(list = results) {
+
+      const table = document.getElementById("resultTable");
+
+      table.innerHTML = "";
+
+      if (list.length === 0) {
+
+        table.innerHTML = `
+          <tr>
+            <td colspan="7" class="empty">
+              No results found.
+            </td>
+          </tr>
+        `;
+
+        return;
+      }
+
+      list.forEach((result, index) => {
+
+        const row = document.createElement("tr");
+
+        row.innerHTML = `
+          <td>${result.studentName}</td>
+          <td>${result.studentId}</td>
+          <td>${result.className}</td>
+          <td>${result.subject}</td>
+          <td>${result.score}</td>
+          <td class="grade">${result.grade}</td>
+          <td>
+            <button
+              class="delete-btn"
+              onclick="deleteResult(${index})">
+              Delete
+            </button>
+          </td>
+        `;
+
+        table.appendChild(row);
+
+      });
+    }
+
+    function addResult(event) {
+
+      event.preventDefault();
+
+      const studentName =
+        document.getElementById("studentName").value;
+
+      const studentId =
+        document.getElementById("studentId").value;
+
+      const className =
+        document.getElementById("className").value;
+
+      const subject =
+        document.getElementById("subject").value;
+
+      const score =
+        Number(document.getElementById("score").value);
+
+      const grade = getGrade(score);
+
+      const newResult = {
+        studentName: studentName,
+        studentId: studentId,
+        className: className,
+        subject: subject,
+        score: score,
+        grade: grade
+      };
+
+      results.push(newResult);
+
+      localStorage.setItem(
+        "crestfieldResults",
+        JSON.stringify(results)
+      );
+
+      alert(
+        "Result saved successfully. Grade: " + grade
+      );
+
+      document.querySelector("form").reset();
+
+      displayResults();
+    }
+
+    function deleteResult(index) {
+
+      const confirmDelete = confirm(
+        "Are you sure you want to delete this result?"
+      );
+
+      if (!confirmDelete) {
+        return;
+      }
+
+      results.splice(index, 1);
+
+      localStorage.setItem(
+        "crestfieldResults",
+        JSON.stringify(results)
+      );
+
+      displayResults();
+    }
+
+    function searchResults() {
+
+      const searchValue =
+        document.getElementById("search").value.toLowerCase();
+
+      const filteredResults = results.filter(function(result) {
+
+        return (
+          result.studentName.toLowerCase().includes(searchValue) ||
+          result.studentId.toLowerCase().includes(searchValue) ||
+          result.subject.toLowerCase().includes(searchValue) ||
+          result.className.toLowerCase().includes(searchValue)
+        );
+
+      });
+
+      displayResults(filteredResults);
+    }
+
+    displayResults();
+
+  </script>
+
+</body>
+</html>
