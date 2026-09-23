@@ -150,6 +150,16 @@
       color: #777;
     }
 
+    .success-message {
+      display: none;
+      background: #e8f5e9;
+      color: #2e7d32;
+      padding: 12px;
+      border-radius: 6px;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
     @media (max-width: 600px) {
       .container {
         width: 95%;
@@ -180,11 +190,13 @@
     </a>
 
     <div class="card">
+
       <h2>Create New Announcement</h2>
 
       <form onsubmit="addAnnouncement(event)">
 
         <label for="title">Announcement Title</label>
+
         <input
           type="text"
           id="title"
@@ -193,6 +205,7 @@
         >
 
         <label for="message">Announcement Message</label>
+
         <textarea
           id="message"
           placeholder="Enter announcement details..."
@@ -200,20 +213,55 @@
         ></textarea>
 
         <label for="audience">Audience / Class</label>
+
         <select id="audience" required>
-          <option value="">Select audience</option>
-          <option value="All Students">All Students</option>
-          <option value="All Parents">All Parents</option>
-          <option value="All Teachers">All Teachers</option>
-          <option value="JSS 1">JSS 1</option>
-          <option value="JSS 2">JSS 2</option>
-          <option value="JSS 3">JSS 3</option>
-          <option value="SS 1">SS 1</option>
-          <option value="SS 2">SS 2</option>
-          <option value="SS 3">SS 3</option>
+
+          <option value="">
+            Select audience
+          </option>
+
+          <option value="All Students">
+            All Students
+          </option>
+
+          <option value="All Parents">
+            All Parents
+          </option>
+
+          <option value="All Teachers">
+            All Teachers
+          </option>
+
+          <option value="JSS 1">
+            JSS 1
+          </option>
+
+          <option value="JSS 2">
+            JSS 2
+          </option>
+
+          <option value="JSS 3">
+            JSS 3
+          </option>
+
+          <option value="SS 1">
+            SS 1
+          </option>
+
+          <option value="SS 2">
+            SS 2
+          </option>
+
+          <option value="SS 3">
+            SS 3
+          </option>
+
         </select>
 
-        <label for="date">Announcement Date</label>
+        <label for="date">
+          Announcement Date
+        </label>
+
         <input
           type="date"
           id="date"
@@ -224,10 +272,20 @@
           Add Announcement
         </button>
 
+        <div
+          id="successMessage"
+          class="success-message"
+        >
+          Announcement added successfully.
+        </div>
+
       </form>
+
     </div>
 
+
     <div class="card">
+
       <h2>Announcements</h2>
 
       <input
@@ -239,8 +297,11 @@
       >
 
       <div class="table-container">
+
         <table>
+
           <thead>
+
             <tr>
               <th>Title</th>
               <th>Message</th>
@@ -248,27 +309,38 @@
               <th>Date</th>
               <th>Action</th>
             </tr>
+
           </thead>
 
           <tbody id="announcementTable"></tbody>
+
         </table>
+
       </div>
+
     </div>
 
   </div>
 
+
   <script>
 
     let announcements =
-      JSON.parse(localStorage.getItem("crestfieldAnnouncements")) || [];
+      JSON.parse(
+        localStorage.getItem("crestfieldAnnouncements")
+      ) || [];
+
 
     function displayAnnouncements(list = announcements) {
 
-      const table = document.getElementById("announcementTable");
+      const table =
+        document.getElementById("announcementTable");
 
       table.innerHTML = "";
 
+
       if (list.length === 0) {
+
         table.innerHTML = `
           <tr>
             <td colspan="5" class="empty-message">
@@ -276,100 +348,206 @@
             </td>
           </tr>
         `;
+
         return;
       }
 
-      list.forEach((announcement, index) => {
 
-        const row = document.createElement("tr");
+      list.forEach((announcement) => {
+
+        const realIndex =
+          announcements.indexOf(announcement);
+
+        const row =
+          document.createElement("tr");
 
         row.innerHTML = `
-          <td>${announcement.title}</td>
-          <td>${announcement.message}</td>
-          <td>${announcement.audience}</td>
-          <td>${announcement.date}</td>
+
+          <td>${escapeHTML(announcement.title)}</td>
+
+          <td>${escapeHTML(announcement.message)}</td>
+
+          <td>${escapeHTML(announcement.audience)}</td>
+
+          <td>${escapeHTML(announcement.date)}</td>
+
           <td>
+
             <button
               class="delete-btn"
-              onclick="deleteAnnouncement(${index})"
+              onclick="deleteAnnouncement(${realIndex})"
             >
               Delete
             </button>
+
           </td>
+
         `;
 
         table.appendChild(row);
 
       });
+
     }
+
 
     function addAnnouncement(event) {
 
       event.preventDefault();
 
+
       const title =
-        document.getElementById("title").value.trim();
+        document
+          .getElementById("title")
+          .value
+          .trim();
+
 
       const message =
-        document.getElementById("message").value.trim();
+        document
+          .getElementById("message")
+          .value
+          .trim();
+
 
       const audience =
-        document.getElementById("audience").value;
+        document
+          .getElementById("audience")
+          .value;
+
 
       const date =
-        document.getElementById("date").value;
+        document
+          .getElementById("date")
+          .value;
+
 
       const newAnnouncement = {
+
         title: title,
+
         message: message,
+
         audience: audience,
+
         date: date
+
       };
 
-      announcements.push(newAnnouncement);
+
+      announcements.push(
+        newAnnouncement
+      );
+
 
       localStorage.setItem(
         "crestfieldAnnouncements",
         JSON.stringify(announcements)
       );
 
-      alert("Announcement added successfully.");
 
-      document.querySelector("form").reset();
+      document
+        .getElementById("successMessage")
+        .style.display = "block";
+
+
+      document
+        .querySelector("form")
+        .reset();
+
 
       displayAnnouncements();
+
+
+      setTimeout(() => {
+
+        document
+          .getElementById("successMessage")
+          .style.display = "none";
+
+      }, 3000);
+
     }
+
 
     function deleteAnnouncement(index) {
 
-      if (confirm("Are you sure you want to delete this announcement?")) {
+      if (
+        confirm(
+          "Are you sure you want to delete this announcement?"
+        )
+      ) {
 
         announcements.splice(index, 1);
+
 
         localStorage.setItem(
           "crestfieldAnnouncements",
           JSON.stringify(announcements)
         );
 
+
         displayAnnouncements();
+
       }
+
     }
+
 
     function searchAnnouncements() {
 
       const search =
-        document.getElementById("search").value.toLowerCase();
+        document
+          .getElementById("search")
+          .value
+          .toLowerCase();
+
 
       const filtered =
-        announcements.filter(announcement =>
-          announcement.title.toLowerCase().includes(search) ||
-          announcement.message.toLowerCase().includes(search) ||
-          announcement.audience.toLowerCase().includes(search) ||
-          announcement.date.toLowerCase().includes(search)
+        announcements.filter(
+          announcement =>
+
+            announcement.title
+              .toLowerCase()
+              .includes(search)
+
+            ||
+
+            announcement.message
+              .toLowerCase()
+              .includes(search)
+
+            ||
+
+            announcement.audience
+              .toLowerCase()
+              .includes(search)
+
+            ||
+
+            announcement.date
+              .toLowerCase()
+              .includes(search)
         );
 
+
       displayAnnouncements(filtered);
+
     }
+
+
+    function escapeHTML(text) {
+
+      const div =
+        document.createElement("div");
+
+      div.textContent =
+        text ?? "";
+
+      return div.innerHTML;
+
+    }
+
 
     displayAnnouncements();
 
