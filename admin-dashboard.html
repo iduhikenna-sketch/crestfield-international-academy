@@ -15,123 +15,106 @@
 
     body {
       font-family: Arial, sans-serif;
-      background: #f4f7fb;
+      background: #f4f6f8;
       color: #222;
     }
 
     header {
-      background: #12355b;
+      background: #123c69;
       color: white;
-      padding: 30px 20px;
+      padding: 25px 20px;
       text-align: center;
     }
 
     header h1 {
-      font-size: 28px;
       margin-bottom: 8px;
-    }
-
-    header p {
-      font-size: 15px;
     }
 
     .container {
       width: 92%;
       max-width: 1100px;
-      margin: 35px auto;
+      margin: 30px auto;
     }
 
     .welcome {
       background: white;
       padding: 25px;
-      border-radius: 12px;
+      border-radius: 10px;
       margin-bottom: 25px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
     }
 
     .welcome h2 {
-      color: #12355b;
-      margin-bottom: 10px;
+      color: #123c69;
+      margin-bottom: 8px;
     }
 
     .dashboard-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 20px;
     }
 
-    .dashboard-card {
+    .card {
       background: white;
       padding: 25px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      border-radius: 10px;
       text-align: center;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
     }
 
-    .dashboard-card .icon {
-      font-size: 40px;
+    .card h3 {
+      color: #123c69;
       margin-bottom: 15px;
     }
 
-    .dashboard-card h3 {
-      color: #12355b;
-      margin-bottom: 10px;
-    }
-
-    .dashboard-card p {
+    .card p {
       color: #666;
-      font-size: 14px;
-      margin-bottom: 18px;
+      margin-bottom: 20px;
+      line-height: 1.5;
     }
 
-    .manage-link {
+    .manage-link,
+    .action-button {
       display: inline-block;
-      padding: 11px 18px;
-      background: #12355b;
+      background: #123c69;
       color: white;
       text-decoration: none;
-      border-radius: 7px;
-      font-weight: bold;
+      padding: 10px 18px;
+      border-radius: 6px;
       border: none;
       cursor: pointer;
-      font-size: 15px;
+      font-size: 14px;
     }
 
-    .manage-link:hover {
-      opacity: 0.9;
+    .manage-link:hover,
+    .action-button:hover {
+      background: #0d2e50;
     }
 
     .logout {
       display: block;
-      width: 180px;
-      margin: 30px auto 0;
-      padding: 13px;
-      text-align: center;
+      width: fit-content;
+      margin: 30px auto;
       background: #c62828;
       color: white;
       text-decoration: none;
-      border-radius: 7px;
-      font-weight: bold;
+      padding: 12px 25px;
+      border-radius: 6px;
     }
 
     .logout:hover {
-      opacity: 0.9;
+      background: #a61f1f;
     }
 
     @media (max-width: 600px) {
-
-      header h1 {
-        font-size: 22px;
-      }
-
       .container {
         width: 95%;
       }
 
-      .dashboard-card {
-        padding: 20px;
+      header h1 {
+        font-size: 23px;
       }
-
     }
   </style>
 </head>
@@ -146,96 +129,78 @@
   <div class="container">
 
     <div class="welcome">
-      <h2>👋 Welcome, Administrator</h2>
-
-      <p>
-        Manage students, teachers, results, examination timetables,
-        announcements and school settings from this dashboard.
-      </p>
+      <h2>Welcome, Administrator</h2>
+      <p>Manage the school's students, teachers, results, timetable and announcements from this dashboard.</p>
     </div>
 
     <div class="dashboard-grid">
 
       <!-- Students -->
-      <div class="dashboard-card">
-        <div class="icon">👨‍🎓</div>
+      <div class="card">
         <h3>Students</h3>
-        <p>Manage student records and information.</p>
+        <p>Add, search and manage student records.</p>
 
         <a href="students.html" class="manage-link">
           Manage Students
         </a>
       </div>
 
-
       <!-- Teachers -->
-      <div class="dashboard-card">
-        <div class="icon">👨‍🏫</div>
+      <div class="card">
         <h3>Teachers</h3>
-        <p>Manage teachers and teaching information.</p>
+        <p>Add, search and manage teacher records.</p>
 
         <a href="teachers.html" class="manage-link">
           Manage Teachers
         </a>
       </div>
 
-
       <!-- Results -->
-      <div class="dashboard-card">
-        <div class="icon">📊</div>
+      <div class="card">
         <h3>Results</h3>
-        <p>Manage student academic results.</p>
+        <p>Add and manage student examination results.</p>
 
         <a href="results.html" class="manage-link">
           Manage Results
         </a>
       </div>
 
-
       <!-- Exam Timetable -->
-      <div class="dashboard-card">
-        <div class="icon">📅</div>
+      <div class="card">
         <h3>Exam Timetable</h3>
-        <p>Manage examination schedules and timetable.</p>
+        <p>Create and manage examination schedules.</p>
 
         <a href="timetable.html" class="manage-link">
           Manage Timetable
         </a>
       </div>
 
-
       <!-- Announcements -->
-      <div class="dashboard-card">
-        <div class="icon">📢</div>
+      <div class="card">
         <h3>Announcements</h3>
-        <p>Manage important school announcements.</p>
+        <p>Create, search and manage school announcements.</p>
 
-        <button
-          class="manage-link"
-          onclick="alert('Announcements Management will be added next.')">
+        <a href="announcements.html" class="manage-link">
           Manage Announcements
-        </button>
+        </a>
       </div>
 
-
       <!-- School Settings -->
-      <div class="dashboard-card">
-        <div class="icon">⚙️</div>
+      <div class="card">
         <h3>School Settings</h3>
-        <p>Manage school portal settings.</p>
+        <p>Manage school information and settings.</p>
 
         <button
-          class="manage-link"
+          class="action-button"
           onclick="alert('School Settings will be added next.')">
-          Settings
+          School Settings
         </button>
       </div>
 
     </div>
 
-
     <a href="login.html" class="logout">
-      🚪 Logout
+      Logout
     </a>
 
   </div>
