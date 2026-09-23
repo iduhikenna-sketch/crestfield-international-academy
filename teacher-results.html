@@ -4,23 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>View Student Results | Crestfield International Academy</title>
+  <title>Student Results | Crestfield International Academy</title>
 
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      font-family: Arial, sans-serif;
     }
 
     body {
-      font-family: Arial, sans-serif;
       background: #f4f6f8;
       color: #222;
     }
 
     header {
-      background: #123c69;
+      background: #0b1f3a;
       color: white;
       padding: 25px 20px;
       text-align: center;
@@ -31,38 +31,28 @@
     }
 
     .container {
-      width: 92%;
-      max-width: 1100px;
+      width: 95%;
+      max-width: 1200px;
       margin: 30px auto;
     }
 
-    .back-button {
-      display: inline-block;
-      background: #123c69;
-      color: white;
-      text-decoration: none;
-      padding: 10px 18px;
-      border-radius: 6px;
-      margin-bottom: 20px;
-    }
-
-    .card {
+    .top {
       background: white;
       padding: 25px;
-      border-radius: 10px;
-      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+      border-radius: 12px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     }
 
-    .card h2 {
-      color: #123c69;
+    .top h2 {
+      color: #0b1f3a;
       margin-bottom: 20px;
     }
 
     .filters {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 15px;
-      margin-bottom: 20px;
+      gap: 12px;
     }
 
     input,
@@ -70,12 +60,16 @@
       width: 100%;
       padding: 12px;
       border: 1px solid #ccc;
-      border-radius: 6px;
-      font-size: 15px;
+      border-radius: 7px;
+      font-size: 14px;
     }
 
-    .table-container {
+    .table-box {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
       overflow-x: auto;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     }
 
     table {
@@ -86,190 +80,204 @@
 
     th,
     td {
-      padding: 12px;
-      border: 1px solid #ddd;
+      padding: 13px;
+      border-bottom: 1px solid #ddd;
       text-align: left;
     }
 
     th {
-      background: #123c69;
+      background: #0b1f3a;
       color: white;
     }
 
-    tr:nth-child(even) {
-      background: #f8f9fa;
+    tr:hover {
+      background: #f5f5f5;
     }
 
-    .empty-message {
+    .back {
+      display: inline-block;
+      margin-top: 25px;
+      background: #0b1f3a;
+      color: white;
+      text-decoration: none;
+      padding: 12px 20px;
+      border-radius: 7px;
+      font-weight: bold;
+    }
+
+    .back:hover {
+      background: #163b68;
+    }
+
+    footer {
+      margin-top: 40px;
+      background: #0b1f3a;
+      color: white;
       text-align: center;
       padding: 20px;
-      color: #777;
-    }
-
-    @media (max-width: 600px) {
-      .container {
-        width: 95%;
-      }
-
-      .card {
-        padding: 18px;
-      }
-
-      header h1 {
-        font-size: 23px;
-      }
     }
   </style>
 </head>
 
 <body>
 
-  <header>
-    <h1>Crestfield International Academy</h1>
-    <p>Teacher Portal — Student Results</p>
-  </header>
+<header>
+  <h1>Crestfield International Academy</h1>
+  <p>Teacher Portal — Student Results</p>
+</header>
 
-  <div class="container">
+<div class="container">
 
-    <a href="teacher-dashboard.html" class="back-button">
-      ← Back to Teacher Dashboard
-    </a>
+  <div class="top">
+    <h2>View Student Results</h2>
 
-    <div class="card">
+    <div class="filters">
+      <input
+        type="text"
+        id="studentSearch"
+        placeholder="Search student name or ID..."
+        oninput="displayResults()"
+      >
 
-      <h2>View Student Results</h2>
+      <select id="classFilter" onchange="displayResults()">
+        <option value="">All Classes</option>
+        <option value="JSS 1">JSS 1</option>
+        <option value="JSS 2">JSS 2</option>
+        <option value="JSS 3">JSS 3</option>
+        <option value="SS 1">SS 1</option>
+        <option value="SS 2">SS 2</option>
+        <option value="SS 3">SS 3</option>
+      </select>
 
-      <div class="filters">
-
-        <input
-          type="text"
-          id="search"
-          placeholder="Search student name or ID..."
-          onkeyup="filterResults()"
-        >
-
-        <select id="classFilter" onchange="filterResults()">
-          <option value="">All Classes</option>
-          <option value="JSS 1">JSS 1</option>
-          <option value="JSS 2">JSS 2</option>
-          <option value="JSS 3">JSS 3</option>
-          <option value="SS 1">SS 1</option>
-          <option value="SS 2">SS 2</option>
-          <option value="SS 3">SS 3</option>
-        </select>
-
-        <input
-          type="text"
-          id="subjectFilter"
-          placeholder="Search subject..."
-          onkeyup="filterResults()"
-        >
-
-      </div>
-
-      <div class="table-container">
-
-        <table>
-
-          <thead>
-            <tr>
-              <th>Student Name</th>
-              <th>Student ID</th>
-              <th>Class</th>
-              <th>Subject</th>
-              <th>Score</th>
-              <th>Grade</th>
-            </tr>
-          </thead>
-
-          <tbody id="resultsTable"></tbody>
-
-        </table>
-
-      </div>
-
+      <input
+        type="text"
+        id="subjectSearch"
+        placeholder="Search subject..."
+        oninput="displayResults()"
+      >
     </div>
+  </div>
+
+  <div class="table-box">
+
+    <table>
+      <thead>
+        <tr>
+          <th>Student Name</th>
+          <th>Student ID</th>
+          <th>Class</th>
+          <th>Subject</th>
+          <th>Score</th>
+          <th>Grade</th>
+        </tr>
+      </thead>
+
+      <tbody id="resultsTable">
+      </tbody>
+    </table>
 
   </div>
 
-  <script>
+  <a class="back" href="teacher-dashboard.html">
+    ← Back to Teacher Dashboard
+  </a>
 
-    let results =
-      JSON.parse(localStorage.getItem("crestfieldResults")) || [];
+</div>
 
-    function displayResults(list = results) {
+<footer>
+  <p>© 2026 Crestfield International Academy. All Rights Reserved.</p>
+</footer>
 
-      const table = document.getElementById("resultsTable");
+<script>
 
-      table.innerHTML = "";
+function displayResults() {
 
-      if (list.length === 0) {
+  const table = document.getElementById("resultsTable");
 
-        table.innerHTML = `
-          <tr>
-            <td colspan="6" class="empty-message">
-              No student results found.
-            </td>
-          </tr>
-        `;
+  const studentSearch =
+    document.getElementById("studentSearch").value.toLowerCase();
 
-        return;
-      }
+  const classFilter =
+    document.getElementById("classFilter").value;
 
-      list.forEach(result => {
+  const subjectSearch =
+    document.getElementById("subjectSearch").value.toLowerCase();
 
-        const row = document.createElement("tr");
+  const results =
+    JSON.parse(localStorage.getItem("crestfieldResults")) || [];
 
-        row.innerHTML = `
-          <td>${result.name}</td>
-          <td>${result.id}</td>
-          <td>${result.className}</td>
-          <td>${result.subject}</td>
-          <td>${result.score}</td>
-          <td>${result.grade}</td>
-        `;
+  table.innerHTML = "";
 
-        table.appendChild(row);
+  const validResults = results.filter(result => {
 
-      });
-    }
+    return (
+      result &&
+      result.name &&
+      result.id &&
+      result.className &&
+      result.subject &&
+      result.score !== undefined &&
+      result.grade
+    );
 
-    function filterResults() {
+  });
 
-      const search =
-        document.getElementById("search").value.toLowerCase();
+  const filteredResults = validResults.filter(result => {
 
-      const classFilter =
-        document.getElementById("classFilter").value;
+    const matchesStudent =
+      result.name.toLowerCase().includes(studentSearch) ||
+      result.id.toLowerCase().includes(studentSearch);
 
-      const subjectFilter =
-        document.getElementById("subjectFilter").value.toLowerCase();
+    const matchesClass =
+      classFilter === "" ||
+      result.className === classFilter;
 
-      const filtered = results.filter(result => {
+    const matchesSubject =
+      result.subject.toLowerCase().includes(subjectSearch);
 
-        const matchesSearch =
-          result.name.toLowerCase().includes(search) ||
-          result.id.toLowerCase().includes(search);
+    return (
+      matchesStudent &&
+      matchesClass &&
+      matchesSubject
+    );
 
-        const matchesClass =
-          classFilter === "" ||
-          result.className === classFilter;
+  });
 
-        const matchesSubject =
-          subjectFilter === "" ||
-          result.subject.toLowerCase().includes(subjectFilter);
+  if (filteredResults.length === 0) {
 
-        return matchesSearch &&
-               matchesClass &&
-               matchesSubject;
-      });
+    table.innerHTML = `
+      <tr>
+        <td colspan="6" style="text-align:center;">
+          No student results found.
+        </td>
+      </tr>
+    `;
 
-      displayResults(filtered);
-    }
+    return;
+  }
 
-    displayResults();
+  filteredResults.forEach(result => {
 
-  </script>
+    const row = document.createElement("tr");
+
+    row.innerHTML = `
+      <td>${result.name}</td>
+      <td>${result.id}</td>
+      <td>${result.className}</td>
+      <td>${result.subject}</td>
+      <td>${result.score}</td>
+      <td>${result.grade}</td>
+    `;
+
+    table.appendChild(row);
+
+  });
+
+}
+
+displayResults();
+
+</script>
 
 </body>
 </html>
