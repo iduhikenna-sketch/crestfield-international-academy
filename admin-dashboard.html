@@ -74,21 +74,16 @@
       line-height: 1.5;
     }
 
-    .manage-link,
-    .action-button {
+    .manage-link {
       display: inline-block;
       background: #123c69;
       color: white;
       text-decoration: none;
       padding: 10px 18px;
       border-radius: 6px;
-      border: none;
-      cursor: pointer;
-      font-size: 14px;
     }
 
-    .manage-link:hover,
-    .action-button:hover {
+    .manage-link:hover {
       background: #0d2e50;
     }
 
@@ -130,71 +125,60 @@
 
     <div class="welcome">
       <h2>Welcome, Administrator</h2>
-      <p>Manage the school's students, teachers, results, timetable and announcements from this dashboard.</p>
+      <p>
+        Manage the school's students, teachers, results,
+        timetable, announcements and settings from this dashboard.
+      </p>
     </div>
 
     <div class="dashboard-grid">
 
-      <!-- Students -->
       <div class="card">
         <h3>Students</h3>
         <p>Add, search and manage student records.</p>
-
         <a href="students.html" class="manage-link">
           Manage Students
         </a>
       </div>
 
-      <!-- Teachers -->
       <div class="card">
         <h3>Teachers</h3>
         <p>Add, search and manage teacher records.</p>
-
         <a href="teachers.html" class="manage-link">
           Manage Teachers
         </a>
       </div>
 
-      <!-- Results -->
       <div class="card">
         <h3>Results</h3>
         <p>Add and manage student examination results.</p>
-
         <a href="results.html" class="manage-link">
           Manage Results
         </a>
       </div>
 
-      <!-- Exam Timetable -->
       <div class="card">
         <h3>Exam Timetable</h3>
         <p>Create and manage examination schedules.</p>
-
         <a href="timetable.html" class="manage-link">
           Manage Timetable
         </a>
       </div>
 
-      <!-- Announcements -->
       <div class="card">
         <h3>Announcements</h3>
         <p>Create, search and manage school announcements.</p>
-
         <a href="announcements.html" class="manage-link">
           Manage Announcements
         </a>
       </div>
 
-      <!-- School Settings -->
       <div class="card">
         <h3>School Settings</h3>
         <p>Manage school information and settings.</p>
-
-        <button
-          class="action-button"
-          onclick="alert('School Settings will be added next.')">
+        <a href="settings.html" class="manage-link">
           School Settings
-        </button>
+        </a>
       </div>
 
     </div>
