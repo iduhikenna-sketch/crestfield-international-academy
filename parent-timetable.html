@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Exam Timetable | Crestfield International Academy</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f4f6f8;
+      color: #222;
+    }
+
+    header {
+      background: #0b1f3a;
+      color: white;
+      padding: 22px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 24px;
+      margin-bottom: 6px;
+    }
+
+    header p {
+      font-size: 14px;
+      opacity: 0.9;
+    }
+
+    .container {
+      width: 94%;
+      max-width: 1100px;
+      margin: 30px auto;
+    }
+
+    .box {
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      margin-bottom: 25px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    }
+
+    .box h2 {
+      color: #0b1f3a;
+      margin-bottom: 10px;
+    }
+
+    .student-info {
+      margin-top: 18px;
+      padding: 15px;
+      background: #f4f6f8;
+      border-radius: 10px;
+      line-height: 1.8;
+    }
+
+    .student-info strong {
+      color: #0b1f3a;
+    }
+
+    .table-container {
+      width: 100%;
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      min-width: 650px;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th,
+    td {
+      padding: 14px;
+      border: 1px solid #ddd;
+      text-align: left;
+    }
+
+    th {
+      background: #0b1f3a;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background: #f8f9fa;
+    }
+
+    .no-exams {
+      text-align: center;
+      padding: 25px;
+      color: #777;
+    }
+
+    .back-button {
+      display: inline-block;
+      padding: 12px 18px;
+      background: #0b1f3a;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    .back-button:hover {
+      background: #123f63;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      color: #777;
+      font-size: 13px;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 20px;
+      }
+
+      .box {
+        padding: 18px;
+      }
+
+      th,
+      td {
+        padding: 10px;
+        font-size: 13px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Crestfield International Academy</h1>
+    <p>Parent Portal — Examination Timetable</p>
+  </header>
+
+  <div class="container">
+
+    <div class="box">
+
+      <h2>📅 Examination Timetable</h2>
+
+      <p>
+        View the examination schedule for your child.
+      </p>
+
+      <div class="student-info">
+
+        <strong>Student:</strong> John Doe<br>
+        <strong>Student ID:</strong> CFA001<br>
+        <strong>Class:</strong> JSS 1<br>
+        <strong>Academic Session:</strong> 2026/2027
+
+      </div>
+
+    </div>
+
+
+    <div class="box">
+
+      <h2>📋 Examination Schedule</h2>
+
+      <div class="table-container">
+
+        <table>
+
+          <thead>
+            <tr>
+              <th>Subject</th>
+              <th>Class</th>
+              <th>Date</th>
+              <th>Time</th>
+              <th>Venue</th>
+            </tr>
+          </thead>
+
+          <tbody id="examTable"></tbody>
+
+        </table>
+
+        <div id="noExams" class="no-exams">
+          No examination timetable has been published yet.
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <a href="parent-dashboard.html" class="back-button">
+      ← Back to Parent Dashboard
+    </a>
+
+  </div>
+
+
+  <footer>
+    © 2026 Crestfield International Academy. All Rights Reserved.
+  </footer>
+
+
+  <script>
+
+    // Get examination timetable saved by the school admin
+    const exams =
+      JSON.parse(localStorage.getItem("crestfieldExams")) || [];
+
+    const examTable =
+      document.getElementById("examTable");
+
+    const noExams =
+      document.getElementById("noExams");
+
+
+    // Parent's child class
+    const studentClass = "JSS 1";
+
+
+    // Show only examinations for JSS 1
+    const studentExams = exams.filter(function(exam) {
+
+      return exam.className === studentClass;
+
+    });
+
+
+    if (studentExams.length === 0) {
+
+      noExams.style.display = "block";
+
+    } else {
+
+      noExams.style.display = "none";
+
+
+      studentExams.forEach(function(exam) {
+
+        const row = document.createElement("tr");
+
+        row.innerHTML = `
+          <td>${exam.subject || ""}</td>
+          <td>${exam.className || ""}</td>
+          <td>${exam.date || ""}</td>
+          <td>${exam.time || ""}</td>
+          <td>${exam.venue || ""}</td>
+        `;
+
+        examTable.appendChild(row);
+
+      });
+
+    }
+
+  </script>
+
+</body>
+</html>
