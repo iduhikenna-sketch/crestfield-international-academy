@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Exam Timetable | Crestfield International Academy</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f7fb;
+      color: #222;
+    }
+
+    header {
+      background: #12355b;
+      color: white;
+      padding: 25px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+
+    header p {
+      font-size: 15px;
+    }
+
+    .container {
+      width: 92%;
+      max-width: 1100px;
+      margin: 30px auto;
+    }
+
+    .back {
+      display: inline-block;
+      margin-bottom: 20px;
+      text-decoration: none;
+      color: #12355b;
+      font-weight: bold;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      margin-bottom: 25px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    .card h2 {
+      color: #12355b;
+      margin-bottom: 20px;
+    }
+
+    form {
+      display: grid;
+      gap: 15px;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #ccc;
+      border-radius: 7px;
+      font-size: 15px;
+    }
+
+    button {
+      padding: 13px 20px;
+      border: none;
+      border-radius: 7px;
+      background: #12355b;
+      color: white;
+      font-size: 15px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+
+    .search-box {
+      margin-bottom: 20px;
+    }
+
+    .table-container {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 750px;
+    }
+
+    th,
+    td {
+      padding: 12px;
+      border: 1px solid #ddd;
+      text-align: left;
+    }
+
+    th {
+      background: #12355b;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background: #f8f9fa;
+    }
+
+    .delete-btn {
+      background: #c62828;
+      padding: 8px 12px;
+      font-size: 13px;
+    }
+
+    .empty {
+      text-align: center;
+      padding: 20px;
+      color: #777;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 22px;
+      }
+
+      .container {
+        width: 95%;
+      }
+
+      .card {
+        padding: 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Crestfield International Academy</h1>
+    <p>Administrator Portal — Exam Timetable Management</p>
+  </header>
+
+  <div class="container">
+
+    <a href="admin-dashboard.html" class="back">
+      ← Back to Dashboard
+    </a>
+
+    <div class="card">
+
+      <h2>📅 Add Examination</h2>
+
+      <form onsubmit="addExam(event)">
+
+        <input
+          type="text"
+          id="subject"
+          placeholder="Subject"
+          required
+        >
+
+        <select id="className" required>
+          <option value="">Select Class</option>
+          <option value="JSS 1">JSS 1</option>
+          <option value="JSS 2">JSS 2</option>
+          <option value="JSS 3">JSS 3</option>
+          <option value="SS 1">SS 1</option>
+          <option value="SS 2">SS 2</option>
+          <option value="SS 3">SS 3</option>
+        </select>
+
+        <input
+          type="date"
+          id="examDate"
+          required
+        >
+
+        <input
+          type="time"
+          id="examTime"
+          required
+        >
+
+        <input
+          type="text"
+          id="venue"
+          placeholder="Examination Venue"
+          required
+        >
+
+        <button type="submit">
+          ➕ Add Examination
+        </button>
+
+      </form>
+
+    </div>
+
+    <div class="card">
+
+      <h2>📋 Examination Timetable</h2>
+
+      <div class="search-box">
+        <input
+          type="text"
+          id="search"
+          placeholder="🔎 Search subject or class..."
+          onkeyup="searchExams()"
+        >
+      </div>
+
+      <div class="table-container">
+
+        <table>
+
+          <thead>
+            <tr>
+              <th>Subject</th>
+              <th>Class</th>
+              <th>Date</th>
+              <th>Time</th>
+              <th>Venue</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+
+          <tbody id="examTable">
+          </tbody>
+
+        </table>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <script>
+
+    let exams = JSON.parse(
+      localStorage.getItem("crestfieldExams")
+    ) || [];
+
+    function displayExams(list = exams) {
+
+      const table = document.getElementById("examTable");
+
+      table.innerHTML = "";
+
+      if (list.length === 0) {
+
+        table.innerHTML = `
+          <tr>
+            <td colspan="6" class="empty">
+              No examination timetable entries found.
+            </td>
+          </tr>
+        `;
+
+        return;
+      }
+
+      list.forEach((exam, index) => {
+
+        const row = document.createElement("tr");
+
+        row.innerHTML = `
+          <td>${exam.subject}</td>
+          <td>${exam.className}</td>
+          <td>${exam.examDate}</td>
+          <td>${exam.examTime}</td>
+          <td>${exam.venue}</td>
+          <td>
+            <button
+              class="delete-btn"
+              onclick="deleteExam(${index})">
+              Delete
+            </button>
+          </td>
+        `;
+
+        table.appendChild(row);
+
+      });
+    }
+
+    function addExam(event) {
+
+      event.preventDefault();
+
+      const subject =
+        document.getElementById("subject").value;
+
+      const className =
+        document.getElementById("className").value;
+
+      const examDate =
+        document.getElementById("examDate").value;
+
+      const examTime =
+        document.getElementById("examTime").value;
+
+      const venue =
+        document.getElementById("venue").value;
+
+      const newExam = {
+        subject: subject,
+        className: className,
+        examDate: examDate,
+        examTime: examTime,
+        venue: venue
+      };
+
+      exams.push(newExam);
+
+      localStorage.setItem(
+        "crestfieldExams",
+        JSON.stringify(exams)
+      );
+
+      alert("Examination added successfully.");
+
+      document.querySelector("form").reset();
+
+      displayExams();
+    }
+
+    function deleteExam(index) {
+
+      const confirmDelete = confirm(
+        "Are you sure you want to delete this examination?"
+      );
+
+      if (!confirmDelete) {
+        return;
+      }
+
+      exams.splice(index, 1);
+
+      localStorage.setItem(
+        "crestfieldExams",
+        JSON.stringify(exams)
+      );
+
+      displayExams();
+    }
+
+    function searchExams() {
+
+      const searchValue =
+        document.getElementById("search").value.toLowerCase();
+
+      const filteredExams = exams.filter(function(exam) {
+
+        return (
+          exam.subject.toLowerCase().includes(searchValue) ||
+          exam.className.toLowerCase().includes(searchValue) ||
+          exam.venue.toLowerCase().includes(searchValue)
+        );
+
+      });
+
+      displayExams(filteredExams);
+    }
+
+    displayExams();
+
+  </script>
+
+</body>
+</html>
