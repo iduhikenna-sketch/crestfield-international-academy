@@ -22,7 +22,7 @@
         body {
             font-family: Arial, Helvetica, sans-serif;
             background: #f7f9fc;
-            color: #1d2733;
+            color: #182536;
             line-height: 1.6;
         }
 
@@ -35,41 +35,42 @@
             display: block;
         }
 
-        /* DEMO NOTICE */
+        /* DEMO BAR */
 
         .demo-bar {
-            background: #101c2c;
+            background: #07182b;
             color: #ffffff;
             text-align: center;
-            padding: 9px 15px;
-            font-size: 12px;
-            letter-spacing: 0.5px;
+            padding: 8px 15px;
+            font-size: 11px;
+            letter-spacing: 1px;
         }
 
         /* HEADER */
 
         header {
-            background: #ffffff;
-            border-bottom: 1px solid #e6eaf0;
+            background: rgba(255,255,255,0.97);
+            border-bottom: 1px solid #e5eaf0;
             position: sticky;
             top: 0;
             z-index: 1000;
+            backdrop-filter: blur(10px);
         }
 
         .header-container {
-            max-width: 1200px;
+            max-width: 1250px;
             margin: auto;
-            padding: 18px 25px;
+            padding: 16px 25px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            gap: 30px;
+            gap: 25px;
         }
 
         .logo {
             color: #123c69;
             font-size: 25px;
-            font-weight: 800;
+            font-weight: 900;
             white-space: nowrap;
         }
 
@@ -80,13 +81,15 @@
         nav {
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 16px;
+            flex-wrap: wrap;
+            justify-content: flex-end;
         }
 
         nav a {
             color: #26384a;
-            font-size: 14px;
-            font-weight: 600;
+            font-size: 13px;
+            font-weight: 700;
             transition: 0.3s;
         }
 
@@ -94,24 +97,39 @@
             color: #c89b3c;
         }
 
-        .nav-button {
-            background: #c89b3c;
+        .portal-button {
+            background: #123c69;
             color: #ffffff !important;
-            padding: 11px 18px;
-            border-radius: 6px;
+            padding: 11px 17px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(18,60,105,0.18);
         }
 
-        .nav-button:hover {
+        .portal-button:hover {
+            background: #0b2949;
+            transform: translateY(-1px);
+        }
+
+        .apply-button {
+            background: #c89b3c;
+            color: #ffffff !important;
+            padding: 11px 17px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(200,155,60,0.20);
+        }
+
+        .apply-button:hover {
             background: #a97d25;
         }
 
         /* HERO */
 
         .hero {
-            min-height: 650px;
+            min-height: 690px;
+            position: relative;
             background:
-                linear-gradient(rgba(10, 36, 64, 0.78), rgba(10, 36, 64, 0.78)),
-                url("https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1600&q=85");
+                linear-gradient(90deg, rgba(5,25,48,0.90), rgba(12,50,84,0.70), rgba(12,50,84,0.35)),
+                url("https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1800&q=90");
             background-size: cover;
             background-position: center;
             display: flex;
@@ -119,54 +137,57 @@
         }
 
         .hero-content {
-            max-width: 1200px;
+            max-width: 1250px;
             width: 100%;
             margin: auto;
-            padding: 80px 25px;
+            padding: 90px 25px;
             color: #ffffff;
         }
 
         .hero-label {
             display: inline-block;
-            background: rgba(200, 155, 60, 0.95);
+            background: rgba(200,155,60,0.95);
             color: #ffffff;
-            padding: 8px 15px;
-            border-radius: 4px;
-            font-size: 13px;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-
-        .hero h1 {
-            max-width: 800px;
-            font-size: 58px;
-            line-height: 1.1;
+            padding: 9px 16px;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1px;
             margin-bottom: 22px;
         }
 
+        .hero h1 {
+            max-width: 850px;
+            font-size: 64px;
+            line-height: 1.05;
+            margin-bottom: 25px;
+            letter-spacing: -1.5px;
+        }
+
         .hero h1 span {
-            color: #e5bb62;
+            color: #e7c36d;
+            display: block;
         }
 
         .hero p {
             max-width: 700px;
-            font-size: 19px;
-            color: #f0f4f8;
-            margin-bottom: 32px;
+            font-size: 18px;
+            color: #edf3f8;
+            margin-bottom: 34px;
         }
 
         .hero-buttons {
             display: flex;
-            gap: 15px;
+            gap: 14px;
             flex-wrap: wrap;
         }
 
         .btn {
             display: inline-block;
             padding: 14px 23px;
-            border-radius: 6px;
-            font-weight: bold;
-            font-size: 14px;
+            border-radius: 8px;
+            font-weight: 800;
+            font-size: 13px;
             transition: 0.3s;
         }
 
@@ -177,11 +198,13 @@
 
         .btn-primary:hover {
             background: #a97d25;
+            transform: translateY(-2px);
         }
 
         .btn-outline {
-            border: 1px solid #ffffff;
+            border: 1px solid rgba(255,255,255,0.8);
             color: #ffffff;
+            background: rgba(255,255,255,0.05);
         }
 
         .btn-outline:hover {
@@ -192,8 +215,8 @@
         /* QUICK INFO */
 
         .quick-info {
-            max-width: 1100px;
-            margin: -55px auto 0;
+            max-width: 1120px;
+            margin: -65px auto 0;
             position: relative;
             z-index: 5;
             padding: 0 20px;
@@ -201,15 +224,15 @@
 
         .info-grid {
             background: #ffffff;
-            border-radius: 10px;
-            box-shadow: 0 12px 35px rgba(0,0,0,0.12);
+            border-radius: 16px;
+            box-shadow: 0 18px 45px rgba(10,35,60,0.14);
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             overflow: hidden;
         }
 
         .info-box {
-            padding: 28px;
+            padding: 30px 25px;
             text-align: center;
             border-right: 1px solid #e8edf2;
         }
@@ -218,28 +241,33 @@
             border-right: none;
         }
 
+        .info-icon {
+            font-size: 27px;
+            margin-bottom: 7px;
+        }
+
         .info-box strong {
             display: block;
             color: #123c69;
-            font-size: 17px;
+            font-size: 16px;
             margin-bottom: 5px;
         }
 
         .info-box span {
             color: #687585;
-            font-size: 14px;
+            font-size: 13px;
         }
 
         /* GENERAL */
 
         .section {
-            max-width: 1200px;
+            max-width: 1250px;
             margin: auto;
-            padding: 90px 25px;
+            padding: 95px 25px;
         }
 
         .section-heading {
-            max-width: 700px;
+            max-width: 720px;
             margin-bottom: 45px;
         }
 
@@ -250,19 +278,19 @@
         }
 
         .eyebrow {
-            color: #c89b3c;
-            font-size: 13px;
-            font-weight: bold;
-            letter-spacing: 1.5px;
+            color: #b1832d;
+            font-size: 12px;
+            font-weight: 900;
+            letter-spacing: 2px;
             text-transform: uppercase;
             margin-bottom: 10px;
         }
 
         .section-heading h2 {
             color: #123c69;
-            font-size: 38px;
-            line-height: 1.2;
-            margin-bottom: 15px;
+            font-size: 40px;
+            line-height: 1.15;
+            margin-bottom: 16px;
         }
 
         .section-heading p {
@@ -275,18 +303,28 @@
         .welcome-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 55px;
+            gap: 65px;
             align-items: center;
         }
 
         .welcome-image {
-            border-radius: 12px;
+            border-radius: 18px;
             overflow: hidden;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+            box-shadow: 0 18px 40px rgba(0,0,0,0.13);
+            position: relative;
+        }
+
+        .welcome-image::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 18px;
+            pointer-events: none;
         }
 
         .welcome-image img {
-            height: 390px;
+            height: 410px;
             object-fit: cover;
         }
 
@@ -304,18 +342,18 @@
             gap: 13px;
             margin-bottom: 15px;
             color: #344352;
-            font-weight: 600;
+            font-weight: 700;
         }
 
         .check {
-            width: 25px;
-            height: 25px;
+            width: 26px;
+            height: 26px;
             flex-shrink: 0;
             background: #123c69;
             color: #ffffff;
             border-radius: 50%;
             text-align: center;
-            line-height: 25px;
+            line-height: 26px;
             font-size: 13px;
         }
 
@@ -328,21 +366,27 @@
         .highlight-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
+            gap: 24px;
         }
 
         .highlight-card {
             background: #ffffff;
-            padding: 32px 27px;
-            border-radius: 10px;
-            border-top: 4px solid #c89b3c;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+            padding: 35px 28px;
+            border-radius: 15px;
+            border: 1px solid #e4eaf0;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+            transition: 0.3s;
+        }
+
+        .highlight-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.09);
         }
 
         .highlight-number {
             color: #c89b3c;
-            font-size: 30px;
-            font-weight: bold;
+            font-size: 31px;
+            font-weight: 900;
             margin-bottom: 10px;
         }
 
@@ -357,7 +401,7 @@
             font-size: 14px;
         }
 
-        /* ACADEMICS PREVIEW */
+        /* ACADEMICS */
 
         .academic-grid {
             display: grid;
@@ -367,35 +411,42 @@
 
         .academic-card {
             background: #ffffff;
-            border-radius: 10px;
+            border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 7px 22px rgba(0,0,0,0.07);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+            border: 1px solid #e8edf2;
+            transition: 0.3s;
+        }
+
+        .academic-card:hover {
+            transform: translateY(-5px);
         }
 
         .academic-card img {
-            height: 210px;
+            height: 215px;
             object-fit: cover;
         }
 
         .academic-content {
-            padding: 25px;
+            padding: 27px;
         }
 
         .academic-content h3 {
             color: #123c69;
             margin-bottom: 8px;
+            font-size: 20px;
         }
 
         .academic-content p {
             color: #687585;
             font-size: 14px;
-            margin-bottom: 15px;
+            margin-bottom: 17px;
         }
 
         .text-link {
             color: #b1832d;
-            font-weight: bold;
-            font-size: 14px;
+            font-weight: 900;
+            font-size: 13px;
         }
 
         /* WHY CHOOSE */
@@ -409,18 +460,24 @@
         .why-card {
             display: flex;
             gap: 18px;
-            padding: 25px;
+            padding: 27px;
             background: #ffffff;
             border: 1px solid #e5eaf0;
-            border-radius: 9px;
+            border-radius: 14px;
+            transition: 0.3s;
+        }
+
+        .why-card:hover {
+            border-color: #c89b3c;
+            transform: translateY(-3px);
         }
 
         .why-icon {
-            width: 48px;
-            height: 48px;
+            width: 50px;
+            height: 50px;
             background: #123c69;
             color: #ffffff;
-            border-radius: 8px;
+            border-radius: 11px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -438,7 +495,7 @@
             font-size: 14px;
         }
 
-        /* CAMPUS PREVIEW */
+        /* CAMPUS */
 
         .campus-grid {
             display: grid;
@@ -447,16 +504,21 @@
         }
 
         .campus-item {
-            border-radius: 10px;
+            border-radius: 15px;
             overflow: hidden;
             position: relative;
-            min-height: 270px;
+            min-height: 285px;
         }
 
         .campus-item img {
             height: 100%;
-            min-height: 270px;
+            min-height: 285px;
             object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .campus-item:hover img {
+            transform: scale(1.04);
         }
 
         .campus-label {
@@ -464,18 +526,18 @@
             bottom: 0;
             left: 0;
             right: 0;
-            padding: 18px;
-            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            padding: 35px 18px 18px;
+            background: linear-gradient(transparent, rgba(0,0,0,0.82));
             color: #ffffff;
-            font-weight: bold;
+            font-weight: 800;
         }
 
         /* STUDENT LIFE */
 
         .student-life {
             background:
-                linear-gradient(rgba(18,60,105,0.93), rgba(18,60,105,0.93)),
-                url("https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&w=1500&q=80");
+                linear-gradient(rgba(7,35,63,0.94), rgba(18,60,105,0.94)),
+                url("https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&w=1500&q=85");
             background-size: cover;
             background-position: center;
             color: #ffffff;
@@ -493,10 +555,11 @@
         }
 
         .student-card {
-            border: 1px solid rgba(255,255,255,0.25);
+            border: 1px solid rgba(255,255,255,0.20);
             background: rgba(255,255,255,0.08);
-            padding: 30px;
-            border-radius: 9px;
+            padding: 32px;
+            border-radius: 14px;
+            backdrop-filter: blur(5px);
         }
 
         .student-card .icon {
@@ -513,30 +576,89 @@
             font-size: 14px;
         }
 
-        /* ADMISSIONS CTA */
+        /* PORTAL FEATURE */
+
+        .portal-section {
+            background: #ffffff;
+        }
+
+        .portal-box {
+            background:
+                linear-gradient(120deg, #123c69, #0b2949);
+            color: #ffffff;
+            border-radius: 20px;
+            padding: 55px;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 40px;
+            align-items: center;
+            box-shadow: 0 18px 40px rgba(18,60,105,0.18);
+        }
+
+        .portal-box h2 {
+            font-size: 35px;
+            line-height: 1.2;
+            margin-bottom: 13px;
+        }
+
+        .portal-box p {
+            color: #dbe5ef;
+            max-width: 650px;
+        }
+
+        .portal-cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .portal-card {
+            background: rgba(255,255,255,0.10);
+            border: 1px solid rgba(255,255,255,0.15);
+            padding: 18px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .portal-card span {
+            display: block;
+            font-size: 25px;
+            margin-bottom: 5px;
+        }
+
+        .portal-card strong {
+            font-size: 13px;
+        }
+
+        /* ADMISSIONS */
 
         .admission-cta {
             max-width: 1150px;
             margin: 20px auto 90px;
-            padding: 65px 30px;
-            background: #123c69;
-            border-radius: 12px;
+            padding: 70px 30px;
+            background:
+                linear-gradient(rgba(18,60,105,0.96), rgba(18,60,105,0.96)),
+                url("https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1400&q=85");
+            background-size: cover;
+            background-position: center;
+            border-radius: 20px;
             text-align: center;
             color: #ffffff;
+            box-shadow: 0 18px 40px rgba(0,0,0,0.12);
         }
 
         .admission-cta h2 {
-            font-size: 38px;
+            font-size: 40px;
             margin-bottom: 12px;
         }
 
         .admission-cta p {
             max-width: 700px;
-            margin: 0 auto 25px;
+            margin: 0 auto 27px;
             color: #dbe5ef;
         }
 
-        /* CONTACT PREVIEW */
+        /* CONTACT */
 
         .contact-preview {
             background: #eef3f8;
@@ -550,9 +672,15 @@
 
         .contact-box {
             background: #ffffff;
-            padding: 28px;
-            border-radius: 9px;
+            padding: 30px;
+            border-radius: 14px;
             text-align: center;
+            border: 1px solid #e4eaf0;
+        }
+
+        .contact-icon {
+            font-size: 28px;
+            margin-bottom: 8px;
         }
 
         .contact-box h3 {
@@ -568,14 +696,14 @@
         /* FOOTER */
 
         footer {
-            background: #0d2238;
+            background: #07182b;
             color: #ffffff;
         }
 
         .footer-main {
-            max-width: 1200px;
+            max-width: 1250px;
             margin: auto;
-            padding: 60px 25px 40px;
+            padding: 65px 25px 45px;
             display: grid;
             grid-template-columns: 1.5fr 1fr 1fr;
             gap: 50px;
@@ -592,7 +720,7 @@
         .footer-brand p {
             color: #b8c5d1;
             font-size: 14px;
-            max-width: 420px;
+            max-width: 430px;
         }
 
         footer h3 {
@@ -603,7 +731,7 @@
             display: block;
             color: #b8c5d1;
             font-size: 14px;
-            margin-bottom: 8px;
+            margin-bottom: 9px;
         }
 
         .footer-links a:hover {
@@ -615,12 +743,12 @@
             text-align: center;
             padding: 20px 15px;
             color: #aebdca;
-            font-size: 13px;
+            font-size: 12px;
         }
 
         /* MOBILE */
 
-        @media (max-width: 900px) {
+        @media (max-width: 1000px) {
 
             .header-container {
                 flex-direction: column;
@@ -628,19 +756,21 @@
 
             nav {
                 justify-content: center;
-                flex-wrap: wrap;
             }
 
             .hero h1 {
-                font-size: 45px;
+                font-size: 48px;
             }
 
             .welcome-grid,
+            .portal-box {
+                grid-template-columns: 1fr;
+            }
+
             .highlight-grid,
             .academic-grid,
             .student-grid,
-            .contact-grid,
-            .footer-main {
+            .contact-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -664,12 +794,20 @@
             .info-box:last-child {
                 border-bottom: none;
             }
+
+            .footer-main {
+                grid-template-columns: 1fr;
+            }
         }
 
         @media (max-width: 600px) {
 
             .demo-bar {
-                font-size: 10px;
+                font-size: 9px;
+            }
+
+            .header-container {
+                padding: 15px 15px;
             }
 
             .logo {
@@ -677,19 +815,28 @@
             }
 
             nav {
-                gap: 10px;
+                gap: 8px;
             }
 
             nav a {
-                font-size: 12px;
+                font-size: 11px;
+            }
+
+            .portal-button,
+            .apply-button {
+                padding: 9px 12px;
             }
 
             .hero {
-                min-height: 560px;
+                min-height: 590px;
+            }
+
+            .hero-content {
+                padding: 70px 20px;
             }
 
             .hero h1 {
-                font-size: 36px;
+                font-size: 38px;
             }
 
             .hero p {
@@ -704,6 +851,18 @@
                 font-size: 30px;
             }
 
+            .welcome-image img {
+                height: 300px;
+            }
+
+            .portal-box {
+                padding: 35px 23px;
+            }
+
+            .portal-box h2 {
+                font-size: 29px;
+            }
+
             .admission-cta {
                 margin: 0 15px 65px;
                 padding: 50px 20px;
@@ -711,6 +870,10 @@
 
             .admission-cta h2 {
                 font-size: 30px;
+            }
+
+            .portal-cards {
+                grid-template-columns: 1fr 1fr;
             }
         }
     </style>
@@ -721,7 +884,7 @@
     <!-- DEMO NOTICE -->
 
     <div class="demo-bar">
-        FICTIONAL DEMO WEBSITE — CREATED BY NOVATECH SOLUTIONS
+        FICTIONAL DEMO WEBSITE • CREATED BY NOVATECH SOLUTIONS
     </div>
 
     <!-- HEADER -->
@@ -741,7 +904,14 @@
                 <a href="facilities.html">Facilities</a>
                 <a href="student-life.html">Student Life</a>
                 <a href="contact.html">Contact</a>
-                <a href="admissions.html" class="nav-button">Apply Now</a>
+
+                <a href="login.html" class="portal-button">
+                    🔐 School Portal
+                </a>
+
+                <a href="admissions.html" class="apply-button">
+                    Apply Now
+                </a>
             </nav>
 
         </div>
@@ -771,7 +941,7 @@
             <div class="hero-buttons">
 
                 <a href="admissions.html" class="btn btn-primary">
-                    Explore Admissions
+                    Explore Admissions →
                 </a>
 
                 <a href="about.html" class="btn btn-outline">
@@ -791,16 +961,19 @@
         <div class="info-grid">
 
             <div class="info-box">
+                <div class="info-icon">📚</div>
                 <strong>Academic Excellence</strong>
                 <span>Focused learning and development</span>
             </div>
 
             <div class="info-box">
+                <div class="info-icon">🌱</div>
                 <strong>Whole-Child Development</strong>
                 <span>Character, creativity and confidence</span>
             </div>
 
             <div class="info-box">
+                <div class="info-icon">🚀</div>
                 <strong>Future-Focused Learning</strong>
                 <span>Skills for tomorrow's opportunities</span>
             </div>
@@ -927,7 +1100,7 @@
 
     </section>
 
-    <!-- ACADEMICS PREVIEW -->
+    <!-- ACADEMICS -->
 
     <section class="section">
 
@@ -1099,7 +1272,7 @@
 
     </section>
 
-    <!-- FACILITIES PREVIEW -->
+    <!-- FACILITIES -->
 
     <section class="section">
 
@@ -1163,7 +1336,7 @@
 
         <div style="text-align:center; margin-top:30px;">
             <a href="facilities.html" class="btn btn-primary">
-                Explore Facilities
+                Explore Facilities →
             </a>
         </div>
 
@@ -1223,8 +1396,67 @@
 
             <div style="text-align:center; margin-top:35px;">
                 <a href="student-life.html" class="btn btn-primary">
-                    Discover Student Life
+                    Discover Student Life →
                 </a>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- SCHOOL PORTAL -->
+
+    <section class="section portal-section">
+
+        <div class="portal-box">
+
+            <div>
+
+                <div class="eyebrow" style="color:#e7c36d;">
+                    Digital School Experience
+                </div>
+
+                <h2>
+                    A connected school portal for families and staff.
+                </h2>
+
+                <p>
+                    The demonstration portal provides separate experiences
+                    for administrators, teachers, parents and students,
+                    including results, timetables, announcements, fees,
+                    profiles and attendance.
+                </p>
+
+                <div style="margin-top:25px;">
+                    <a href="login.html" class="btn btn-primary">
+                        🔐 Enter School Portal
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="portal-cards">
+
+                <div class="portal-card">
+                    <span>👨‍💼</span>
+                    <strong>Admin</strong>
+                </div>
+
+                <div class="portal-card">
+                    <span>👨‍🏫</span>
+                    <strong>Teacher</strong>
+                </div>
+
+                <div class="portal-card">
+                    <span>👨‍👩‍👧</span>
+                    <strong>Parent</strong>
+                </div>
+
+                <div class="portal-card">
+                    <span>🎓</span>
+                    <strong>Student</strong>
+                </div>
+
             </div>
 
         </div>
@@ -1245,12 +1477,12 @@
         </p>
 
         <a href="admissions.html" class="btn btn-primary">
-            View Admissions
+            View Admissions →
         </a>
 
     </section>
 
-    <!-- CONTACT PREVIEW -->
+    <!-- CONTACT -->
 
     <section class="contact-preview">
 
@@ -1274,21 +1506,24 @@
             <div class="contact-grid">
 
                 <div class="contact-box">
-                    <h3>📍 Location</h3>
+                    <div class="contact-icon">📍</div>
+                    <h3>Location</h3>
                     <p>
                         Asaba, Delta State, Nigeria
                     </p>
                 </div>
 
                 <div class="contact-box">
-                    <h3>📞 Phone</h3>
+                    <div class="contact-icon">📞</div>
+                    <h3>Phone</h3>
                     <p>
                         +234 800 000 2026
                     </p>
                 </div>
 
                 <div class="contact-box">
-                    <h3>✉️ Email</h3>
+                    <div class="contact-icon">✉️</div>
+                    <h3>Email</h3>
                     <p>
                         admissions@crestfieldacademy.example
                     </p>
@@ -1298,7 +1533,7 @@
 
             <div style="text-align:center; margin-top:30px;">
                 <a href="contact.html" class="btn btn-primary">
-                    Contact the School
+                    Contact the School →
                 </a>
             </div>
 
@@ -1321,7 +1556,7 @@
                 <p>
                     A fictional school website demonstration created by
                     NovaTech Solutions to showcase modern educational
-                    website design.
+                    website design and digital school portal experiences.
                 </p>
 
             </div>
@@ -1334,17 +1569,18 @@
                 <a href="about.html">About</a>
                 <a href="academics.html">Academics</a>
                 <a href="admissions.html">Admissions</a>
+                <a href="facilities.html">Facilities</a>
 
             </div>
 
             <div class="footer-links">
 
-                <h3>More</h3>
+                <h3>Portal & More</h3>
 
-                <a href="facilities.html">Facilities</a>
                 <a href="student-life.html">Student Life</a>
                 <a href="cte.html">CTE</a>
                 <a href="contact.html">Contact</a>
+                <a href="login.html">🔐 School Portal</a>
 
             </div>
 
