@@ -20,113 +20,94 @@
     }
 
     header {
-      background: #0b1f3a;
+      background: #123c69;
       color: white;
-      padding: 20px;
+      padding: 25px 15px;
       text-align: center;
     }
 
     header h1 {
-      font-size: 24px;
-      margin-bottom: 5px;
+      font-size: 25px;
+      margin-bottom: 8px;
     }
 
     header p {
-      font-size: 14px;
-      opacity: 0.9;
+      font-size: 15px;
     }
 
     .container {
       width: 92%;
-      max-width: 1100px;
+      max-width: 1000px;
       margin: 30px auto;
     }
 
     .welcome {
       background: white;
-      padding: 25px;
-      border-radius: 15px;
+      padding: 22px;
+      border-radius: 12px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.08);
       margin-bottom: 25px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
     }
 
     .welcome h2 {
-      color: #0b1f3a;
-      margin-bottom: 8px;
+      color: #123c69;
+      margin-bottom: 10px;
     }
 
-    .student-info {
-      margin-top: 15px;
-      padding: 15px;
-      background: #f4f6f8;
-      border-radius: 10px;
+    .welcome p {
+      margin: 7px 0;
     }
 
-    .student-info strong {
-      color: #0b1f3a;
-    }
-
-    .dashboard-grid {
+    .cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 18px;
     }
 
     .card {
       background: white;
-      padding: 25px;
-      border-radius: 15px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+      padding: 25px 20px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+      text-decoration: none;
+      color: #222;
+      transition: 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+    }
+
+    .icon {
+      font-size: 35px;
+      margin-bottom: 12px;
     }
 
     .card h3 {
-      color: #0b1f3a;
-      margin-bottom: 10px;
+      color: #123c69;
+      margin-bottom: 8px;
     }
 
     .card p {
-      color: #666;
       font-size: 14px;
-      line-height: 1.6;
-    }
-
-    .card button {
-      margin-top: 15px;
-      padding: 11px 16px;
-      border: none;
-      border-radius: 8px;
-      background: #0b1f3a;
-      color: white;
-      cursor: pointer;
-      font-weight: bold;
-    }
-
-    .card button:hover {
-      background: #123f63;
+      color: #666;
     }
 
     .logout {
       display: block;
       width: 180px;
-      margin: 30px auto;
-      padding: 13px;
+      margin: 30px auto 0;
+      padding: 12px;
       text-align: center;
-      background: #8b0000;
+      background: #123c69;
       color: white;
       text-decoration: none;
       border-radius: 8px;
-      font-weight: bold;
     }
 
     .logout:hover {
-      background: #650000;
-    }
-
-    footer {
-      text-align: center;
-      padding: 25px;
-      color: #777;
-      font-size: 13px;
+      background: #0d2d4f;
     }
   </style>
 </head>
@@ -141,95 +122,49 @@
   <div class="container">
 
     <div class="welcome">
-      <h2>Welcome, Student 👋</h2>
-
-      <p>
-        Welcome to your Crestfield International Academy student portal.
-        Access your academic information, timetable and school
-        announcements here.
-      </p>
-
-      <div class="student-info">
-        <strong>Student:</strong> Sample Student<br>
-        <strong>Class:</strong> JSS 2<br>
-        <strong>Student ID:</strong> CIA-2026-001<br>
-        <strong>Academic Session:</strong> 2026/2027
-      </div>
+      <h2>Welcome, John Doe 👋</h2>
+      <p><strong>Student ID:</strong> CFA001</p>
+      <p><strong>Class:</strong> JSS 1</p>
+      <p><strong>Academic Session:</strong> 2026/2027</p>
     </div>
 
-    <div class="dashboard-grid">
+    <div class="cards">
 
-      <div class="card">
-        <h3>📊 My Results</h3>
-        <p>
-          View your examination and assessment results.
-        </p>
-        <button onclick="alert('Your results will be added next.')">
-          View Results
-        </button>
-      </div>
+      <a href="student-results.html" class="card">
+        <div class="icon">📊</div>
+        <h3>Student Results</h3>
+        <p>View your examination results</p>
+      </a>
 
-      <div class="card">
-        <h3>📅 Exam Timetable</h3>
-        <p>
-          Check your upcoming examinations and scheduled dates.
-        </p>
-        <button onclick="alert('Exam timetable will be added next.')">
-          View Timetable
-        </button>
-      </div>
+      <a href="parent-timetable.html" class="card">
+        <div class="icon">📅</div>
+        <h3>Exam Timetable</h3>
+        <p>View your examination schedule</p>
+      </a>
 
-      <div class="card">
-        <h3>📚 My Subjects</h3>
-        <p>
-          View the subjects you are currently studying.
-        </p>
-        <button onclick="alert('Your subjects will be added next.')">
-          View Subjects
-        </button>
-      </div>
+      <a href="parent-announcements.html" class="card">
+        <div class="icon">📢</div>
+        <h3>Announcements</h3>
+        <p>View school announcements</p>
+      </a>
 
-      <div class="card">
-        <h3>📢 Announcements</h3>
-        <p>
-          Read important announcements and notices from the school.
-        </p>
-        <button onclick="alert('Announcements will be added next.')">
-          View Announcements
-        </button>
-      </div>
+      <a href="parent-profile.html" class="card">
+        <div class="icon">👤</div>
+        <h3>Student Profile</h3>
+        <p>View your student information</p>
+      </a>
 
-      <div class="card">
-        <h3>📖 Assignments</h3>
-        <p>
-          View assignments and other academic tasks from your teachers.
-        </p>
-        <button onclick="alert('Assignments will be added next.')">
-          View Assignments
-        </button>
-      </div>
-
-      <div class="card">
-        <h3>👤 My Profile</h3>
-        <p>
-          View your student profile and school information.
-        </p>
-        <button onclick="alert('Your profile will be added next.')">
-          My Profile
-        </button>
-      </div>
+      <a href="parent-attendance.html" class="card">
+        <div class="icon">📚</div>
+        <h3>Attendance</h3>
+        <p>View your attendance record</p>
+      </a>
 
     </div>
 
-    <a href="login.html" class="logout">
-      Logout
-    </a>
+    <a href="login.html" class="logout">🚪 Logout</a>
 
   </div>
-
-  <footer>
-    © 2026 Crestfield International Academy. All Rights Reserved.
-  </footer>
 
 </body>
 </html>
