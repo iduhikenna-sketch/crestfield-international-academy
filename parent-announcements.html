@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Announcements | Crestfield International Academy</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f4f6f8;
+      color: #222;
+    }
+
+    header {
+      background: #0b1f3a;
+      color: white;
+      padding: 22px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 24px;
+      margin-bottom: 6px;
+    }
+
+    header p {
+      font-size: 14px;
+      opacity: 0.9;
+    }
+
+    .container {
+      width: 94%;
+      max-width: 1000px;
+      margin: 30px auto;
+    }
+
+    .box {
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      margin-bottom: 25px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    }
+
+    .box h2 {
+      color: #0b1f3a;
+      margin-bottom: 10px;
+    }
+
+    .student-info {
+      margin-top: 18px;
+      padding: 15px;
+      background: #f4f6f8;
+      border-radius: 10px;
+      line-height: 1.8;
+    }
+
+    .student-info strong {
+      color: #0b1f3a;
+    }
+
+    .announcement {
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      padding: 20px;
+      margin-top: 18px;
+      background: #fafafa;
+    }
+
+    .announcement h3 {
+      color: #0b1f3a;
+      margin-bottom: 8px;
+    }
+
+    .announcement-date {
+      font-size: 13px;
+      color: #777;
+      margin-bottom: 12px;
+    }
+
+    .announcement-message {
+      color: #444;
+      line-height: 1.7;
+      white-space: pre-wrap;
+    }
+
+    .announcement-audience {
+      display: inline-block;
+      margin-top: 14px;
+      padding: 6px 10px;
+      background: #0b1f3a;
+      color: white;
+      border-radius: 6px;
+      font-size: 12px;
+    }
+
+    .no-announcements {
+      text-align: center;
+      padding: 30px 15px;
+      color: #777;
+    }
+
+    .back-button {
+      display: inline-block;
+      padding: 12px 18px;
+      background: #0b1f3a;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    .back-button:hover {
+      background: #123f63;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      color: #777;
+      font-size: 13px;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 20px;
+      }
+
+      .box {
+        padding: 18px;
+      }
+
+      .announcement {
+        padding: 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Crestfield International Academy</h1>
+    <p>Parent Portal — School Announcements</p>
+  </header>
+
+  <div class="container">
+
+    <div class="box">
+
+      <h2>📢 School Announcements</h2>
+
+      <p>
+        Stay updated with important information, notices,
+        and messages from Crestfield International Academy.
+      </p>
+
+      <div class="student-info">
+
+        <strong>Student:</strong> John Doe<br>
+        <strong>Student ID:</strong> CFA001<br>
+        <strong>Class:</strong> JSS 1<br>
+        <strong>Academic Session:</strong> 2026/2027
+
+      </div>
+
+    </div>
+
+
+    <div class="box">
+
+      <h2>📋 Latest Announcements</h2>
+
+      <div id="announcementList"></div>
+
+      <div id="noAnnouncements" class="no-announcements">
+        No announcements have been published yet.
+      </div>
+
+    </div>
+
+
+    <a href="parent-dashboard.html" class="back-button">
+      ← Back to Parent Dashboard
+    </a>
+
+  </div>
+
+
+  <footer>
+    © 2026 Crestfield International Academy. All Rights Reserved.
+  </footer>
+
+
+  <script>
+
+    const announcements =
+      JSON.parse(
+        localStorage.getItem("crestfieldAnnouncements")
+      ) || [];
+
+    const announcementList =
+      document.getElementById("announcementList");
+
+    const noAnnouncements =
+      document.getElementById("noAnnouncements");
+
+    const studentClass = "JSS 1";
+
+
+    const visibleAnnouncements =
+      announcements.filter(function(announcement) {
+
+        const audience =
+          String(
+            announcement.audience || ""
+          ).toLowerCase().trim();
+
+        const className =
+          String(
+            announcement.className || ""
+          ).toLowerCase().trim();
+
+        return (
+          audience === "all" ||
+          audience === "parents" ||
+          audience === "parent" ||
+          audience === studentClass.toLowerCase() ||
+          className === studentClass.toLowerCase()
+        );
+
+      });
+
+
+    if (visibleAnnouncements.length === 0) {
+
+      noAnnouncements.style.display = "block";
+
+    } else {
+
+      noAnnouncements.style.display = "none";
+
+      visibleAnnouncements.reverse();
+
+      visibleAnnouncements.forEach(
+        function(announcement) {
+
+          const card =
+            document.createElement("div");
+
+          card.className = "announcement";
+
+          card.innerHTML = `
+
+            <h3>
+              ${announcement.title || "School Announcement"}
+            </h3>
+
+            <div class="announcement-date">
+              📅 ${announcement.date || "Date not provided"}
+            </div>
+
+            <div class="announcement-message">
+              ${announcement.message || ""}
+            </div>
+
+            ${
+              announcement.audience
+              ?
+              `<span class="announcement-audience">
+                ${announcement.audience}
+              </span>`
+              :
+              ""
+            }
+
+          `;
+
+          announcementList.appendChild(card);
+
+        }
+      );
+
+    }
+
+  </script>
+
+</body>
+</html>
