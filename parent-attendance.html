@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Attendance | Crestfield International Academy</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f4f6f8;
+      color: #222;
+    }
+
+    header {
+      background: #123c69;
+      color: white;
+      padding: 25px 15px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 25px;
+      margin-bottom: 8px;
+    }
+
+    header p {
+      font-size: 15px;
+    }
+
+    .container {
+      width: 92%;
+      max-width: 1000px;
+      margin: 25px auto;
+    }
+
+    .student-card {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+      margin-bottom: 20px;
+    }
+
+    .student-card h2 {
+      color: #123c69;
+      margin-bottom: 12px;
+    }
+
+    .student-card p {
+      margin: 7px 0;
+    }
+
+    .summary {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 15px;
+      margin-bottom: 25px;
+    }
+
+    .summary-card {
+      background: white;
+      padding: 20px;
+      text-align: center;
+      border-radius: 12px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    }
+
+    .summary-card h3 {
+      color: #666;
+      font-size: 15px;
+      margin-bottom: 10px;
+    }
+
+    .summary-card .number {
+      font-size: 28px;
+      font-weight: bold;
+      color: #123c69;
+    }
+
+    .attendance-section {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+      overflow-x: auto;
+    }
+
+    .attendance-section h2 {
+      color: #123c69;
+      margin-bottom: 15px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 600px;
+    }
+
+    th,
+    td {
+      padding: 12px;
+      border: 1px solid #ddd;
+      text-align: left;
+    }
+
+    th {
+      background: #123c69;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background: #f8f9fa;
+    }
+
+    .present {
+      font-weight: bold;
+    }
+
+    .absent {
+      font-weight: bold;
+    }
+
+    .back-button {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 12px 20px;
+      background: #123c69;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+    }
+
+    .back-button:hover {
+      background: #0d2d4f;
+    }
+
+    .note {
+      margin-top: 20px;
+      padding: 15px;
+      background: #fff8e1;
+      border-left: 5px solid #f0ad4e;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Crestfield International Academy</h1>
+    <p>Parent Portal — Student Attendance</p>
+  </header>
+
+  <div class="container">
+
+    <div class="student-card">
+      <h2>📚 Student Attendance</h2>
+
+      <p><strong>Student:</strong> John Doe</p>
+      <p><strong>Student ID:</strong> CFA001</p>
+      <p><strong>Class:</strong> JSS 1</p>
+      <p><strong>Academic Session:</strong> 2026/2027</p>
+    </div>
+
+    <div class="summary">
+
+      <div class="summary-card">
+        <h3>Total School Days</h3>
+        <div class="number">20</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Days Present</h3>
+        <div class="number">18</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Days Absent</h3>
+        <div class="number">2</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Attendance Rate</h3>
+        <div class="number">90%</div>
+      </div>
+
+    </div>
+
+    <div class="attendance-section">
+
+      <h2>📋 Attendance Record</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Day</th>
+            <th>Status</th>
+            <th>Remark</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <tr>
+            <td>15 September 2026</td>
+            <td>Tuesday</td>
+            <td class="present">Present</td>
+            <td>On time</td>
+          </tr>
+
+          <tr>
+            <td>16 September 2026</td>
+            <td>Wednesday</td>
+            <td class="present">Present</td>
+            <td>On time</td>
+          </tr>
+
+          <tr>
+            <td>17 September 2026</td>
+            <td>Thursday</td>
+            <td class="present">Present</td>
+            <td>On time</td>
+          </tr>
+
+          <tr>
+            <td>18 September 2026</td>
+            <td>Friday</td>
+            <td class="absent">Absent</td>
+            <td>Not recorded</td>
+          </tr>
+
+          <tr>
+            <td>21 September 2026</td>
+            <td>Monday</td>
+            <td class="present">Present</td>
+            <td>On time</td>
+          </tr>
+
+          <tr>
+            <td>22 September 2026</td>
+            <td>Tuesday</td>
+            <td class="present">Present</td>
+            <td>On time</td>
+          </tr>
+
+          <tr>
+            <td>23 September 2026</td>
+            <td>Wednesday</td>
+            <td class="absent">Absent</td>
+            <td>Not recorded</td>
+          </tr>
+
+        </tbody>
+      </table>
+
+      <div class="note">
+        <strong>Note:</strong> This is a demonstration school portal.
+        The attendance information shown is sample information.
+      </div>
+
+    </div>
+
+    <a href="parent-dashboard.html" class="back-button">
+      ← Back to Parent Dashboard
+    </a>
+
+  </div>
+
+</body>
+</html>
