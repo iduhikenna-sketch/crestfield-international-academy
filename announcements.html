@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Announcements | Crestfield International Academy</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+      color: #222;
+    }
+
+    header {
+      background: #123c69;
+      color: white;
+      padding: 25px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin-bottom: 8px;
+    }
+
+    header p {
+      font-size: 15px;
+    }
+
+    .container {
+      width: 92%;
+      max-width: 1100px;
+      margin: 30px auto;
+    }
+
+    .back-button {
+      display: inline-block;
+      background: #123c69;
+      color: white;
+      text-decoration: none;
+      padding: 10px 18px;
+      border-radius: 6px;
+      margin-bottom: 20px;
+    }
+
+    .back-button:hover {
+      background: #0d2e50;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+      margin-bottom: 25px;
+    }
+
+    .card h2 {
+      margin-bottom: 20px;
+      color: #123c69;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      margin-bottom: 6px;
+      font-weight: bold;
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 15px;
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px 20px;
+      background: #123c69;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 15px;
+    }
+
+    button:hover {
+      background: #0d2e50;
+    }
+
+    .search-box {
+      margin-bottom: 20px;
+    }
+
+    .table-container {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 750px;
+    }
+
+    th,
+    td {
+      padding: 12px;
+      border: 1px solid #ddd;
+      text-align: left;
+    }
+
+    th {
+      background: #123c69;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background: #f8f9fa;
+    }
+
+    .delete-btn {
+      background: #c62828;
+      margin-top: 0;
+      padding: 8px 12px;
+    }
+
+    .delete-btn:hover {
+      background: #a61f1f;
+    }
+
+    .empty-message {
+      text-align: center;
+      padding: 20px;
+      color: #777;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        width: 95%;
+      }
+
+      .card {
+        padding: 18px;
+      }
+
+      header h1 {
+        font-size: 23px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Crestfield International Academy</h1>
+    <p>Administrator Portal — Announcements Management</p>
+  </header>
+
+  <div class="container">
+
+    <a href="admin-dashboard.html" class="back-button">
+      ← Back to Dashboard
+    </a>
+
+    <div class="card">
+      <h2>Create New Announcement</h2>
+
+      <form onsubmit="addAnnouncement(event)">
+
+        <label for="title">Announcement Title</label>
+        <input
+          type="text"
+          id="title"
+          placeholder="Enter announcement title"
+          required
+        >
+
+        <label for="message">Announcement Message</label>
+        <textarea
+          id="message"
+          placeholder="Enter announcement details..."
+          required
+        ></textarea>
+
+        <label for="audience">Audience / Class</label>
+        <select id="audience" required>
+          <option value="">Select audience</option>
+          <option value="All Students">All Students</option>
+          <option value="All Parents">All Parents</option>
+          <option value="All Teachers">All Teachers</option>
+          <option value="JSS 1">JSS 1</option>
+          <option value="JSS 2">JSS 2</option>
+          <option value="JSS 3">JSS 3</option>
+          <option value="SS 1">SS 1</option>
+          <option value="SS 2">SS 2</option>
+          <option value="SS 3">SS 3</option>
+        </select>
+
+        <label for="date">Announcement Date</label>
+        <input
+          type="date"
+          id="date"
+          required
+        >
+
+        <button type="submit">
+          Add Announcement
+        </button>
+
+      </form>
+    </div>
+
+    <div class="card">
+      <h2>Announcements</h2>
+
+      <input
+        type="text"
+        id="search"
+        class="search-box"
+        placeholder="Search announcements..."
+        onkeyup="searchAnnouncements()"
+      >
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Message</th>
+              <th>Audience</th>
+              <th>Date</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+
+          <tbody id="announcementTable"></tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+
+    let announcements =
+      JSON.parse(localStorage.getItem("crestfieldAnnouncements")) || [];
+
+    function displayAnnouncements(list = announcements) {
+
+      const table = document.getElementById("announcementTable");
+
+      table.innerHTML = "";
+
+      if (list.length === 0) {
+        table.innerHTML = `
+          <tr>
+            <td colspan="5" class="empty-message">
+              No announcements found.
+            </td>
+          </tr>
+        `;
+        return;
+      }
+
+      list.forEach((announcement, index) => {
+
+        const row = document.createElement("tr");
+
+        row.innerHTML = `
+          <td>${announcement.title}</td>
+          <td>${announcement.message}</td>
+          <td>${announcement.audience}</td>
+          <td>${announcement.date}</td>
+          <td>
+            <button
+              class="delete-btn"
+              onclick="deleteAnnouncement(${index})"
+            >
+              Delete
+            </button>
+          </td>
+        `;
+
+        table.appendChild(row);
+
+      });
+    }
+
+    function addAnnouncement(event) {
+
+      event.preventDefault();
+
+      const title =
+        document.getElementById("title").value.trim();
+
+      const message =
+        document.getElementById("message").value.trim();
+
+      const audience =
+        document.getElementById("audience").value;
+
+      const date =
+        document.getElementById("date").value;
+
+      const newAnnouncement = {
+        title: title,
+        message: message,
+        audience: audience,
+        date: date
+      };
+
+      announcements.push(newAnnouncement);
+
+      localStorage.setItem(
+        "crestfieldAnnouncements",
+        JSON.stringify(announcements)
+      );
+
+      alert("Announcement added successfully.");
+
+      document.querySelector("form").reset();
+
+      displayAnnouncements();
+    }
+
+    function deleteAnnouncement(index) {
+
+      if (confirm("Are you sure you want to delete this announcement?")) {
+
+        announcements.splice(index, 1);
+
+        localStorage.setItem(
+          "crestfieldAnnouncements",
+          JSON.stringify(announcements)
+        );
+
+        displayAnnouncements();
+      }
+    }
+
+    function searchAnnouncements() {
+
+      const search =
+        document.getElementById("search").value.toLowerCase();
+
+      const filtered =
+        announcements.filter(announcement =>
+          announcement.title.toLowerCase().includes(search) ||
+          announcement.message.toLowerCase().includes(search) ||
+          announcement.audience.toLowerCase().includes(search) ||
+          announcement.date.toLowerCase().includes(search)
+        );
+
+      displayAnnouncements(filtered);
+    }
+
+    displayAnnouncements();
+
+  </script>
+
+</body>
+</html>
