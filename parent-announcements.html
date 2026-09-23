@@ -4,142 +4,127 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Announcements | Crestfield International Academy</title>
+  <title>School Announcements | Crestfield International Academy</title>
 
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: Arial, sans-serif;
     }
 
     body {
+      font-family: Arial, sans-serif;
       background: #f4f6f8;
       color: #222;
     }
 
     header {
-      background: #0b1f3a;
+      background: #123c69;
       color: white;
-      padding: 22px;
+      padding: 25px 20px;
       text-align: center;
     }
 
     header h1 {
-      font-size: 24px;
-      margin-bottom: 6px;
-    }
-
-    header p {
-      font-size: 14px;
-      opacity: 0.9;
-    }
-
-    .container {
-      width: 94%;
-      max-width: 1000px;
-      margin: 30px auto;
-    }
-
-    .box {
-      background: white;
-      padding: 25px;
-      border-radius: 15px;
-      margin-bottom: 25px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-    }
-
-    .box h2 {
-      color: #0b1f3a;
-      margin-bottom: 10px;
-    }
-
-    .student-info {
-      margin-top: 18px;
-      padding: 15px;
-      background: #f4f6f8;
-      border-radius: 10px;
-      line-height: 1.8;
-    }
-
-    .student-info strong {
-      color: #0b1f3a;
-    }
-
-    .announcement {
-      border: 1px solid #ddd;
-      border-radius: 12px;
-      padding: 20px;
-      margin-top: 18px;
-      background: #fafafa;
-    }
-
-    .announcement h3 {
-      color: #0b1f3a;
       margin-bottom: 8px;
     }
 
-    .announcement-date {
-      font-size: 13px;
-      color: #777;
-      margin-bottom: 12px;
+    header p {
+      font-size: 15px;
     }
 
-    .announcement-message {
-      color: #444;
-      line-height: 1.7;
-      white-space: pre-wrap;
-    }
-
-    .announcement-audience {
-      display: inline-block;
-      margin-top: 14px;
-      padding: 6px 10px;
-      background: #0b1f3a;
-      color: white;
-      border-radius: 6px;
-      font-size: 12px;
-    }
-
-    .no-announcements {
-      text-align: center;
-      padding: 30px 15px;
-      color: #777;
+    .container {
+      width: 92%;
+      max-width: 900px;
+      margin: 30px auto;
     }
 
     .back-button {
       display: inline-block;
-      padding: 12px 18px;
-      background: #0b1f3a;
+      background: #123c69;
       color: white;
       text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
+      padding: 10px 18px;
+      border-radius: 6px;
+      margin-bottom: 20px;
     }
 
     .back-button:hover {
-      background: #123f63;
+      background: #0d2e50;
     }
 
-    footer {
-      text-align: center;
+    .card {
+      background: white;
       padding: 25px;
-      color: #777;
+      border-radius: 10px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+      margin-bottom: 25px;
+    }
+
+    .card h2 {
+      color: #123c69;
+      margin-bottom: 20px;
+    }
+
+    .student-info {
+      line-height: 1.9;
+      font-size: 16px;
+    }
+
+    .announcement {
+      border: 1px solid #ddd;
+      border-left: 5px solid #123c69;
+      padding: 20px;
+      margin-bottom: 18px;
+      border-radius: 6px;
+      background: #fafafa;
+    }
+
+    .announcement h3 {
+      color: #123c69;
+      margin-bottom: 10px;
+    }
+
+    .announcement-message {
+      line-height: 1.7;
+      margin-bottom: 12px;
+    }
+
+    .announcement-date {
+      color: #666;
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    .announcement-audience {
+      display: inline-block;
+      background: #e8eef5;
+      color: #123c69;
+      padding: 5px 10px;
+      border-radius: 5px;
       font-size: 13px;
+      font-weight: bold;
+    }
+
+    .empty-message {
+      text-align: center;
+      color: #777;
+      padding: 25px;
+      line-height: 1.6;
     }
 
     @media (max-width: 600px) {
-      header h1 {
-        font-size: 20px;
+      .container {
+        width: 95%;
       }
 
-      .box {
+      .card {
         padding: 18px;
       }
 
-      .announcement {
-        padding: 16px;
+      header h1 {
+        font-size: 23px;
       }
     }
   </style>
@@ -154,142 +139,195 @@
 
   <div class="container">
 
-    <div class="box">
+    <a href="parent-dashboard.html" class="back-button">
+      ← Back to Parent Dashboard
+    </a>
 
-      <h2>📢 School Announcements</h2>
+    <div class="card">
 
-      <p>
-        Stay updated with important information, notices,
-        and messages from Crestfield International Academy.
+      <h2>School Announcements</h2>
+
+      <p style="margin-bottom: 20px;">
+        Stay updated with important information, notices, and messages from Crestfield International Academy.
       </p>
 
       <div class="student-info">
-
         <strong>Student:</strong> John Doe<br>
         <strong>Student ID:</strong> CFA001<br>
         <strong>Class:</strong> JSS 1<br>
         <strong>Academic Session:</strong> 2026/2027
-
       </div>
 
     </div>
 
 
-    <div class="box">
+    <div class="card">
 
       <h2>📋 Latest Announcements</h2>
 
       <div id="announcementList"></div>
 
-      <div id="noAnnouncements" class="no-announcements">
-        No announcements have been published yet.
-      </div>
-
     </div>
-
-
-    <a href="parent-dashboard.html" class="back-button">
-      ← Back to Parent Dashboard
-    </a>
 
   </div>
 
 
-  <footer>
-    © 2026 Crestfield International Academy. All Rights Reserved.
-  </footer>
-
-
   <script>
 
-    const announcements =
-      JSON.parse(
-        localStorage.getItem("crestfieldAnnouncements")
-      ) || [];
+    function loadAnnouncements() {
 
-    const announcementList =
-      document.getElementById("announcementList");
+      const announcementList =
+        document.getElementById("announcementList");
 
-    const noAnnouncements =
-      document.getElementById("noAnnouncements");
-
-    const studentClass = "JSS 1";
+      announcementList.innerHTML = "";
 
 
-    const visibleAnnouncements =
-      announcements.filter(function(announcement) {
+      let announcements = [];
 
-        const audience =
-          String(
-            announcement.audience || ""
-          ).toLowerCase().trim();
+      try {
 
-        const className =
-          String(
-            announcement.className || ""
-          ).toLowerCase().trim();
+        announcements =
+          JSON.parse(
+            localStorage.getItem("crestfieldAnnouncements")
+          ) || [];
 
-        return (
-          audience === "all" ||
-          audience === "parents" ||
-          audience === "parent" ||
-          audience === studentClass.toLowerCase() ||
-          className === studentClass.toLowerCase()
-        );
+      } catch (error) {
+
+        announcements = [];
+
+      }
+
+
+      /*
+        Parent should receive:
+        1. All Parents
+        2. All Students
+        3. All
+        4. Parents
+        5. parent
+        6. JSS 1
+      */
+
+      const parentAnnouncements =
+        announcements.filter(function(announcement) {
+
+          if (!announcement) {
+            return false;
+          }
+
+          const audience =
+            String(
+              announcement.audience || ""
+            )
+            .trim()
+            .toLowerCase();
+
+
+          return (
+            audience === "all parents" ||
+            audience === "parents" ||
+            audience === "parent" ||
+            audience === "all" ||
+            audience === "all students" ||
+            audience === "jss 1"
+          );
+
+        });
+
+
+      /*
+        Show newest announcements first
+      */
+
+      parentAnnouncements.reverse();
+
+
+      if (parentAnnouncements.length === 0) {
+
+        announcementList.innerHTML = `
+          <div class="empty-message">
+            No announcements have been published yet.
+          </div>
+        `;
+
+        return;
+
+      }
+
+
+      parentAnnouncements.forEach(function(announcement) {
+
+        const item =
+          document.createElement("div");
+
+        item.className =
+          "announcement";
+
+
+        item.innerHTML = `
+
+          <h3>
+            ${escapeHTML(announcement.title)}
+          </h3>
+
+          <div class="announcement-message">
+            ${escapeHTML(announcement.message)}
+          </div>
+
+          <div class="announcement-date">
+            📅 Date:
+            ${escapeHTML(announcement.date)}
+          </div>
+
+          <span class="announcement-audience">
+            ${escapeHTML(announcement.audience)}
+          </span>
+
+        `;
+
+
+        announcementList.appendChild(item);
 
       });
 
+    }
 
-    if (visibleAnnouncements.length === 0) {
 
-      noAnnouncements.style.display = "block";
+    function escapeHTML(value) {
 
-    } else {
+      const div =
+        document.createElement("div");
 
-      noAnnouncements.style.display = "none";
+      div.textContent =
+        value || "";
 
-      visibleAnnouncements.reverse();
-
-      visibleAnnouncements.forEach(
-        function(announcement) {
-
-          const card =
-            document.createElement("div");
-
-          card.className = "announcement";
-
-          card.innerHTML = `
-
-            <h3>
-              ${announcement.title || "School Announcement"}
-            </h3>
-
-            <div class="announcement-date">
-              📅 ${announcement.date || "Date not provided"}
-            </div>
-
-            <div class="announcement-message">
-              ${announcement.message || ""}
-            </div>
-
-            ${
-              announcement.audience
-              ?
-              `<span class="announcement-audience">
-                ${announcement.audience}
-              </span>`
-              :
-              ""
-            }
-
-          `;
-
-          announcementList.appendChild(card);
-
-        }
-      );
+      return div.innerHTML;
 
     }
+
+
+    loadAnnouncements();
+
+
+    /*
+      Automatically refresh if an announcement
+      is changed in another browser tab.
+    */
+
+    window.addEventListener(
+      "storage",
+      function(event) {
+
+        if (
+          event.key === "crestfieldAnnouncements"
+        ) {
+
+          loadAnnouncements();
+
+        }
+
+      }
+    );
 
   </script>
 
