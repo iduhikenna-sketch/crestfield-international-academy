@@ -90,6 +90,21 @@
       line-height: 1.6;
     }
 
+    .card a {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 11px 16px;
+      border-radius: 8px;
+      background: #0b1f3a;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .card a:hover {
+      background: #123f63;
+    }
+
     .card button {
       margin-top: 15px;
       padding: 11px 16px;
@@ -158,67 +173,97 @@
 
     <div class="dashboard-grid">
 
+      <!-- VIEW RESULTS -->
+
       <div class="card">
         <h3>📊 View Results</h3>
+
         <p>
           View your child's examination and assessment results.
         </p>
-        <button onclick="alert('Student results will be added next.')">
+
+        <a href="parent-results.html">
           View Results
-        </button>
+        </a>
       </div>
+
+
+      <!-- EXAM TIMETABLE -->
 
       <div class="card">
         <h3>📅 Exam Timetable</h3>
+
         <p>
           View upcoming examinations and their scheduled dates.
         </p>
-        <button onclick="alert('Exam timetable will be added next.')">
+
+        <a href="timetable.html">
           View Timetable
-        </button>
+        </a>
       </div>
+
+
+      <!-- ANNOUNCEMENTS -->
 
       <div class="card">
         <h3>📢 Announcements</h3>
+
         <p>
           Stay updated with important school announcements and notices.
         </p>
-        <button onclick="alert('Announcements will be added next.')">
+
+        <a href="announcements.html">
           View Announcements
-        </button>
+        </a>
       </div>
+
+
+      <!-- SCHOOL FEES -->
 
       <div class="card">
         <h3>💰 School Fees</h3>
+
         <p>
           View school fee information and payment status.
         </p>
+
         <button onclick="alert('School fee information will be added next.')">
           View Fees
         </button>
       </div>
 
+
+      <!-- STUDENT PROFILE -->
+
       <div class="card">
         <h3>👤 Student Profile</h3>
+
         <p>
           View your child's profile and registered school information.
         </p>
+
         <button onclick="alert('Student profile will be added next.')">
           View Profile
         </button>
       </div>
 
+
+      <!-- ATTENDANCE -->
+
       <div class="card">
         <h3>📚 Attendance</h3>
+
         <p>
           View your child's school attendance record.
         </p>
+
         <button onclick="alert('Attendance records will be added next.')">
           View Attendance
         </button>
       </div>
 
     </div>
+
 
     <a href="login.html" class="logout">
       Logout
