@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Student Results | Crestfield International Academy</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f4f6f8;
+      color: #222;
+    }
+
+    header {
+      background: #123c69;
+      color: white;
+      padding: 25px 15px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 25px;
+      margin-bottom: 8px;
+    }
+
+    header p {
+      font-size: 15px;
+    }
+
+    .container {
+      width: 92%;
+      max-width: 900px;
+      margin: 25px auto;
+    }
+
+    .student-card,
+    .results-card {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      color: #123c69;
+      margin-bottom: 15px;
+    }
+
+    .student-info p {
+      margin: 8px 0;
+    }
+
+    .table-container {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 500px;
+    }
+
+    th,
+    td {
+      padding: 13px;
+      border: 1px solid #ddd;
+      text-align: left;
+    }
+
+    th {
+      background: #123c69;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background: #f8f9fa;
+    }
+
+    .grade {
+      font-weight: bold;
+    }
+
+    .empty-message {
+      padding: 15px;
+      background: #fff8e1;
+      border-left: 5px solid #f0ad4e;
+      border-radius: 6px;
+      display: none;
+    }
+
+    .back-button {
+      display: inline-block;
+      margin-top: 5px;
+      padding: 12px 20px;
+      background: #123c69;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+    }
+
+    .back-button:hover {
+      background: #0d2d4f;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Crestfield International Academy</h1>
+    <p>Student Portal — Student Results</p>
+  </header>
+
+  <div class="container">
+
+    <div class="student-card">
+
+      <h2>📊 Student Results</h2>
+
+      <div class="student-info">
+        <p><strong>Student:</strong> John Doe</p>
+        <p><strong>Student ID:</strong> CFA001</p>
+        <p><strong>Class:</strong> JSS 1</p>
+        <p><strong>Academic Session:</strong> 2026/2027</p>
+      </div>
+
+    </div>
+
+    <div class="results-card">
+
+      <h2>📋 Examination Results</h2>
+
+      <div class="table-container">
+
+        <table id="resultsTable">
+
+          <thead>
+            <tr>
+              <th>Subject</th>
+              <th>Score</th>
+              <th>Grade</th>
+            </tr>
+          </thead>
+
+          <tbody id="resultsBody">
+          </tbody>
+
+        </table>
+
+      </div>
+
+      <div class="empty-message" id="emptyMessage">
+        No results have been added yet.
+      </div>
+
+    </div>
+
+    <a href="student-dashboard.html" class="back-button">
+      ← Back to Student Dashboard
+    </a>
+
+  </div>
+
+  <script>
+
+    const studentId = "CFA001";
+
+    const results = JSON.parse(
+      localStorage.getItem("crestfieldResults") || "[]"
+    );
+
+    const studentResults = results.filter(result => {
+
+      return (
+        result &&
+        result.id === studentId &&
+        result.subject &&
+        result.score !== undefined &&
+        result.grade
+      );
+
+    });
+
+    const resultsBody = document.getElementById("resultsBody");
+    const emptyMessage = document.getElementById("emptyMessage");
+    const resultsTable = document.getElementById("resultsTable");
+
+    if (studentResults.length === 0) {
+
+      resultsTable.style.display = "none";
+      emptyMessage.style.display = "block";
+
+    } else {
+
+      studentResults.forEach(result => {
+
+        const row = document.createElement("tr");
+
+        row.innerHTML = `
+          <td>${result.subject}</td>
+          <td>${result.score}</td>
+          <td class="grade">${result.grade}</td>
+        `;
+
+        resultsBody.appendChild(row);
+
+      });
+
+    }
+
+  </script>
+
+</body>
+</html>
